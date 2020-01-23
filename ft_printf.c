@@ -1,3 +1,5 @@
+#include "libftprintf.h"
+
 void 	ft_printf(char* str)
 {
 	int i;
