@@ -1,11 +1,12 @@
-# ifndef LIBFT_H
-# define LIBFT_H
+# ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 #include "libft/libft.h"
 
-typedef	struct	s_struct
+typedef	struct	s_printf
 {
 	int			zero;
 	int			plus;
@@ -27,7 +28,7 @@ typedef	struct	s_struct
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
-void 		formatparser(char *nformat);
+void 		formatparser(char *nformat, va_list args);
 t_printf	conversions(char *nformat);
 
 #endif

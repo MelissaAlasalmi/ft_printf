@@ -2,10 +2,14 @@
 // passed into each individual conversion to be processed into an 
 // output.
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 t_printf	conversions(char *nformat)
 {
-
+	t_printf *fstruct;
+	fstruct = (t_printf *)malloc(sizeof(t_printf));
+	fstruct->zero = 1;
+	ft_putstr(nformat);
+	return(*fstruct);
 }

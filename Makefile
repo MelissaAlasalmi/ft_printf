@@ -1,18 +1,23 @@
 NAME = libftprintf.a
 
-SRCS = 	ft_printf.c \
+SRCS = 	main.c ft_printf.c formatparser.c conversions.c \
 
-OBJS =	ft_printf.o \
+OBJS =	main.o ft_printf.o formatparser.o conversions.o \
 
-HEADER = libftprintf.h
+HEADER = ft_printf.h
+
+INCS = -I libft/libft.h
 
 CFLAGS = -Wall -Wextra -Werror
+
+LIB = -L libft -lft
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c -I $(HEADER) $(CFLAGS) $(SRCS)
-	ar rc $(NAME) $(OBJS)
+	make -C libft
+	gcc $(CFLAGS) -c $(SRCS) $(INCS)
+	gcc $(CFLAGS) $(INCS) $(OBJS) $(LIB) -o $(NAME)
 
 .PHONY: clean fclean re all
 
