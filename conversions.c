@@ -3,7 +3,6 @@
 // output.
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 t_printf	conversions(char *nformat)
 {
