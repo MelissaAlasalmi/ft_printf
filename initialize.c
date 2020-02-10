@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 
-t_printf		*initialize(char *ptr)
+t_printf		*initialize(char *nformat)
 {
 	t_printf	*data;
 
@@ -32,7 +32,7 @@ t_printf		*initialize(char *ptr)
 	data->c = 0;
 	data->s = 0;
 	data->p = 0;
-	data->ptr = ptr;
+	data->ptr = nformat;
 	data->d = 0;
 	data->i = 0;
 	data->o = 0;
