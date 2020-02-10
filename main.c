@@ -19,7 +19,7 @@ int main(void)
  	*/
  	printf("SIMPLE STRING WITH S FLAG\n");
 	printf("%s\n", str);
-	ft_printf("%s\n", str);
+	ft_printf("%x\n", str);
 
 	return (0);
 }

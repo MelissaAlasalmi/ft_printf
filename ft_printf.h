@@ -8,23 +8,39 @@
 
 typedef	struct	s_printf
 {
-	int			zero;
-	int			plus;
-	int			minus;
-	int			space;
+	//flags
 	int			hash;
-	int			dot;
-	int			prc;
-	int			star;
-	int			fieldwidth;
-	int			len;
+	int			zero;
+	int			minus;
+	int			plus;
+	int			space;
+
+	//width
+	int			asterisk;
+
+	//precision
+	int			decimal;
+
+	//length
+	int			hh;
+	int			h;
+	int			l;
+	int			ll;
+	int			L;
+
+	//conversions
 	int			c;
-	int			d;
-	int			o;
 	int			s;
-	int			x;
 	int			p;
 	char		*ptr;
+	int			d;
+	int			i;
+	int			o;
+	int			u;
+	int			x;
+	int			X;
+	int			f;
+	int			percent;	
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
