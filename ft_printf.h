@@ -44,7 +44,8 @@ typedef	struct	s_printf
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
-void 		formatparser(char *nformat, va_list args);
+void 		formatparser(char *nformat);
 t_printf	conversions(char *nformat);
+t_printf	*initialize(char *ptr);
 
 #endif

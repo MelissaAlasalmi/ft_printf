@@ -15,7 +15,7 @@ int ft_printf(const char *restrict format, ...)
 	while (nformat[i] != '\0')
 	{
 		if (nformat[i] == '%')
-			formatparser(nformat, args);
+			formatparser(nformat);
 		else
 			ft_putchar(nformat[i]);
 		i++;
