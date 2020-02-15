@@ -9,11 +9,11 @@
 typedef	struct	s_printf
 {
 	//flags
-	int			hash;
-	int			zero;
-	int			minus;
-	int			plus;
-	int			space;
+	int			hash; // Alternates. For f flag, the output will always contain a decimal point. For o, x, and X flags, the texts 0, 0x, and 0X are added to non-zero numbers.
+	int			zero; //When the 'width' is specified, adds the width amount of zeros in front of numeric types
+	int			minus; //specifies left adjustment of the onverted argument
+	int			plus; //adds a plus for positive or a minus for negative-signed numeric types
+	int			space; //adds a space for positive signed-numeric types, unless there is a plus!
 
 	//width
 	int			asterisk;
@@ -44,8 +44,9 @@ typedef	struct	s_printf
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
-void 		formatparser(char *nformat, t_printf *data);
-t_printf	conversions(char *nformat);
+void 		length(char *next, t_printf *data);
+void 		format_parser(char next, t_printf *data);
+void		conversion_parser(char next, t_printf *data);
 t_printf	*initialize(char *ptr);
 
 #endif

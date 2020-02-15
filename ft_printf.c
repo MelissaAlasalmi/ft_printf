@@ -3,27 +3,26 @@
 int ft_printf(const char *restrict format, ...)
 {
 	va_list		args; // second param of printf
-	size_t		i;
 	char		*nformat; //new format cast into a char string
-	char		*parsedata;
 	t_printf	*data;
 
-	i = 0;
 	va_start(args, format);
 	nformat = (char *)format;
+	data = initialize(nformat);
 
 // mainparser!! differentiates between things that you want printed out 
 // vs flags, width, precision, length, and conversions
-	while (nformat[i] != '\0')
+	while (*nformat != '\0')
 	{
-		if (nformat[i] == '%')
-		{
-			data = initialize(nformat);
-			parsedata = formatparser(nformat, data);
-		}
+		if (*nformat == '%')
+			if (*(nformat + 1) == 'h' || *(nformat + 1) == 'l' 
+			|| *(nformat + 1) =='L')
+				length(*(nformat + 1), data);
+			else
+				formatparser(*(nformat + 1), data);
 		else
-			ft_putchar(nformat[i]);
-		i++;
+			ft_putchar(*nformat);
+		nformat++;
 	}
 	va_end(args);
 	return (0);
