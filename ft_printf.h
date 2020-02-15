@@ -44,9 +44,10 @@ typedef	struct	s_printf
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
+t_printf	*initialize(char *ptr);
 void 		length(char *next, t_printf *data);
 void 		format_parser(char next, t_printf *data);
 void		conversion_parser(char next, t_printf *data);
-t_printf	*initialize(char *ptr);
+void		output(t_printf *data, va_list args);
 
 #endif

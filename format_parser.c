@@ -39,9 +39,7 @@ void flags(char flag, t_printf *data)
 
 void format_parser(char next, t_printf *data)
 {
-	if (next == '%')
-		ft_putchar('%');
-	else if (next == '#' || next == '0' || next == '-' || 
+	if (next == '#' || next == '0' || next == '-' || 
 		next == '+' || next == ' ')
 		flags(next, data);
 	else if (next == '*')
