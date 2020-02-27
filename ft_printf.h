@@ -6,6 +6,8 @@
 # include <stdlib.h>
 #include "libft/libft.h"
 
+static char			types[10] = "cspdiouxXf";
+
 typedef	struct	s_printf
 {
 	//flags
@@ -30,26 +32,24 @@ typedef	struct	s_printf
 	int			ll; // +d = long long, +i = long long, +o = unsigned long long, +u = unsigned long long, +x = unsigned long long, +X = unsigned long long
 	int			L;
 
-	//conversions
-	int			c;
-	int			s;
-	int			p;
-	char		*ptr;
-	int			d;
-	int			i;
-	int			o;
-	int			u;
-	int			x;
-	int			X;
-	int			f;
-	int			percent;	
+	//type specifier
+	int			c; // char ~ c
+	int			s; // char *str ~ example
+	int			p; // pointer address ~ bc080
+	int			d; // signed decimal int ~ –123
+	int			i; // signed decimal int ~ –123
+	int			o; // unsigned octal ~ 05670
+	int			u; // unsigned decimal int ~ 456
+	int			x; // unsigned hexadecimal (lowercase) ~ 89abc
+	int			X; // unsigned hexadecimal (uppercase) ~ 89ABC
+	int			f; // decimal floating point ~ 123.456
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
 t_printf	*initialize(char *ptr);
 void 		length(char *next, t_printf *data);
 void 		format_parser(char next, t_printf *data);
-void		conversion_parser(char next, t_printf *data);
+void		type_parser(char next, t_printf *data);
 void		output(t_printf *data, va_list args);
 
 #endif

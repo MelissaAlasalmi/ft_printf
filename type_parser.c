@@ -4,7 +4,7 @@
 
 #include "ft_printf.h"
 
-void		cons_diouxX(char next, t_printf *data)
+void		type_diouxX(char next, t_printf *data)
 {
 	if (next == 'd')
 		data->d = 1;
@@ -19,7 +19,7 @@ void		cons_diouxX(char next, t_printf *data)
 	else if (next == 'X')
 		data->X = 1;
 }
-void		cons_csp(char next, t_printf *data)
+void		type_csp(char next, t_printf *data)
 {
 	if (next == 'c')
 		data->c = 1;
@@ -28,13 +28,13 @@ void		cons_csp(char next, t_printf *data)
 	else if (next == 'p')
 		data->p = 1;
 }
-void		conversion_parser(char next, t_printf *data)
+void		type_parser(char next, t_printf *data)
 {
 	if (next == 'c' || next == 's' || next == 'p')
-		cons_csp(next, data);
+		type_csp(next, data);
 	else if (next == 'd' || next == 'i' || next == 'o' || 
 	next == 'u' || next == 'x' || next == 'X')
-		cons_diouxX(next, data);
+		type_diouxX(next, data);
 	else if (next == 'f')
 		data->f = 1;
 }

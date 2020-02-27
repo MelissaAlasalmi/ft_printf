@@ -1,13 +1,13 @@
 #include "ft_printf.h"
 
-int ft_printf(const char *restrict format, ...)
+int ft_printf(const char *format, ...)
 {
 	va_list		args; // second param of printf
 	char		*nformat; //new format cast into a char string
 	t_printf	*data;
 
 	va_start(args, format);
-	nformat = (char *)format;
+	nformat = format;
 	
 
 // mainparser!! differentiates between things that you want printed out 
@@ -16,18 +16,27 @@ int ft_printf(const char *restrict format, ...)
 	{
 		if (*nformat == '%')
 		{
+			// if (*(nformat + 1) == '%') ------> move this!!!
+			// {
+			// 	ft_putchar('%');
+			// 	*nformat++;
+			// }
 			data = initialize(nformat);
-			if ((nformat + 1) == '%')
+			*nformat++;
+			while (*nformat != '%')
 			{
-				ft_putchar('%');
-				nformat++;
+				if (*nformat == types)
+				{
+					type_parser(*nformat, data);
+					output(data, args);
+					break ;
+				}
+				else
+				{
+					format_parser(*nformat, data);
+					*nformat++;
+				}
 			}
-			else if (*(nformat + 1) == 'h' || *(nformat + 1) == 'l' 
-			|| *(nformat + 1) =='L')
-				length(*(nformat + 1), data);
-			else
-				format_parser(*(nformat + 1), data);
-			output(data, args);	
 		}
 		else
 			ft_putchar(*nformat);

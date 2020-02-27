@@ -46,6 +46,6 @@ void format_parser(char next, t_printf *data)
 		data->asterisk = 1;
 	else if (next == '.')
 		data->decimal = 1;
-	else
-		conversions(next, data);
+	else if (next == 'h' || next == 'l' || next =='L')
+		length(next, data);
 }
