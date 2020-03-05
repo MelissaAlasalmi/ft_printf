@@ -6,8 +6,6 @@
 # include <stdlib.h>
 #include "libft/libft.h"
 
-static char			types[10] = "cspdiouxXf";
-
 typedef	struct	s_printf
 {
 	//flags
@@ -46,10 +44,13 @@ typedef	struct	s_printf
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
-t_printf	*initialize(char *ptr);
-void 		length(char *next, t_printf *data);
-void 		format_parser(char next, t_printf *data);
+t_printf	*initialize(void);
+int 		length(char *next, t_printf *data);
+int 		format_parser(char *nformat, char next, t_printf *data);
 void		type_parser(char next, t_printf *data);
 void		output(t_printf *data, va_list args);
+void		type_c(t_printf *data, va_list args);
+void		type_s(t_printf *data, va_list args);
+void		type_p(t_printf *data, va_list args);
 
 #endif

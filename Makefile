@@ -1,12 +1,12 @@
 NAME = libftprintf.a
 
-SRCS = 	main.c ft_printf.c formatparser.c conversions.c \
+SRCS = 	main.c ft_printf.c format_parser.c initialize.c type_parser.c output.c types_csp.c \
 
-OBJS =	main.o ft_printf.o formatparser.o conversions.o \
+OBJS =	main.o ft_printf.o format_parser.o initialize.o type_parser.o output.o types_csp.o \
 
 HEADER = ft_printf.h
 
-INCS = -I libft/libft.h
+INCS = -I libft/libft.h -I ft_printf.h
 
 CFLAGS = -Wall -Wextra -Werror
 

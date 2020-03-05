@@ -1,13 +1,13 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 
-t_printf		*initialize(char *nformat)
+t_printf		*initialize(void)
 {
 	t_printf	*data;
 
 	if (!(data = (t_printf *)malloc(sizeof(t_printf))))
 		return (NULL);
-	
+
 	//flags
 	data->hash = 0;
 	data->zero = 0;
@@ -32,7 +32,6 @@ t_printf		*initialize(char *nformat)
 	data->c = 0;
 	data->s = 0;
 	data->p = 0;
-	data->ptr = nformat;
 	data->d = 0;
 	data->i = 0;
 	data->o = 0;
@@ -40,7 +39,6 @@ t_printf		*initialize(char *nformat)
 	data->x = 0;
 	data->X = 0;
 	data->f = 0;
-	data->percent = 0;
 
-	return(data);
+	return (data);
 }
