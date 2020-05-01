@@ -5,44 +5,48 @@ int	ft_printf(const char *format, ...)
 	va_list		args; // second param of printf
 	char		*nformat; //new format cast into a char string
 	t_printf	*data;
-	char		*types;
-	int 		i; //for types
+	char		*all;
+	int 		i; // for iterating thru all flags and types
 
 	va_start(args, format);
 	nformat = (char*)format;
-	types = "cspdiouxXf";
+	all = "hlL#0-+ cspdiouxXf";
 	i = 0;
 
-// mainparser!! differentiates between things that you want printed out 
-// vs flags, width, precision, length, and conversions
+// Mainparser - differentiates between things that you want printed out and a format specifier:
+// < % (flags) (width) (.precision) (length) type specifier >
 	while (*nformat != '\0')
 	{
-		if (*nformat == '%')
+		if (*nformat == '%' && (*(nformat + 1) != '%'))
 		{
-			// if (*(nformat + 1) == '%') ------> move this!!!
-			// {
-			// 	ft_putchar('%');
-			//	nformat++;
-			//	}
 			data = initialize();
-			nformat++;
-			while (*nformat != '%')
+			*nformat++;
+			while (i < 18)
 			{
-				if (*nformat == *types)
+				if (i <= 7)
 				{
-					type_parser(*nformat, data);
-					output(data, args);
-					break ;
+					if (*nformat == all[i])
+						format_parser(nformat, *nformat, data);
+					else
+						i++;
 				}
-				else if (*nformat != *types)
-					types++;
-				else if (*types == '\0')
-					nformat += format_parser(nformat, *nformat, data);
+				else if (i >= 8 && < 18)
+				{
+					if (*nformat == all[i])
+						{
+							type_parser(*nformat, data);
+							output(data, args);
+						}
+					else
+						i++;
+				}
 			}
 		}
+		else if (*nformat == '%' && (*(nformat + 1) == '%'))
+			ft_putchar('%');
 		else
 			ft_putchar(*nformat);
-		nformat++;
+		*nformat++;
 	}
 	va_end(args);
 	return (0);
