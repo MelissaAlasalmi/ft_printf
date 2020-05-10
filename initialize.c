@@ -3,7 +3,7 @@
 
 t_printf		*initialize(void)
 {
-	t_printf	*data;
+	t_printf *data;
 
 	if (!(data = (t_printf *)malloc(sizeof(t_printf))))
 		return (NULL);
@@ -28,17 +28,17 @@ t_printf		*initialize(void)
 	data->ll = 0;
 	data->L = 0;
 
-	//conversions
-	data->c = 0;
-	data->s = 0;
-	data->p = 0;
-	data->d = 0;
-	data->i = 0;
-	data->o = 0;
-	data->u = 0;
-	data->x = 0;
-	data->X = 0;
-	data->f = 0;
+	// //conversions
+	// data->c = 0;
+	// data->s = 0;
+	// data->p = 0;
+	// data->d = 0;
+	// data->i = 0;
+	// data->o = 0;
+	// data->u = 0;
+	// data->x = 0;
+	// data->X = 0;
+	// data->f = 0;
 
 	return (data);
 }

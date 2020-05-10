@@ -1,7 +1,12 @@
 #include "ft_printf.h"
 
-void	output(t_printf *data, va_list args)
+int	output(char c) //, t_printf *data, va_list args)
 {
-	if (data->c == 1)
-		type_c(data, args);
+	if (c == 'c')
+	{
+		write(1, &c,1);
+		return (0);
+	}
+	else
+		return (0);
 }

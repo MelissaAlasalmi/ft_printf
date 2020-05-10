@@ -1,8 +1,8 @@
 NAME = libftprintf.a
 
-SRCS = 	main.c ft_printf.c format_parser.c initialize.c type_parser.c output.c types_csp.c \
+SRCS = 	main.c ft_printf.c flags_to_struct.c initialize.c type_to_struct.c teststruct.c output.c\
 
-OBJS =	main.o ft_printf.o format_parser.o initialize.o type_parser.o output.o types_csp.o \
+OBJS =	main.o ft_printf.o flags_to_struct.o initialize.o type_to_struct.o teststruct.o output.o\
 
 HEADER = ft_printf.h
 

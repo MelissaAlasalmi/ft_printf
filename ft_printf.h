@@ -45,10 +45,11 @@ typedef	struct	s_printf
 
 int 		ft_printf(const char *restrict format, ...);
 t_printf	*initialize(void);
-int 		length(char *next, t_printf *data);
-int 		format_parser(char *nformat, char next, t_printf *data);
-void		type_parser(char next, t_printf *data);
-void		output(t_printf *data, va_list args);
+void 		length(char flag, t_printf *data);
+t_printf 	flags_to_struct(char c, t_printf *data);
+void		type_to_struct(char c, t_printf *data);
+void		teststruct(t_printf *data);
+int		output(char c); //, t_printf *data, va_list args);
 void		type_c(t_printf *data, va_list args);
 void		type_s(t_printf *data, va_list args);
 void		type_p(t_printf *data, va_list args);
