@@ -1,14 +1,14 @@
 NAME = libftprintf.a
 
-SRCS = 	main.c ft_printf.c flags_to_struct.c initialize.c type_to_struct.c teststruct.c output.c\
+SRCS = 	main.c ft_printf.c flags_to_struct.c initialize.c teststruct.c output.c\
 
-OBJS =	main.o ft_printf.o flags_to_struct.o initialize.o type_to_struct.o teststruct.o output.o\
+OBJS =	main.o ft_printf.o flags_to_struct.o initialize.o teststruct.o output.o\
 
 HEADER = ft_printf.h
 
 INCS = -I libft/libft.h -I ft_printf.h
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 LIB = -L libft -lft
 

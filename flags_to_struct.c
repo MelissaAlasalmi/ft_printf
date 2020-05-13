@@ -3,7 +3,7 @@
 
 #include "ft_printf.h"
 
-void	length(char flag, t_printf *data)
+void	length(char flag, t_printf *data) // 23 lines
 {
 	if (flag == 'h')
 	{

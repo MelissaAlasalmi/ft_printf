@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void ft_preparser(char c, t_printf *data) //, va_list args)
+void ft_preparser(char c, t_printf *data, va_list args) //27 lines
 {
 	char	*all;
 	int		i;
@@ -19,13 +19,11 @@ void ft_preparser(char c, t_printf *data) //, va_list args)
 		else 
 			i++;
 	}
-	//teststruct(data);
 	while (i >= 10 && i < 20)
 	{
 		if (c == all[i])
 		{
-			printf("<Got to output>\n");
-			output(c); //, data, args);
+			output(c, args); //, data,);
 			break ;
 		}
 		else
@@ -33,7 +31,7 @@ void ft_preparser(char c, t_printf *data) //, va_list args)
 	}
 }
 
-int	ft_printf(const char *format, ...) // 24 lines, no touch!
+int	ft_printf(const char *format, ...) // 32 lines
 {
 	va_list		args;
 	char		*nformat;
@@ -44,15 +42,12 @@ int	ft_printf(const char *format, ...) // 24 lines, no touch!
 	data = initialize();
 	while (*nformat != '\0')
 	{
-		printf("<In the main nformat loop>\n");
 		if (*nformat == '%' && (*(nformat + 1) != '%'))
 		{
-			printf("<%c>\n", *nformat);
 			nformat++;
 			while (*nformat != '%' && *nformat != '\0')
 			{
-				printf("<In the inner preparser loop>\n");
-				ft_preparser(*nformat, data); //args);
+				ft_preparser(*nformat, data, args);
 				nformat++;
 			}
 		}
@@ -60,12 +55,9 @@ int	ft_printf(const char *format, ...) // 24 lines, no touch!
 		{
 			ft_putchar('%');
 			nformat++;
-			printf("<Printed %%>\n");
 		}
 		else
 		{
-			//printf("<%c>\n", *nformat);
-			printf("<Nothing to see here>\n");
 			ft_putchar(*nformat);
 			nformat++;
 		}

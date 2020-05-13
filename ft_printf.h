@@ -30,26 +30,26 @@ typedef	struct	s_printf
 	int			ll; // +d = long long, +i = long long, +o = unsigned long long, +u = unsigned long long, +x = unsigned long long, +X = unsigned long long
 	int			L;
 
-	//type specifier
-	int			c; // char ~ c
-	int			s; // char *str ~ example
-	int			p; // pointer address ~ bc080
-	int			d; // signed decimal int ~ –123
-	int			i; // signed decimal int ~ –123
-	int			o; // unsigned octal ~ 05670
-	int			u; // unsigned decimal int ~ 456
-	int			x; // unsigned hexadecimal (lowercase) ~ 89abc
-	int			X; // unsigned hexadecimal (uppercase) ~ 89ABC
-	int			f; // decimal floating point ~ 123.456
+	// //type specifier
+	// int			c; // char ~ c
+	// int			s; // char *str ~ example
+	// int			p; // pointer address ~ bc080
+	// int			d; // signed decimal int ~ –123
+	// int			i; // signed decimal int ~ –123
+	// int			o; // unsigned octal ~ 05670
+	// int			u; // unsigned decimal int ~ 456
+	// int			x; // unsigned hexadecimal (lowercase) ~ 89abc
+	// int			X; // unsigned hexadecimal (uppercase) ~ 89ABC
+	// int			f; // decimal floating point ~ 123.456
 }				t_printf;
 
 int 		ft_printf(const char *restrict format, ...);
 t_printf	*initialize(void);
 void 		length(char flag, t_printf *data);
 t_printf 	flags_to_struct(char c, t_printf *data);
-void		type_to_struct(char c, t_printf *data);
+// void		type_to_struct(char c, t_printf *data);
 void		teststruct(t_printf *data);
-int		output(char c); //, t_printf *data, va_list args);
+int			output(char c, va_list args); //, t_printf *data, );
 void		type_c(t_printf *data, va_list args);
 void		type_s(t_printf *data, va_list args);
 void		type_p(t_printf *data, va_list args);
