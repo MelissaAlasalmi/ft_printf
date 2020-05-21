@@ -23,6 +23,7 @@ void ft_preparser(char c, t_printf *data, va_list args) //27 lines
 	{
 		if (c == all[i])
 		{
+			printf("Character to output: %c\n", c);
 			output(c, args); //, data,);
 			break ;
 		}
@@ -53,6 +54,7 @@ int	ft_printf(const char *format, ...) // 32 lines
 		}
 		else if (*nformat == '%' && (*(nformat + 1) == '%'))
 		{
+			nformat++;
 			ft_putchar('%');
 			nformat++;
 		}
@@ -62,7 +64,10 @@ int	ft_printf(const char *format, ...) // 32 lines
 			nformat++;
 		}
 	}
+	printf("\n");
+	printf("STRUCT:\n");
 	teststruct(data);
+	printf("\n");
 	va_end(args);
 	return (0);
 }
