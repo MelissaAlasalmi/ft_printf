@@ -42,7 +42,7 @@ exe:
 .PHONY: clean fclean re all
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(MAINO)
 	make -C libft clean
 
 fclean: clean
