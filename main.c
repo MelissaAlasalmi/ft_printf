@@ -9,8 +9,8 @@ int	main(void)
 
 	str = "hello";
 	i = 0;
-
 	c = str[i];
+
 	/*
  	** ****************** Simple string without any variables ******************
  	*/
@@ -43,12 +43,28 @@ int	main(void)
 	ft_printf("ft_printf: %s\n", str);
 	printf("\n");
 
-		/*
+	/*
  	** ****************** Simple string with %p flag ******************
  	*/
  	printf("SIMPLE STRING WITH p FLAG\n");
 	printf("printf: %p\n", str);
 	ft_printf("ft_printf: %p\n", str);
+	printf("\n");
+
+	/*
+ 	** ****************** Simple string with %d flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH d FLAG\n");
+	printf("printf: %d\n", -12443);
+	ft_printf("ft_printf: %d\n", -12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH d FLAG\n");
+	printf("printf: %i\n", 12443);
+	ft_printf("ft_printf: %i\n", 12443);
 	printf("\n");
 
 	return (0);

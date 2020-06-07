@@ -27,3 +27,23 @@ void	type_p(va_list args)
 	write(1,"0x", 2);
 	ft_putstr(base);
 }
+
+void	type_d(va_list args)
+{
+	unsigned long long value;
+	char *signeddecimalint;
+
+	value = (unsigned long long)va_arg(args, void*);
+	signeddecimalint = ft_itoa(value);
+	ft_putstr(signeddecimalint);
+}
+
+void	type_i(va_list args)
+{
+	unsigned long long value;
+	char *signeddecimalint;
+
+	value = (unsigned long long)va_arg(args, void*);
+	signeddecimalint = ft_itoa(value);
+	ft_putstr(signeddecimalint);
+}

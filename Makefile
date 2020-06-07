@@ -6,7 +6,7 @@ SRCS = ft_printf.c \
 	   teststruct.c \
 	   output.c \
 	   ft_itoa_base.c \
-	   types_csp.c \
+	   types_cspdi.c \
 
 OBJS = ft_printf.o \
 	   flags_to_struct.o \
@@ -14,7 +14,7 @@ OBJS = ft_printf.o \
 	   teststruct.o \
 	   output.o \
 	   ft_itoa_base.o \
-	   types_csp.o \
+	   types_cspdi.o \
 
 HEADER = ft_printf.h
 
