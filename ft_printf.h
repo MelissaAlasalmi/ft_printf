@@ -50,10 +50,10 @@ void 		length(char flag, t_printf *data);
 t_printf 	flags_to_struct(char c, t_printf *data);
 // void		type_to_struct(char c, t_printf *data);
 void		teststruct(t_printf *data);
-int			output(char c, va_list args); //, t_printf *data, );
-void		type_c(t_printf *data, va_list args);
-void		type_s(t_printf *data, va_list args);
-void		type_p(t_printf *data, va_list args);
+int			output(char c, va_list args); //, t_printf *data,);
+void		type_c(va_list args);
+void		type_s(va_list args);
+void		type_p(va_list args);
 char		*ft_itoa_base(long value, int base);
 
 #endif
