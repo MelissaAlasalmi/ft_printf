@@ -13,52 +13,48 @@
 
 #include "ft_printf.h"
 
-char	*ft_itoa_base(int value, int base)
+char	*ft_itoa_base(long value, int base)
 {
 	char	*str;
 	int		i;
-    int     basestart;
+    long    basestart;
     int     modulo;
 
-	i = ft_intlen((long)value);
+	i = ft_intlen(value);
     basestart = 1;
     modulo = 0;
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	str[i] = '\0';
 	i = 0;
-	if (value == 0)
+    if (value == 0)
 		str[0] = 48;
-	if (value < 0)
-        {
+	else if (value < 0)
+    {
 		str[0] = '-';
         i = 1;
-        }
-	while (value != 0)
-	{
+    }
+    else
+    {
         while (value > (basestart * base))
             basestart = basestart * base;
-        while (value >= basestart)
+    }
+	while (value >= 0 && basestart > 0)
+	{
+        if (value < basestart)
+		    str[i] = 48;
+        else
         {
-            modulo++;
-            value = value - basestart;
+            while (value >= basestart)
+            {
+                modulo++;
+                value = value - basestart;
+            }
+            str[i] = modulo <= 9 ? '0' + modulo : 'a' + (modulo % 10);
         }
-		str[i] = modulo < 9 ? 48 + modulo : 48 + ((modulo % 10) + 17);
-		modulo = 0;
-        basestart = 1;
-		i++;
+        basestart = (basestart / base);  
+        modulo = 0;
+        i++;
 	}
-    ft_putstr(str);
-    write(1, "\n", 1);
 	return (str);
-}
-
-int main(void)
-{
-    int value;
-    int base;
-    value = 131071;
-    base = 16;
-    ft_itoa_base(value, base);
-    return (0);
 }

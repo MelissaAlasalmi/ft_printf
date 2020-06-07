@@ -1,6 +1,7 @@
 # ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <stdio.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -53,5 +54,6 @@ int			output(char c, va_list args); //, t_printf *data, );
 void		type_c(t_printf *data, va_list args);
 void		type_s(t_printf *data, va_list args);
 void		type_p(t_printf *data, va_list args);
+char		*ft_itoa_base(long value, int base);
 
 #endif

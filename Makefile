@@ -1,8 +1,8 @@
 NAME = libftprintf.a
 
-SRCS = 	main.c ft_printf.c flags_to_struct.c initialize.c teststruct.c output.c\
+SRCS = 	main.c ft_printf.c flags_to_struct.c initialize.c teststruct.c output.c ft_itoa_base.c\
 
-OBJS =	main.o ft_printf.o flags_to_struct.o initialize.o teststruct.o output.o\
+OBJS =	main.o ft_printf.o flags_to_struct.o initialize.o teststruct.o output.o ft_itoa_base.o\
 
 HEADER = ft_printf.h
 

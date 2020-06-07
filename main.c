@@ -27,20 +27,12 @@ int	main(void)
 	ft_printf("ft_printf: %% hello\n");
 	printf("\n");
 
-
-	/*
- 	** ****************** Simple string with flags ******************
- 	*/
- 	printf("TEST STRUCT\n");
-	ft_printf("ft_printf: %#hh%");
-	printf("\n");
-	
 	/*
  	** ****************** Simple string with %c flag ******************
  	*/
  	printf("SIMPLE STRING WITH c FLAG\n");
-	printf("printf:%c\n", c);
-	ft_printf("ft_printf:%c\n", c);
+	printf("printf: %c\n", c);
+	ft_printf("ft_printf: %c\n", c);
 	printf("\n");
 
 	/*
@@ -48,9 +40,16 @@ int	main(void)
  	*/
  	printf("SIMPLE STRING WITH s FLAG\n");
 	printf("printf: %s\n", str);
-	ft_printf("ft_printf:%s\n", str);
+	ft_printf("ft_printf: %s\n", str);
 	printf("\n");
 
+		/*
+ 	** ****************** Simple string with %p flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH p FLAG\n");
+	printf("printf: %p\n", str);
+	ft_printf("ft_printf: %p\n", str);
+	printf("\n");
 
 	return (0);
 }
