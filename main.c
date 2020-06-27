@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	main(void)
 {
@@ -60,11 +59,51 @@ int	main(void)
 	printf("\n");
 
 		/*
- 	** ****************** Simple string with %d flag ******************
+ 	** ****************** Simple string with %i flag ******************
  	*/
- 	printf("SIMPLE STRING WITH d FLAG\n");
+ 	printf("SIMPLE STRING WITH i FLAG\n");
 	printf("printf: %i\n", 12443);
 	ft_printf("ft_printf: %i\n", 12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %o flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH o FLAG\n");
+	printf("printf: %o\n", 12443);
+	ft_printf("ft_printf: %o\n", 12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %u flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH u FLAG\n");
+	printf("printf: %i\n", 12443);
+	ft_printf("ft_printf: %i\n", 12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %x flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH x FLAG\n");
+	printf("printf: %x\n", 12443);
+	ft_printf("ft_printf: %x\n", 12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %X flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH X FLAG\n");
+	printf("printf: %X\n", 12443);
+	ft_printf("ft_printf: %X\n", 12443);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %f flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH f FLAG\n");
+	printf("printf: %f\n", 12443.0009);
+	ft_printf("ft_printf: %f\n", 12443.0009);
 	printf("\n");
 
 	return (0);

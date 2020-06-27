@@ -28,7 +28,7 @@ void	type_csp(char c, t_printf *data)
 	else if (c == 'p')
 		data->p = 1;
 }
-void	type_to_struct(char c, t_printf *data)
+void	types_to_struct(char c, t_printf *data)
 {
 	if (c == 'c' || c == 's' || c == 'p')
 		type_csp(c, data);

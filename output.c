@@ -12,5 +12,15 @@ int	output(char c, va_list args) //, t_printf *data)
 		type_d(args);
 	else if (c == 'i')
 		type_i(args);
+	else if (c == 'o')
+		type_o(args);
+	else if (c == 'u')
+		type_u(args);
+	else if (c == 'x')
+		type_u(args);
+	else if (c == 'X')
+		type_u(args);
+	else if (c == 'f')
+		type_u(args);
 	return (0);
 }

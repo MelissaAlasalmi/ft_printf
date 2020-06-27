@@ -1,7 +1,7 @@
 # ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
+# include <stdio.h> //REMOVE!!!
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -44,18 +44,41 @@ typedef	struct	s_printf
 	// int			f; // decimal floating point ~ 123.456
 }				t_printf;
 
+// ft_printf.c
 int 		ft_printf(const char *restrict format, ...);
+void 	ft_preparser(char c, t_printf *data, va_list args);
+
+// initialize.c
 t_printf	*initialize(void);
+
+// flags_to_struct.c
 void 		length(char flag, t_printf *data);
+void		amplifiers(char flag, t_printf *data);
 t_printf 	flags_to_struct(char c, t_printf *data);
-// void		type_to_struct(char c, t_printf *data);
+
+// // types_to_struct.c
+// void		types_to_struct(char c, t_printf *data);
+// void		type_csp(char c, t_printf *data);
+// void		type_diouxX(char c, t_printf *data);
+
+// teststruct.c
 void		teststruct(t_printf *data);
+
+// output.c
 int			output(char c, va_list args); //, t_printf *data,);
+
+// types_cspdi.c
 void		type_c(va_list args);
 void		type_s(va_list args);
 void		type_p(va_list args);
 void		type_d(va_list args);
 void		type_i(va_list args);
-char		*ft_itoa_base(long value, int base);
+
+// types_ouxXf.c
+void		type_o(va_list args);
+void		type_u(va_list args);
+void		type_x(va_list args);
+void		type_X(va_list args);
+void		type_f(va_list args);
 
 #endif

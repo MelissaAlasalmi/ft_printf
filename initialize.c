@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdlib.h>
 
 t_printf		*initialize(void)
 {

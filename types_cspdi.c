@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdlib.h>
 
 void	type_c(va_list args)
 {
@@ -31,19 +30,19 @@ void	type_p(va_list args)
 void	type_d(va_list args)
 {
 	unsigned long long value;
-	char *signeddecimalint;
+	char *sign_dec_int;
 
 	value = (unsigned long long)va_arg(args, void*);
-	signeddecimalint = ft_itoa(value);
-	ft_putstr(signeddecimalint);
+	sign_dec_int = ft_itoa(value);
+	ft_putstr(sign_dec_int);
 }
 
 void	type_i(va_list args)
 {
 	unsigned long long value;
-	char *signeddecimalint;
+	char *sign_dec_int;
 
 	value = (unsigned long long)va_arg(args, void*);
-	signeddecimalint = ft_itoa(value);
-	ft_putstr(signeddecimalint);
+	sign_dec_int = ft_itoa(value);
+	ft_putstr(sign_dec_int);
 }

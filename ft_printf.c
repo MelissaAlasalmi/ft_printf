@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 void ft_preparser(char c, t_printf *data, va_list args) //27 lines
 {

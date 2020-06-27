@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <stdio.h>
 
 void		teststruct(t_printf *data)
 {

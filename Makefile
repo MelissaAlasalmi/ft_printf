@@ -5,16 +5,16 @@ SRCS = ft_printf.c \
 	   initialize.c \
 	   teststruct.c \
 	   output.c \
-	   ft_itoa_base.c \
 	   types_cspdi.c \
+	   types_ouxXf.c \
 
 OBJS = ft_printf.o \
 	   flags_to_struct.o \
 	   initialize.o \
 	   teststruct.o \
 	   output.o \
-	   ft_itoa_base.o \
 	   types_cspdi.o \
+	   types_ouxXf.o \
 
 HEADER = ft_printf.h
 
