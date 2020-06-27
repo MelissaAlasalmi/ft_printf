@@ -46,7 +46,7 @@ typedef	struct	s_printf
 
 // ft_printf.c
 int 		ft_printf(const char *restrict format, ...);
-void 	ft_preparser(char c, t_printf *data, va_list args);
+int		 	ft_preparser(char c, t_printf *data, va_list args);
 
 // initialize.c
 t_printf	*initialize(void);

@@ -106,5 +106,15 @@ int	main(void)
 	ft_printf("ft_printf: %f\n", 12443.0009);
 	printf("\n");
 
+		/*
+ 	** ****************** Simple string with %d flag + extra text ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH d flag + extra text\n");
+	printf("this %d number %d\n", 17, 18);
+	ft_printf("this %d number %d\n", 17, 18);
+	printf("\n");
+
+
+
 	return (0);
 }

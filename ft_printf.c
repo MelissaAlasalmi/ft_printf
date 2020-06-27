@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void ft_preparser(char c, t_printf *data, va_list args) //27 lines
+int ft_preparser(char c, t_printf *data, va_list args) //27 lines
 {
 	char	*all;
 	int		i;
@@ -23,11 +23,12 @@ void ft_preparser(char c, t_printf *data, va_list args) //27 lines
 		if (c == all[i])
 		{
 			output(c, args); //, data,);
-			break ;
+			return (0);
 		}
 		else
 			i++;
 	}
+	return (1);
 }
 
 int	ft_printf(const char *format, ...) // 32 lines
@@ -46,8 +47,14 @@ int	ft_printf(const char *format, ...) // 32 lines
 			nformat++;
 			while (*nformat != '%' && *nformat != '\0')
 			{
-				ft_preparser(*nformat, data, args);
-				nformat++;
+				
+				if (ft_preparser(*nformat, data, args) == 0)
+				{
+					nformat++;
+					break ;
+				}
+				else
+					nformat++;
 			}
 		}
 		else if (*nformat == '%' && (*(nformat + 1) == '%'))
