@@ -34,10 +34,23 @@ void		type_X(va_list args)
 {
     unsigned long long value;
 	char *base;
+    char c;
+    int i;
+    i = 0;
 
 	value = (unsigned long long)va_arg(args, void*);
 	base = ft_itoa_base(value, 16);
-	ft_putstr(base);
+    while (base[i] != '\0')
+    {
+        if (base[i] >= 97 && base[i] <= 122)
+        {
+            c = base[i] - 32;
+            write(1, &c, 1);
+        }
+        else
+            write(1, &base[i], 1);
+        i++;
+    }
 }
 
 void		type_f(va_list args)

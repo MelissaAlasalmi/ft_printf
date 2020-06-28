@@ -17,10 +17,10 @@ int	output(char c, va_list args) //, t_printf *data)
 	else if (c == 'u')
 		type_u(args);
 	else if (c == 'x')
-		type_u(args);
+		type_x(args);
 	else if (c == 'X')
-		type_u(args);
+		type_X(args);
 	else if (c == 'f')
-		type_u(args);
+		type_f(args);
 	return (0);
 }
