@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int ft_preparser(char c, t_printf *data, va_list args) //27 lines
+int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
 {
 	char	*all;
 	int		i;
@@ -11,7 +11,7 @@ int ft_preparser(char c, t_printf *data, va_list args) //27 lines
 	{	
 		if (c == all[i])
 		{
-			flags_to_struct(c, data);
+			flags_to_struct(c, nformat, data);
 			i = 0;
 			break ;
 		}
@@ -39,7 +39,7 @@ int	ft_printf(const char *format, ...) // 32 lines
 
 	va_start(args, format);
 	nformat = (char *)format;
-	data = initialize();
+	data = initialize(nformat);
 	while (*nformat != '\0')
 	{
 		if (*nformat == '%' && (*(nformat + 1) != '%'))
@@ -48,7 +48,7 @@ int	ft_printf(const char *format, ...) // 32 lines
 			while (*nformat != '%' && *nformat != '\0')
 			{
 				
-				if (ft_preparser(*nformat, data, args) == 0)
+				if (ft_preparser(*nformat, nformat, data, args) == 0)
 				{
 					nformat++;
 					break ;
@@ -69,10 +69,10 @@ int	ft_printf(const char *format, ...) // 32 lines
 			nformat++;
 		}
 	}
-	// printf("\n");
-	// printf("STRUCT:\n");
-	// teststruct(data);
-	// printf("\n");
+	printf("\n");
+	printf("STRUCT:\n");
+	teststruct(data);
+	printf("\n");
 	va_end(args);
 	return (0);
 }

@@ -17,11 +17,11 @@ typedef	struct	s_printf
 	int			space; // Adds a space to the start of numbers when positive... unless there is a plus! (operates only on numeric types)
 
 	//width
-	int			len; //The minimum number of characters to allocate for the output.
+	int			width; //The minimum number of characters to allocate for the output.
 	int			asterisk; //The precision is specified in an integer argument to printf preceding the number to be formatted. (operates on all types)
 
 	//precision - 
-	int			percision; // The minimum number of characters to be output, padded on the left with 0’s if necessary.
+	int			precision; // The minimum number of characters to be output, padded on the left with 0’s if necessary.
 	int			decimal; // For floats, specifies the maximum number of ints to output after a decimal point to the right of a number. The output is rounded.
 
 	//length - Unlike flags, the length flag dosen't tell printf how to display the number, but more about the number itself.
@@ -46,15 +46,18 @@ typedef	struct	s_printf
 
 // ft_printf.c
 int 		ft_printf(const char *restrict format, ...);
-int		 	ft_preparser(char c, t_printf *data, va_list args);
+int		 	ft_preparser(char c, char *nformat, t_printf *data, va_list args);
 
 // initialize.c
-t_printf	*initialize(void);
+int			precision_len(char *nformat);
+t_printf	*initialize(char *nformat);
 
 // flags_to_struct.c
 void 		length(char flag, t_printf *data);
+void		precision_to_struct(char *nformat, t_printf *data);
+void		width_to_struct(char *nformat, t_printf *data);
 void		amplifiers(char flag, t_printf *data);
-t_printf 	flags_to_struct(char c, t_printf *data);
+t_printf 	flags_to_struct(char c, char *nformat, t_printf *data);
 
 // // types_to_struct.c
 // void		types_to_struct(char c, t_printf *data);

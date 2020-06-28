@@ -1,20 +1,22 @@
 NAME = libftprintf.a
 
 SRCS = ft_printf.c \
-	   flags_to_struct.c \
+	   format_specifiers_to_struct.c \
 	   initialize.c \
 	   teststruct.c \
 	   output.c \
 	   types_cspdi.c \
 	   types_ouxXf.c \
+	   helpers.c \
 
 OBJS = ft_printf.o \
-	   flags_to_struct.o \
+	   format_specifiers_to_struct.o \
 	   initialize.o \
 	   teststruct.o \
 	   output.o \
 	   types_cspdi.o \
 	   types_ouxXf.o \
+	   helpers.o \
 
 HEADER = ft_printf.h
 

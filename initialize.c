@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-t_printf		*initialize(void)
+t_printf		*initialize(char *nformat)
 {
 	t_printf *data;
 
@@ -16,8 +16,10 @@ t_printf		*initialize(void)
 
 	//width
 	data->asterisk = 0;
+	data->width = 0;
 
 	//precision
+	data->precision = precision_len(nformat);
 	data->decimal = 0;
 
 	//length

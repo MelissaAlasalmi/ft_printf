@@ -29,6 +29,51 @@ void	length(char flag, t_printf *data) // 23 lines
 		data->L = 1;
 }
 
+void	precision_to_struct(char *nformat, t_printf *data)
+{
+	int precision_value;
+	precision_value = 0;
+
+	while (*nformat != '\0')
+	{
+		if (*nformat == '.')
+		{
+			precision_value = ft_atoi(nformat + 1);
+			data->precision = precision_value;
+			break ;
+		}
+		else
+			nformat++;
+	}
+}
+
+void	width_to_struct(char *nformat, t_printf *data)
+{
+	int width_value;
+	width_value = 0;
+
+	while (*nformat != '\0')
+	{
+		if (*nformat == '.')
+			break ;
+		else if (*nformat == '0' && *nformat + 1 >= '0' && *nformat + 1 <= '9')
+		{
+			width_value = ft_atoi(nformat + 1);
+			data->width = width_value;
+			break ;
+		}
+		else if (*nformat >= '0' && *nformat <= '9')
+		{
+			width_value = ft_atoi(nformat);
+			data->width = width_value;
+			break ;
+		}
+		else
+			nformat++;
+	}
+}
+
+
 void	amplifiers(char flag, t_printf *data)
 {
 	if (flag == '#')
@@ -43,15 +88,19 @@ void	amplifiers(char flag, t_printf *data)
 		data->space = 1;
 }
 
-t_printf	flags_to_struct(char c, t_printf *data)
+t_printf	flags_to_struct(char c, char *nformat, t_printf *data)
 {
+	width_to_struct(nformat, data);
 	if (c == '#' || c == '0' || c == '-' ||
 		c == '+' || c == ' ')
 		amplifiers(c, data);
 	else if (c == '*')
 		data->asterisk = 1;
 	else if (c == '.')
+	{
 		data->decimal = 1;
+		precision_to_struct(nformat, data);
+	}
 	else if (c == 'h' || c == 'l' || c == 'L')
 		length(c, data);
 	return (*data);

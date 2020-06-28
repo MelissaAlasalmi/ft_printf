@@ -114,6 +114,13 @@ int	main(void)
 	ft_printf("this %d number %d\n", 17, 18);
 	printf("\n");
 
+		/*
+ 	** ****************** TEST PRECISION STRUCT ******************
+ 	*/
+ 	printf("TEST PRECISION STRUCT\n");
+	printf("this %060d\n", 187378823);
+	ft_printf("this %0436.566d\n", 18);
+	printf("\n");
 
 
 	return (0);

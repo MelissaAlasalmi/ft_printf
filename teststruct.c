@@ -30,11 +30,15 @@ void		teststruct(t_printf *data)
     else
         printf("Asterisk = 0\n");
 
+    printf("Width = %d\n", data->width);
+
 	//precision
     if (data->decimal == 1)
         printf("Decimal = 1\n");
     else
         printf("Decimal = 0\n");
+
+    printf("Precision = %d\n", data->precision);
 
 	//length
     if (data->hh == 1)
