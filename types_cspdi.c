@@ -22,7 +22,7 @@ void	type_p(va_list args)
 	char *base;
 
 	value = (unsigned long long)va_arg(args, void*);
-	base = ft_itoa_base(value, 16);
+	base = ft_itoabase(value, 16);
 	write(1,"0x", 2);
 	ft_putstr(base);
 }

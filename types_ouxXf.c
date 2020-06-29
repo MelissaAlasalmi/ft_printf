@@ -6,7 +6,7 @@ void		type_o(va_list args)
 	char *base;
 
 	value = (unsigned long long)va_arg(args, void*);
-	base = ft_itoa_base(value, 8);
+	base = ft_itoabase(value, 8);
 	ft_putstr(base);
 }
 
@@ -26,7 +26,7 @@ void		type_x(va_list args)
 	char *base;
 
 	value = (unsigned long long)va_arg(args, void*);
-	base = ft_itoa_base(value, 16);
+	base = ft_itoabase(value, 16);
 	ft_putstr(base);
 }
 
@@ -39,7 +39,7 @@ void		type_X(va_list args)
     i = 0;
 
 	value = (unsigned long long)va_arg(args, void*);
-	base = ft_itoa_base(value, 16);
+	base = ft_itoabase(value, 16);
     while (base[i] != '\0')
     {
         if (base[i] >= 97 && base[i] <= 122)
