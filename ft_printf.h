@@ -73,7 +73,7 @@ int			output(char c, va_list args, t_printf *data);
 
 // types_cspdi.c
 void		type_c(va_list args, t_printf *data);
-void		type_s(va_list args);
+void		type_s(va_list args, t_printf *data);
 void		type_p(va_list args);
 void		type_d(va_list args);
 void		type_i(va_list args);

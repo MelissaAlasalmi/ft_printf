@@ -5,7 +5,7 @@ int	output(char c, va_list args, t_printf *data)
 	if (c == 'c')
 		type_c(args, data);
 	else if (c == 's')
-		type_s(args);
+		type_s(args, data);
 	else if (c == 'p')
 		type_p(args);
 	else if (c == 'd')

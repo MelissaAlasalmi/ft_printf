@@ -122,9 +122,13 @@ int	main(void)
 	ft_printf("ft_printf: %5c\n", c);
 	printf("\n");
 
-	// ft_printf("ft_printf: %08.5c\n", c);
-	// printf("\n");
-
+	/*
+ 	** ****************** Simple string with %s flag with width ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH s FLAG WITH WIDTH\n");
+	printf("printf: %9s\n", str);
+	ft_printf("ft_printf: %9s\n", str);
+	printf("\n");
 
 	return (0);
 }

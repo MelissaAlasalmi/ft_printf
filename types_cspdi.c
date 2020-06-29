@@ -5,7 +5,6 @@ void	type_c(va_list args, t_printf *data)
 	char c;
 
 	c = (char)va_arg(args, int);
-
 	if (data->width != 0)
 	{
 		data->width = data->width - 1;
@@ -20,12 +19,23 @@ void	type_c(va_list args, t_printf *data)
 		ft_putchar(c);
 }
 
-void	type_s(va_list args)
+void	type_s(va_list args, t_printf *data)
 {
 	char *str;
 
 	str = va_arg(args, char*);
-	ft_putstr(str);
+	if (data->width != 0)
+	{
+		data->width = data->width - ft_strlen(str);
+		while (data->width != 0)
+		{
+			write(1, " ", 1);
+			data->width = data->width - 1;
+		}
+		ft_putstr(str);
+	}
+	else
+		ft_putstr(str);
 }
 
 void	type_p(va_list args)
