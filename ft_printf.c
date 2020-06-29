@@ -69,6 +69,7 @@ int	ft_printf(const char *format, ...) // 32 lines
 			ft_putchar(*nformat);
 			nformat++;
 		}
+		data = initialize(nformat);
 	}
 	// printf("\n");
 	// printf("TEST STRUCT:\n");
