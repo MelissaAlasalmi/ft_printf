@@ -1,11 +1,23 @@
 #include "ft_printf.h"
 
-void	type_c(va_list args)
+void	type_c(va_list args, t_printf *data)
 {
 	char c;
 
 	c = (char)va_arg(args, int);
-	ft_putchar(c);
+
+	if (data->width != 0)
+	{
+		data->width = data->width - 1;
+		while (data->width != 0)
+		{
+			write(1, " ", 1);
+			data->width = data->width - 1;
+		}
+		ft_putchar(c);
+	}
+	else
+		ft_putchar(c);
 }
 
 void	type_s(va_list args)

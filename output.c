@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
-int	output(char c, va_list args) //, t_printf *data)
+int	output(char c, va_list args, t_printf *data)
 {
 	if (c == 'c')
-		type_c(args);
+		type_c(args, data);
 	else if (c == 's')
 		type_s(args);
 	else if (c == 'p')

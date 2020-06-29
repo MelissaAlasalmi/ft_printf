@@ -22,7 +22,7 @@ int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
 	{
 		if (c == all[i])
 		{
-			output(c, args); //, data,);
+			output(c, args, data);
 			return (0);
 		}
 		else

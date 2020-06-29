@@ -69,10 +69,10 @@ t_printf 	flags_to_struct(char c, char *nformat, t_printf *data);
 void		teststruct(t_printf *data);
 
 // output.c
-int			output(char c, va_list args); //, t_printf *data,);
+int			output(char c, va_list args, t_printf *data);
 
 // types_cspdi.c
-void		type_c(va_list args);
+void		type_c(va_list args, t_printf *data);
 void		type_s(va_list args);
 void		type_p(va_list args);
 void		type_d(va_list args);
