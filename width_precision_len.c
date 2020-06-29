@@ -25,9 +25,7 @@ int	precision_len(char *nformat)
 int	width_len(char *nformat)
 {
 	int width_len;
-	int i;
 	width_len = 0;
-	i = 0;
 
 while (*nformat != '\0')
 	{

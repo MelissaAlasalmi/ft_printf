@@ -62,7 +62,7 @@ void	width_to_struct(char *nformat, t_printf *data)
 			data->width = width_value;
 			break ;
 		}
-		else if (*nformat >= '0' && *nformat <= '9')
+		else if (*nformat >= '1' && *nformat <= '9')
 		{
 			width_value = ft_atoi(nformat);
 			data->width = width_value;
@@ -89,7 +89,7 @@ void	amplifiers(char flag, t_printf *data)
 
 t_printf	flags_to_struct(char c, char *nformat, t_printf *data)
 {
-	width_to_struct(nformat, data);
+	// width_to_struct(nformat, data);
 	if (c == '#' || c == '0' || c == '-' ||
 		c == '+' || c == ' ')
 		amplifiers(c, data);
