@@ -50,6 +50,7 @@ int		 	ft_preparser(char c, char *nformat, t_printf *data, va_list args);
 
 // initialize.c
 int			precision_len(char *nformat);
+int			width_len(char *nformat);
 t_printf	*initialize(char *nformat);
 
 // flags_to_struct.c

@@ -16,7 +16,7 @@ t_printf		*initialize(char *nformat)
 
 	//width
 	data->asterisk = 0;
-	data->width = 0;
+	data->width = width_len(nformat);
 
 	//precision
 	data->precision = precision_len(nformat);

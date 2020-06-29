@@ -69,10 +69,10 @@ int	ft_printf(const char *format, ...) // 32 lines
 			nformat++;
 		}
 	}
-	printf("\n");
-	printf("STRUCT:\n");
-	teststruct(data);
-	printf("\n");
+	// printf("\n");
+	// printf("STRUCT:\n");
+	// teststruct(data);
+	// printf("\n");
 	va_end(args);
 	return (0);
 }

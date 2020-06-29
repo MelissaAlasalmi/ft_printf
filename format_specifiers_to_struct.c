@@ -73,7 +73,6 @@ void	width_to_struct(char *nformat, t_printf *data)
 	}
 }
 
-
 void	amplifiers(char flag, t_printf *data)
 {
 	if (flag == '#')

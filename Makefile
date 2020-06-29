@@ -7,7 +7,7 @@ SRCS = ft_printf.c \
 	   output.c \
 	   types_cspdi.c \
 	   types_ouxXf.c \
-	   helpers.c \
+	   width_precision_len.c \
 
 OBJS = ft_printf.o \
 	   format_specifiers_to_struct.o \
@@ -16,7 +16,7 @@ OBJS = ft_printf.o \
 	   output.o \
 	   types_cspdi.o \
 	   types_ouxXf.o \
-	   helpers.o \
+	   width_precision_len.o \
 
 HEADER = ft_printf.h
 
