@@ -89,7 +89,6 @@ void	amplifiers(char flag, t_printf *data)
 
 t_printf	flags_to_struct(char c, char *nformat, t_printf *data)
 {
-	// width_to_struct(nformat, data);
 	if (c == '#' || c == '0' || c == '-' ||
 		c == '+' || c == ' ')
 		amplifiers(c, data);
