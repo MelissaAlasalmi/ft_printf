@@ -1,9 +1,18 @@
-// Once it finds a % sign, the flag/modifier parsing
-// goes through and saves them into a data struct...
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   format_specifiers_to_struct.c                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
+/*   Updated: 2020/07/09 14:33:43 by malasalm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	length(char flag, t_printf *data) // 23 lines
+void		length(char flag, t_printf *data)
 {
 	if (flag == 'h')
 	{
@@ -29,11 +38,11 @@ void	length(char flag, t_printf *data) // 23 lines
 		data->L = 1;
 }
 
-void	precision_to_struct(char *nformat, t_printf *data)
+void		precision_to_struct(char *nformat, t_printf *data)
 {
 	int precision_value;
-	precision_value = 0;
 
+	precision_value = 0;
 	while (*nformat != '\0')
 	{
 		if (*nformat == '.')
@@ -47,11 +56,11 @@ void	precision_to_struct(char *nformat, t_printf *data)
 	}
 }
 
-void	width_to_struct(char *nformat, t_printf *data)
+void		width_to_struct(char *nformat, t_printf *data)
 {
 	int width_value;
-	width_value = 0;
 
+	width_value = 0;
 	while (*nformat != '\0')
 	{
 		if (*nformat == '.')
@@ -73,7 +82,7 @@ void	width_to_struct(char *nformat, t_printf *data)
 	}
 }
 
-void	amplifiers(char flag, t_printf *data)
+void		amplifiers(char flag, t_printf *data)
 {
 	if (flag == '#')
 		data->hash = 1;

@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
+/*   Updated: 2020/07/09 14:31:40 by malasalm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
+int	ft_preparser(char c, char *nformat, t_printf *data, va_list args) // 28 lines
 {
 	char	*all;
 	int		i;
 
 	all = "-+ #0*.hlLcspdiouxXf";
-	i = 0;	
+	i = 0;
 	width_to_struct(nformat, data);
 	while (i < 10)
-	{	
+	{
 		if (c == all[i])
 		{
 			flags_to_struct(c, nformat, data);
@@ -32,7 +44,7 @@ int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
 	return (1);
 }
 
-int	ft_printf(const char *format, ...) // 29 lines
+int	ft_printf(const char *format, ...) // 42 lines
 {
 	va_list		args;
 	char		*nformat;

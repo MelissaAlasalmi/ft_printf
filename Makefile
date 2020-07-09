@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
+#    Updated: 2020/07/09 15:32:20 by malasalm         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 
 SRCS = ft_printf.c \
@@ -5,18 +17,34 @@ SRCS = ft_printf.c \
 	   initialize_struct.c \
 	   test_struct.c \
 	   output.c \
-	   types_cspdi.c \
-	   types_ouxXf.c \
 	   width_precision_len.c \
-
+	   types/type_c.c \
+	   types/type_s.c \
+	   types/type_p.c \
+	   types/type_d.c \
+	   types/type_i.c \
+	   types/type_o.c \
+	   types/type_u.c \
+	   types/type_lowerx.c \
+	   types/type_upperX.c \
+	   types/type_f.c \
+	   
 OBJS = ft_printf.o \
 	   format_specifiers_to_struct.o \
 	   initialize_struct.o \
 	   test_struct.o \
 	   output.o \
-	   types_cspdi.o \
-	   types_ouxXf.o \
 	   width_precision_len.o \
+	   type_c.o \
+	   type_s.o \
+	   type_p.o \
+	   type_d.o \
+	   type_i.o \
+	   type_o.o \
+	   type_u.o \
+	   type_lowerx.o \
+	   type_upperX.o \
+	   type_f.o \
 
 HEADER = ft_printf.h
 
@@ -37,11 +65,13 @@ $(NAME):
 	gcc $(CFLAGS) -c $(SRCS) $(INCS)
 	ar rc $(NAME) *.o ./libft/*.o
 	ranlib $(NAME)
+	make clean
 
 exe:
 	make -C libft
 	gcc $(CFLAGS) -c $(MAINC) $(SRCS) $(INCS)
 	gcc $(CFLAGS) $(INCS) $(MAINO) $(OBJS) $(LIB) -o $(NAME)
+	make clean
 
 .PHONY: clean fclean re all
 
