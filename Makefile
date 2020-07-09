@@ -6,7 +6,7 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/09 15:32:20 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/09 15:37:48 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,13 +65,13 @@ $(NAME):
 	gcc $(CFLAGS) -c $(SRCS) $(INCS)
 	ar rc $(NAME) *.o ./libft/*.o
 	ranlib $(NAME)
-	make clean
+	rm -f $(OBJS) $(MAINO)
 
 exe:
 	make -C libft
 	gcc $(CFLAGS) -c $(MAINC) $(SRCS) $(INCS)
 	gcc $(CFLAGS) $(INCS) $(MAINO) $(OBJS) $(LIB) -o $(NAME)
-	make clean
+	rm -f $(OBJS) $(MAINO)
 
 .PHONY: clean fclean re all
 

@@ -130,19 +130,13 @@ int	main(void)
 	ft_printf("ft_printf: %9s\n", str);
 	printf("\n");
 
-		/*
- 	** ****************** Simple string no flag or types ******************
- 	*/
- 	printf("SIMPLE STRING no flag or types\n");
-	printf("printf: c");
-	ft_printf("ft_printf: c");
-	printf("\n");
-
 	/*
 	** ****************** String with fieldwidth ******************
  	*/
 	printf("String with fieldwidth\n");
 	printf("printf: %2s\n", "dfgdfgdfgd");
 	ft_printf("ft_printf: %2s\n", "dfgdfgdfgd");
+	printf("\n");
+	
 	return (0);
 }
