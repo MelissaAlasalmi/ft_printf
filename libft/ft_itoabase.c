@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 10:38:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 12:42:22 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/09 14:22:15 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void ft_findbase(long value, int base, char	*str, int i, long basestart)
     while (value >= 0 && basestart > 0)
 	{
         if (value < basestart)
-		    str[i] = 48;
+		    str[i] = '0';
         else
         {
             while (value >= basestart)
