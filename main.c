@@ -22,8 +22,8 @@ int	main(void)
  	** ****************** Simple string with two % ******************
  	*/
  	printf("SIMPLE STRING TEST WITHOUT ANY VARIABLES AND TWO PERCENT SIGNS\n");
-	printf("printf: %% hello\n");
-	ft_printf("ft_printf: %% hello\n");
+	printf("printf: %5%\n");
+	ft_printf("ft_printf: %5%\n");
 	printf("\n");
 
 	/*
@@ -130,5 +130,19 @@ int	main(void)
 	ft_printf("ft_printf: %9s\n", str);
 	printf("\n");
 
+		/*
+ 	** ****************** Simple string no flag or types ******************
+ 	*/
+ 	printf("SIMPLE STRING no flag or types\n");
+	printf("printf: c");
+	ft_printf("ft_printf: c");
+	printf("\n");
+
+	/*
+	** ****************** String with fieldwidth ******************
+ 	*/
+	printf("String with fieldwidth\n");
+	printf("printf: %2s\n", "dfgdfgdfgd");
+	ft_printf("ft_printf: %2s\n", "dfgdfgdfgd");
 	return (0);
 }

@@ -34,7 +34,7 @@ void		type_X(va_list args)
 {
     unsigned long long value;
 	char *base;
-    char c;
+	char c;
     int i;
     i = 0;
 
@@ -42,15 +42,10 @@ void		type_X(va_list args)
 	base = ft_itoabase(value, 16);
     while (base[i] != '\0')
     {
-        if (base[i] >= 97 && base[i] <= 122)
-        {
-            c = base[i] - 32;
-            write(1, &c, 1);
-        }
-        else
-            write(1, &base[i], 1);
+		c = ft_toupper(base[i]);
+        write(1, &c, 1);
         i++;
-    }
+    }	
 }
 
 void		type_f(va_list args)

@@ -6,28 +6,52 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 10:38:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/06/29 10:58:01 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/09 12:42:22 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void ft_findbase(long value, int base, char	*str, int i, long basestart)
+{
+    int modindex;
+    modindex = 0;
+    
+    while (value >= 0 && basestart > 0)
+	{
+        if (value < basestart)
+		    str[i] = 48;
+        else
+        {
+            while (value >= basestart)
+            {
+                modindex++;
+                value = value - basestart;
+            }
+            str[i] = modindex <= 9 ? '0' + modindex : 'a' + (modindex % 10);
+        }
+        basestart = (basestart / base);  
+        modindex = 0;
+        i++;
+	}
+}
 
 char	*ft_itoabase(long value, int base)
 {
 	char	*str;
 	int		i;
     long    basestart;
-    int     modulo;
+    
 
 	i = ft_intlen(value);
     basestart = 1;
-    modulo = 0;
+    
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	str[i] = '\0';
 	i = 0;
     if (value == 0)
-		str[0] = 48;
+		str[0] = '0';
 	else if (value < 0)
     {
 		str[0] = '-';
@@ -38,22 +62,6 @@ char	*ft_itoabase(long value, int base)
         while (value > (basestart * base))
             basestart = basestart * base;
     }
-	while (value >= 0 && basestart > 0)
-	{
-        if (value < basestart)
-		    str[i] = 48;
-        else
-        {
-            while (value >= basestart)
-            {
-                modulo++;
-                value = value - basestart;
-            }
-            str[i] = modulo <= 9 ? '0' + modulo : 'A' + (modulo % 10);
-        }
-        basestart = (basestart / base);  
-        modulo = 0;
-        i++;
-	}
+    ft_findbase(value, base, str, i, basestart);
 	return (str);
 }

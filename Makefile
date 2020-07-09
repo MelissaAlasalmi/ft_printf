@@ -2,8 +2,8 @@ NAME = libftprintf.a
 
 SRCS = ft_printf.c \
 	   format_specifiers_to_struct.c \
-	   initialize.c \
-	   teststruct.c \
+	   initialize_struct.c \
+	   test_struct.c \
 	   output.c \
 	   types_cspdi.c \
 	   types_ouxXf.c \
@@ -11,8 +11,8 @@ SRCS = ft_printf.c \
 
 OBJS = ft_printf.o \
 	   format_specifiers_to_struct.o \
-	   initialize.o \
-	   teststruct.o \
+	   initialize_struct.o \
+	   test_struct.o \
 	   output.o \
 	   types_cspdi.o \
 	   types_ouxXf.o \

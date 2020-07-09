@@ -27,7 +27,7 @@ int	width_len(char *nformat)
 	int width_len;
 	width_len = 0;
 
-while (*nformat != '\0')
+	while (*nformat != '\0')
 	{
 		if (*nformat == '.')
 			break ;

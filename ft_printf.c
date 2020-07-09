@@ -16,7 +16,7 @@ int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
 			i = 0;
 			break ;
 		}
-		else 
+		else
 			i++;
 	}
 	while (i >= 10 && i < 20)
@@ -32,7 +32,7 @@ int ft_preparser(char c, char *nformat, t_printf *data, va_list args) //27 lines
 	return (1);
 }
 
-int	ft_printf(const char *format, ...) // 32 lines
+int	ft_printf(const char *format, ...) // 29 lines
 {
 	va_list		args;
 	char		*nformat;
@@ -48,7 +48,6 @@ int	ft_printf(const char *format, ...) // 32 lines
 			nformat++;
 			while (*nformat != '%' && *nformat != '\0')
 			{
-				
 				if (ft_preparser(*nformat, nformat, data, args) == 0)
 				{
 					nformat++;
