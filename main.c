@@ -22,88 +22,88 @@ int	main(void)
  	** ****************** Simple string with two % ******************
  	*/
  	printf("SIMPLE STRING TEST WITHOUT ANY VARIABLES AND TWO PERCENT SIGNS\n");
-	printf("printf: %5%\n");
-	ft_printf("ft_printf: %5%\n");
+	printf("printf:%%\n");
+	ft_printf("ft_printf:%%\n");
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %c flag ******************
  	*/
  	printf("SIMPLE STRING WITH c FLAG\n");
-	printf("printf: %c\n", c);
-	ft_printf("ft_printf: %c\n", c);
+	printf("printf:%c\n", c);
+	ft_printf("ft_printf:%c\n", c);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %s flag ******************
  	*/
  	printf("SIMPLE STRING WITH s FLAG\n");
-	printf("printf: %s\n", str);
-	ft_printf("ft_printf: %s\n", str);
+	printf("printf:%s\n", str);
+	ft_printf("ft_printf:%s\n", str);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %p flag ******************
  	*/
  	printf("SIMPLE STRING WITH p FLAG\n");
-	printf("printf: %p\n", str);
-	ft_printf("ft_printf: %p\n", str);
+	printf("printf:%p\n", str);
+	ft_printf("ft_printf:%p\n", str);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %d flag ******************
  	*/
  	printf("SIMPLE STRING WITH d FLAG\n");
-	printf("printf: %d\n", -12443);
-	ft_printf("ft_printf: %d\n", -12443);
+	printf("printf:%d\n", -12443);
+	ft_printf("ft_printf:%d\n", -12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %i flag ******************
  	*/
  	printf("SIMPLE STRING WITH i FLAG\n");
-	printf("printf: %i\n", 12443);
-	ft_printf("ft_printf: %i\n", 12443);
+	printf("printf:%i\n", 12443);
+	ft_printf("ft_printf:%i\n", 12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %o flag ******************
  	*/
  	printf("SIMPLE STRING WITH o FLAG\n");
-	printf("printf: %o\n", 12443);
-	ft_printf("ft_printf: %o\n", 12443);
+	printf("printf:%o\n", 12443);
+	ft_printf("ft_printf:%o\n", 12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %u flag ******************
  	*/
  	printf("SIMPLE STRING WITH u FLAG\n");
-	printf("printf: %i\n", 12443);
-	ft_printf("ft_printf: %i\n", 12443);
+	printf("printf:%i\n", 12443);
+	ft_printf("ft_printf:%i\n", 12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %x flag ******************
  	*/
  	printf("SIMPLE STRING WITH x FLAG\n");
-	printf("printf: %x\n", 12443);
-	ft_printf("ft_printf: %x\n", 12443);
+	printf("printf:%x\n", 12443);
+	ft_printf("ft_printf:%x\n", 12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %X flag ******************
  	*/
  	printf("SIMPLE STRING WITH X FLAG\n");
-	printf("printf: %X\n", 12443);
-	ft_printf("ft_printf: %X\n", 12443);
+	printf("printf:%X\n", 12443);
+	ft_printf("ft_printf:%X\n", 12443);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %f flag ******************
  	*/
  	printf("SIMPLE STRING WITH f FLAG\n");
-	printf("printf: %f\n", 12443.0009);
-	ft_printf("ft_printf: %f\n", 12443.0009);
+	printf("printf:%f\n", 12443.0009);
+	ft_printf("ft_printf:%f\n", 12443.0009);
 	printf("\n");
 
 		/*
@@ -118,24 +118,24 @@ int	main(void)
  	** ****************** Simple string with %c flag with width ******************
  	*/
  	printf("SIMPLE STRING WITH c FLAG WITH WIDTH\n");
-	printf("printf: %5c\n", c);
-	ft_printf("ft_printf: %5c\n", c);
+	printf("printf:%5c\n", c);
+	ft_printf("ft_printf:%5c\n", c);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %s flag with width ******************
  	*/
  	printf("SIMPLE STRING WITH s FLAG WITH WIDTH\n");
-	printf("printf: %9s\n", str);
-	ft_printf("ft_printf: %9s\n", str);
+	printf("printf:%9s\n", str);
+	ft_printf("ft_printf:%9s\n", str);
 	printf("\n");
 
 	/*
 	** ****************** String with fieldwidth ******************
  	*/
 	printf("String with fieldwidth\n");
-	printf("printf: %2s\n", "dfgdfgdfgd");
-	ft_printf("ft_printf: %2s\n", "dfgdfgdfgd");
+	printf("printf:%2s\n", "dfgdfgdfgd");
+	ft_printf("ft_printf:%2s\n", "dfgdfgdfgd");
 	printf("\n");
 	
 	return (0);

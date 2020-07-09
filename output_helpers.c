@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_c.c                                           :+:      :+:    :+:   */
+/*   output_helpers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 21:26:27 by malasalm         ###   ########.fr       */
+/*   Created: 2020/07/09 19:07:41 by malasalm          #+#    #+#             */
+/*   Updated: 2020/07/09 21:16:48 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
-void	type_c(va_list args, t_printf *data)
+void	ft_pf_putchar(char c, t_printf *data)
 {
-	char c;
-
-	c = (char)va_arg(args, int);
-	if (data->width != 0)
+	write(1, &c, 1);
+	data->printf++;
+}
+void	ft_pf_putstr(char *str, t_printf *data)
+{
+	while (*str != '\0')
 	{
-		data->width = data->width - 1;
-		while (data->width != 0)
-		{
-			ft_pf_putchar(' ', data);
-			data->width = data->width - 1;
-		}
-		ft_pf_putchar(c, data);
+		ft_pf_putchar(*str, data);
+		str++;
 	}
-	else
-		ft_pf_putchar(c, data);
-    //teststruct_during(data);
 }

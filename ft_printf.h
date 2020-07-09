@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 15:17:17 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/09 21:03:47 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,37 @@ typedef	struct	s_printf
 	int			l; // +d = long, +i = long, +o = unsigned long, +u = unsigned long, +x = unsigned long, +X = unsigned long
 	int			ll; // +d = long long, +i = long long, +o = unsigned long long, +u = unsigned long long, +x = unsigned long long, +X = unsigned long long
 	int			L;
+	int			printf;
+	int			debug;
 }				t_printf;
+void		teststruct_before(t_printf *data);
+void		teststruct_during(t_printf *data);
+void		teststruct_after(t_printf *data);
 int 		ft_printf(const char *restrict format, ...);
-int		 	ft_preparser(char c, char *nformat, t_printf *data, va_list args);
+void		ft_preparser(char *nformat, t_printf *data, va_list args);
+void 		ft_parser(char c, char *nformat, t_printf *data, va_list args);
+int		 	ft_flagparser(char c, char *nformat, t_printf *data, va_list args);
 int			precision_len(char *nformat);
 int			width_len(char *nformat);
 t_printf	*initialize(char *nformat);
+t_printf	*re_initialize(t_printf *data);
 void 		length(char flag, t_printf *data);
 void		precision_to_struct(char *nformat, t_printf *data);
 void		width_to_struct(char *nformat, t_printf *data);
 void		amplifiers(char flag, t_printf *data);
-t_printf 	flags_to_struct(char c, char *nformat, t_printf *data);
-void		teststruct(t_printf *data);
+t_printf 	format_to_struct(char c, char *nformat, t_printf *data);
 int			output(char c, va_list args, t_printf *data);
+void		ft_pf_putchar(char c, t_printf *data);
+void		ft_pf_putstr(char *str, t_printf *data);
 void		type_c(va_list args, t_printf *data);
 void		type_s(va_list args, t_printf *data);
-void		type_p(va_list args);
-void		type_d(va_list args);
-void		type_i(va_list args);
-void		type_o(va_list args);
-void		type_u(va_list args);
-void		type_x(va_list args);
-void		type_X(va_list args);
-void		type_f(va_list args);
+void		type_p(va_list args, t_printf *data);
+void		type_d(va_list args, t_printf *data);
+void		type_i(va_list args, t_printf *data);
+void		type_o(va_list args, t_printf *data);
+void		type_u(va_list args, t_printf *data);
+void		type_x(va_list args, t_printf *data);
+void		type_X(va_list args, t_printf *data);
+void		type_f(va_list args, t_printf *data);
 
 #endif

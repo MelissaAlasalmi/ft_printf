@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format_specifiers_to_struct.c                      :+:      :+:    :+:   */
+/*   format_to_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 14:33:43 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/09 21:03:15 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void		amplifiers(char flag, t_printf *data)
 		data->space = 1;
 }
 
-t_printf	flags_to_struct(char c, char *nformat, t_printf *data)
+t_printf	format_to_struct(char c, char *nformat, t_printf *data)
 {
 	if (c == '#' || c == '0' || c == '-' ||
 		c == '+' || c == ' ')

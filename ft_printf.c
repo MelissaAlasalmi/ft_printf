@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 14:31:40 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/09 21:26:18 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_preparser(char c, char *nformat, t_printf *data, va_list args) // 28 lines
+int		ft_flagparser(char c, char *nformat, t_printf *data, va_list args)
 {
 	char	*all;
 	int		i;
@@ -24,35 +24,29 @@ int	ft_preparser(char c, char *nformat, t_printf *data, va_list args) // 28 line
 	{
 		if (c == all[i])
 		{
-			flags_to_struct(c, nformat, data);
+			format_to_struct(c, nformat, data);
 			i = 0;
 			break ;
 		}
 		else
 			i++;
 	}
+	////teststruct_before(data);
 	while (i >= 10 && i < 20)
 	{
 		if (c == all[i])
 		{
 			output(c, args, data);
-			return (0);
+			return (1);
 		}
 		else
 			i++;
 	}
-	return (1);
+	return (0);
 }
 
-int	ft_printf(const char *format, ...) // 42 lines
+void	ft_preparser(char *nformat, t_printf *data, va_list args)
 {
-	va_list		args;
-	char		*nformat;
-	t_printf	*data;
-
-	va_start(args, format);
-	nformat = (char *)format;
-	data = initialize(nformat);
 	while (*nformat != '\0')
 	{
 		if (*nformat == '%' && (*(nformat + 1) != '%'))
@@ -60,7 +54,7 @@ int	ft_printf(const char *format, ...) // 42 lines
 			nformat++;
 			while (*nformat != '%' && *nformat != '\0')
 			{
-				if (ft_preparser(*nformat, nformat, data, args) == 0)
+				if (ft_flagparser(*nformat, nformat, data, args) == 1)
 				{
 					nformat++;
 					break ;
@@ -72,20 +66,30 @@ int	ft_printf(const char *format, ...) // 42 lines
 		else if (*nformat == '%' && (*(nformat + 1) == '%'))
 		{
 			nformat++;
-			ft_putchar('%');
+			ft_pf_putchar('%', data);
 			nformat++;
 		}
 		else
 		{
-			ft_putchar(*nformat);
+			ft_pf_putchar(*nformat, data);
 			nformat++;
 		}
 		data = initialize(nformat);
 	}
-	// printf("\n");
-	// printf("TEST STRUCT:\n");
-	// teststruct(data);
-	// printf("\n");
+}
+
+int		ft_printf(const char *format, ...)
+{
+	va_list		args;
+	char		*nformat;
+	t_printf	*data;
+
+	va_start(args, format);
+	nformat = (char *)format;
+	data = initialize(nformat);
+	ft_preparser(nformat, data, args);
+	data = re_initialize(data);
+    //teststruct_after(data);
 	va_end(args);
-	return (0);
+	return (data->printf);
 }

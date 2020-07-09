@@ -6,17 +6,18 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/09 15:37:48 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/09 19:15:37 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS = ft_printf.c \
-	   format_specifiers_to_struct.c \
+	   format_to_struct.c \
 	   initialize_struct.c \
 	   test_struct.c \
 	   output.c \
+	   output_helpers.c \
 	   width_precision_len.c \
 	   types/type_c.c \
 	   types/type_s.c \
@@ -30,10 +31,11 @@ SRCS = ft_printf.c \
 	   types/type_f.c \
 	   
 OBJS = ft_printf.o \
-	   format_specifiers_to_struct.o \
+	   format_to_struct.o \
 	   initialize_struct.o \
 	   test_struct.o \
 	   output.o \
+	   output_helpers.o \
 	   width_precision_len.o \
 	   type_c.o \
 	   type_s.o \
