@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 21:22:35 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 09:53:22 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	type_X(va_list args, t_printf *data)
+t_printf	type_X(va_list args, t_printf *data)
 {
     unsigned long long value;
 	char *base;
@@ -28,5 +28,6 @@ void	type_X(va_list args, t_printf *data)
         ft_pf_putchar(c, data);
         i++;
     }
-    //teststruct_during(data);
+    teststruct_during(data);
+    return(*data);
 }

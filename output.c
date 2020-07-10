@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 19:25:04 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 09:46:40 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	output(char c, va_list args, t_printf *data)
+t_printf	output(char c, va_list args, t_printf *data)
 {
 	if (c == 'c')
 		type_c(args, data);
@@ -34,5 +34,5 @@ int	output(char c, va_list args, t_printf *data)
 		type_X(args, data);
 	else if (c == 'f')
 		type_f(args, data);
-	return (0);
+	return (*data);
 }

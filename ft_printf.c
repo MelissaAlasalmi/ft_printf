@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 21:26:18 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 10:03:20 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,37 +45,44 @@ int		ft_flagparser(char c, char *nformat, t_printf *data, va_list args)
 	return (0);
 }
 
-void	ft_preparser(char *nformat, t_printf *data, va_list args)
+int	ft_preparser(char *nformat, t_printf *data, va_list args)
 {
+	int			returnvalue;
+	
+	returnvalue = 0;
 	while (*nformat != '\0')
 	{
-		if (*nformat == '%' && (*(nformat + 1) != '%'))
+		if (*nformat == '%')
 		{
 			nformat++;
-			while (*nformat != '%' && *nformat != '\0')
+			if (*nformat == '%')
 			{
-				if (ft_flagparser(*nformat, nformat, data, args) == 1)
-				{
-					nformat++;
-					break ;
-				}
-				else
-					nformat++;
+				ft_pf_putchar('%', data);
+				nformat++;
 			}
-		}
-		else if (*nformat == '%' && (*(nformat + 1) == '%'))
-		{
-			nformat++;
-			ft_pf_putchar('%', data);
-			nformat++;
+			else
+			{
+				while (*nformat != '%' && *nformat != '\0')
+				{
+					if (ft_flagparser(*nformat, nformat, data, args) == 1)
+					{
+						nformat++;
+						break ;
+					}
+					else
+						nformat++;
+				}
+			}
 		}
 		else
 		{
 			ft_pf_putchar(*nformat, data);
 			nformat++;
 		}
-		data = initialize(nformat);
+		returnvalue = returnvalue + data->printf;
+		data = re_initialize(nformat);
 	}
+	return(returnvalue);
 }
 
 int		ft_printf(const char *format, ...)
@@ -83,13 +90,13 @@ int		ft_printf(const char *format, ...)
 	va_list		args;
 	char		*nformat;
 	t_printf	*data;
+	int			returnvalue;
 
 	va_start(args, format);
 	nformat = (char *)format;
 	data = initialize(nformat);
-	ft_preparser(nformat, data, args);
-	data = re_initialize(data);
-    //teststruct_after(data);
+	returnvalue = ft_preparser(nformat, data, args);
+    teststruct_after(data, returnvalue);
 	va_end(args);
-	return (data->printf);
+	return (returnvalue);
 }

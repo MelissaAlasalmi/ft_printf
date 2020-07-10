@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 20:58:26 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 10:04:20 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void		teststruct_during(t_printf *data)
         printf("\n");
 }
 
-void		teststruct_after(t_printf *data)
+void		teststruct_after(t_printf *data, int returnvalue)
 {
         printf("\n");
         printf("TEST STRUCT after:\n");
@@ -183,5 +183,6 @@ void		teststruct_after(t_printf *data)
         else
             printf("L = 0\n");
         printf("printf = %d\n", data->printf);
+        printf("\nreturnvalue after loop: %d\n", returnvalue);
         printf("\n");
 }

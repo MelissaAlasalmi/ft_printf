@@ -137,6 +137,14 @@ int	main(void)
 	printf("printf:%2s\n", "dfgdfgdfgd");
 	ft_printf("ft_printf:%2s\n", "dfgdfgdfgd");
 	printf("\n");
+
+		/*
+ 	** ****************** STRING WITH 2 x s FLAG & WIDTH ******************
+ 	*/
+ 	printf("STRING WITH 2 x s FLAG & WIDTH\n");
+	printf("printf:%9s%9s\n", str, str);
+	ft_printf("ft_printf:%9s%9s\n", str, str);
+	printf("\n");
 	
 	return (0);
 }
