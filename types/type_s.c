@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 09:53:22 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 10:08:02 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ t_printf	type_s(va_list args, t_printf *data)
 	}
 	else
 		ft_pf_putstr(str, data);
-    teststruct_during(data);
+    //teststruct_during(data);
 	return(*data);
 }

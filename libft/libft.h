@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:56:31 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/09 12:22:35 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 13:10:00 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_itoabase(long value, int base);
 void 				ft_findbase(long value, int base, char	*str, int i, long basestart);
+char				*ft_ftoa(long double floatvalue, int precision, int decimal);
 
 #endif

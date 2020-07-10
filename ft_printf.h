@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 10:03:36 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 14:45:38 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void		teststruct_during(t_printf *data);
 void		teststruct_after(t_printf *data, int returnvalue);
 int 		ft_printf(const char *restrict format, ...);
 int			ft_preparser(char *nformat, t_printf *data, va_list args);
+char 		*ft_percentparser(char *nformat, t_printf *data, va_list args);
 void 		ft_parser(char c, char *nformat, t_printf *data, va_list args);
 int		 	ft_flagparser(char c, char *nformat, t_printf *data, va_list args);
+int		 	ft_typeparser(char c, t_printf *data, va_list args);
 int			precision_len(char *nformat);
 int			width_len(char *nformat);
 t_printf	*initialize(char *nformat);

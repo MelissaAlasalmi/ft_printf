@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 09:53:22 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/10 10:08:02 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ t_printf	type_p(va_list args, t_printf *data)
 	base = ft_itoabase(value, 16);
 	ft_pf_putstr("0x",data);
 	ft_pf_putstr(base, data);
-    teststruct_during(data);
+    //teststruct_during(data);
 	return(*data);
 }
