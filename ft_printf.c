@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 14:48:59 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/12 21:16:54 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_typeparser(char c, t_printf *data, va_list args)
+int		ft_typeparser(t_printf *data, va_list args)
 {
 	char	*all;
 	int		i;
@@ -21,9 +21,9 @@ int		ft_typeparser(char c, t_printf *data, va_list args)
 	i = 0;
 	while (i < 10)
 	{
-		if (c == all[i])
+		if (*data->nformat == all[i])
 		{
-			output(c, args, data);
+			output(args, data);
 			return (1);
 		}
 		else
@@ -32,69 +32,68 @@ int		ft_typeparser(char c, t_printf *data, va_list args)
 	return (0);
 }
 
-int		ft_flagparser(char c, char *nformat, t_printf *data, va_list args)
+int		ft_flagparser(t_printf *data, va_list args)
 {
 	char	*all;
 	int		i;
 
-	all = "-+ #0*.hlL";
+	all = "-+ #0123456789*.hlL";
 	i = 0;
-	width_to_struct(nformat, data);
-	while (i < 10)
+	while (i < 19)
 	{
-		if (c == all[i])
+		if (*data->nformat == all[i])
 		{
-			format_to_struct(c, nformat, data);
-			i = 0;
+			format_to_struct(data);
 			break ;
 		}
 		else
 			i++;
 	}
-	////teststruct_before(data);
-	return (ft_typeparser(c, data, args));
+	if (i == 20)
+		data->nformat++;
+	//teststruct_before(data);
+	return (ft_typeparser(data, args));
 }
 
-char	*ft_percentparser(char *nformat, t_printf *data, va_list args)
+void	ft_percentparser(t_printf *data, va_list args)
 {
-	nformat++;
-	if (*nformat == '%')
+	data->nformat++;
+	if (*data->nformat == '%')
 	{
 		ft_pf_putchar('%', data);
-		nformat++;
+		data->nformat++;
 	}
 	else
 	{
-		while (*nformat != '%' && *nformat != '\0')
+		while (*data->nformat != '%' && *data->nformat != '\0')
 		{
-			if (ft_flagparser(*nformat, nformat, data, args) == 1)
+			if (ft_flagparser(data, args) == 1)
 			{
-				nformat++;
+				data->nformat++;
 				break ;
 			}
 			else
-				nformat++;
+				data->nformat++;
 		}
 	}
-	return (nformat);
 }
 
-int		ft_preparser(char *nformat, t_printf *data, va_list args)
+int		ft_preparser(t_printf *data, va_list args)
 {
-	int			returnvalue;
+	int	returnvalue;
 
 	returnvalue = 0;
-	while (*nformat != '\0')
+	while (*data->nformat != '\0')
 	{
-		if (*nformat == '%')
-			nformat = ft_percentparser(nformat, data, args);
+		if (*data->nformat == '%')
+			ft_percentparser(data, args);
 		else
 		{
-			ft_pf_putchar(*nformat, data);
-			nformat++;
+			ft_pf_putchar(*data->nformat, data);
+			data->nformat++;
 		}
 		returnvalue = returnvalue + data->printf;
-		data = re_initialize(nformat);
+		re_initialize(data);
 	}
 	return (returnvalue);
 }
@@ -104,14 +103,14 @@ int		ft_preparser(char *nformat, t_printf *data, va_list args)
 int		ft_printf(const char *format, ...)
 {
 	va_list		args;
-	char		*nformat;
 	t_printf	*data;
 	int			returnvalue;
 
 	va_start(args, format);
-	nformat = (char *)format;
-	data = initialize(nformat);
-	returnvalue = ft_preparser(nformat, data, args);
+	data = initialize();
+	data->nformat = (char *)format;
+	returnvalue = ft_preparser(data, args);
+	free(data);
     //teststruct_after(data, returnvalue);
 	va_end(args);
 	return (returnvalue);

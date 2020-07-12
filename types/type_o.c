@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 10:08:02 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/12 21:06:06 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-t_printf	type_o(va_list args, t_printf *data)
+void	type_o(va_list args, t_printf *data)
 {
     unsigned long long value;
 	char *base;
@@ -21,5 +21,4 @@ t_printf	type_o(va_list args, t_printf *data)
 	base = ft_itoabase(value, 8);
 	ft_pf_putstr(base, data);
     //teststruct_during(data);
-	return(*data);
 }

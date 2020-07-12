@@ -6,17 +6,19 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 10:08:02 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/12 21:05:09 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-t_printf	type_c(va_list args, t_printf *data)
+void	type_c(va_list args, t_printf *data)
 {
 	char c;
 
 	c = (char)va_arg(args, int);
+	// if (data->minus != 0)
+		
 	if (data->width != 0)
 	{
 		data->width = data->width - 1;
@@ -30,5 +32,4 @@ t_printf	type_c(va_list args, t_printf *data)
 	else
 		ft_pf_putchar(c, data);
     //teststruct_during(data);
-	return(*data);
 }

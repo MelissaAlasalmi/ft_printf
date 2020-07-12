@@ -6,33 +6,33 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 09:46:40 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/12 20:17:27 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_printf	output(char c, va_list args, t_printf *data)
+t_printf	output(va_list args, t_printf *data)
 {
-	if (c == 'c')
+	if (*data->nformat == 'c')
 		type_c(args, data);
-	else if (c == 's')
+	else if (*data->nformat == 's')
 		type_s(args, data);
-	else if (c == 'p')
+	else if (*data->nformat == 'p')
 		type_p(args, data);
-	else if (c == 'd')
+	else if (*data->nformat == 'd')
 		type_d(args, data);
-	else if (c == 'i')
+	else if (*data->nformat == 'i')
 		type_i(args, data);
-	else if (c == 'o')
+	else if (*data->nformat == 'o')
 		type_o(args, data);
-	else if (c == 'u')
+	else if (*data->nformat == 'u')
 		type_u(args, data);
-	else if (c == 'x')
+	else if (*data->nformat == 'x')
 		type_x(args, data);
-	else if (c == 'X')
+	else if (*data->nformat == 'X')
 		type_X(args, data);
-	else if (c == 'f')
+	else if (*data->nformat == 'f')
 		type_f(args, data);
 	return (*data);
 }

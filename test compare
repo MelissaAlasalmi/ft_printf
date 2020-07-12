@@ -1,0 +1,457 @@
+(%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h')
+
+"a b  c   de f  g   h"
+" a  b   cd e  f   g   h"
+" a  b   cd e  f   g   h"
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 1
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 2
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+ a
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 2
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 2
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 3
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+  b
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 3
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 3
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 4
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+   c
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 4
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 4
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 1
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+d
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 1
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 1
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 1
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 2
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+ e
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 2
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 2
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 3
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+  f
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 3
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 3
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 4
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+   g
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 4
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 4
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+
+TEST STRUCT before:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 4
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 0
+
+   h
+TEST STRUCT during:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 0
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 4
+
+
+
+TEST STRUCT after:
+Hash = 0
+Zero = 0
+Minus = 0
+Plus = 0
+Space = 0
+Asterisk = 0
+Width = 1
+Decimal = 0
+Precision = 0
+hh = 0
+h = 0
+l = 0
+ll = 0
+L = 0
+printf = 1
+
+returnvalue after loop: 34

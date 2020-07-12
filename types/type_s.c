@@ -6,13 +6,13 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 10:08:02 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/12 21:06:24 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-t_printf	type_s(va_list args, t_printf *data)
+void	type_s(va_list args, t_printf *data)
 {
 	char *str;
 	str = va_arg(args, char*);
@@ -29,5 +29,4 @@ t_printf	type_s(va_list args, t_printf *data)
 	else
 		ft_pf_putstr(str, data);
     //teststruct_during(data);
-	return(*data);
 }
