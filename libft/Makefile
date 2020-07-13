@@ -6,7 +6,7 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 10:08:13 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/10 12:57:18 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/13 14:36:53 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnlen.c \
 ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 ft_strtrim.c ft_tolower.c ft_toupper.c ft_wordcount.c ft_intlen.c \
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-ft_lstmap.c ft_itoabase.c ft_ftoa.c \
+ft_lstmap.c ft_itoabase.c \
 
 OBJECTS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 ft_isdigit.o ft_isprint.o ft_itoa.o ft_memalloc.o ft_memccpy.o \
@@ -38,7 +38,7 @@ ft_strncmp.o ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnlen.o \
 ft_strnstr.o ft_strrchr.o ft_strsplit.o ft_strstr.o ft_strsub.o \
 ft_strtrim.o ft_tolower.o ft_toupper.o ft_wordcount.o ft_intlen.o \
 ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o \
-ft_lstmap.o ft_itoabase.o ft_ftoa.o \
+ft_lstmap.o ft_itoabase.o \
 
 HEADER = libft.h
 

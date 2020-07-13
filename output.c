@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/12 20:17:27 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/13 14:35:01 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_printf	output(va_list args, t_printf *data)
 		type_x(args, data);
 	else if (*data->nformat == 'X')
 		type_X(args, data);
-	else if (*data->nformat == 'f')
-		type_f(args, data);
+	// else if (*data->nformat == 'f')
+	// 	type_f(args, data);
 	return (*data);
 }

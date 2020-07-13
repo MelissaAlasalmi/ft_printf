@@ -139,21 +139,28 @@ int	main(void)
 	// printf("\n");
 
 		/*
- 	** ****************** STRING WITH 2 x s FLAG & WIDTH ******************
+ 	// ** ****************** STRING WITH 2 x s FLAG & WIDTH ******************
+ 	// */
+ 	// printf("STRING WITH 2 x s FLAG & WIDTH\n");
+	// printf("printf:%11s%11s\n", str, str);
+	// ft_printf("ft_printf:%11s%11s\n", str, str);
+	// printf("\n");
+
+	// 		/*
+ 	// ** ****************** STRING WITH a shitload of width and chars ******************
+ 	// */
+ 	// printf("STRING WITH a shitload of width and chars\n");
+	// printf("printf:%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+	// ft_printf("ft_printf:%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+	// printf("\n");
+
+		/*
+ 	** ****************** Simple string with %c flag with width ******************
  	*/
- 	printf("STRING WITH 2 x s FLAG & WIDTH\n");
-	printf("printf:%11s%11s\n", str, str);
-	ft_printf("ft_printf:%11s%11s\n", str, str);
+ 	printf("SIMPLE STRING WITH c FLAG WITH Left aligned WIDTH\n");
+	printf("printf:%-5c|\n", c);
+	ft_printf("ft_printf:%-5c|\n", c);
 	printf("\n");
 
-			/*
- 	** ****************** STRING WITH a shitload of width and chars ******************
- 	*/
- 	printf("STRING WITH a shitload of width and chars\n");
-	printf("printf:%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
-	ft_printf("ft_printf:%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
-	printf("\n");
-
-	
 	return (0);
 }

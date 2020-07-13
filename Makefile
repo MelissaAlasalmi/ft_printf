@@ -6,7 +6,7 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/12 19:19:10 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/13 14:35:45 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS = ft_printf.c \
 	   types/type_u.c \
 	   types/type_lowerx.c \
 	   types/type_upperX.c \
-	   types/type_f.c \
+
 	   
 OBJS = ft_printf.o \
 	   format_to_struct.o \
@@ -44,7 +44,7 @@ OBJS = ft_printf.o \
 	   type_u.o \
 	   type_lowerx.o \
 	   type_upperX.o \
-	   type_f.o \
+
 
 HEADER = ft_printf.h
 

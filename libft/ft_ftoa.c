@@ -6,14 +6,14 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 12:48:12 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 13:08:12 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/13 14:25:05 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-static long double	roundup(long double floatvalue, int precision)
+long double	roundup(long double floatvalue, int precision)
 {
 	long double	rounded;
 	int			decimal;
@@ -22,36 +22,56 @@ static long double	roundup(long double floatvalue, int precision)
 	decimal = 0;
 	if (floatvalue < 0)
 		rounded *= -1;
-	while (decimal++ < precision)
+	while (decimal < precision)
+	{
 		rounded /= 10.0;
+		decimal++;
+	}
 	return (rounded);
 }
 
-char				*ft_ftoa(long double floatvalue, int precision, int decimal)
+char 		*precision(long double floatvalue, int precision)
+{
+	char	*str;
+	int		i;
+	int		num;
+
+	num = precision;
+	str = ft_strnew(precision + 1);
+	str[0] = '.';
+	i = 1;
+	while (precision > 0)
+	{
+		floatvalue *= 10;
+		str[i] = (int)floatvalue + '0';
+		floatvalue -= (int)floatvalue;
+		precision--;
+		i++;
+	}
+	floatvalue *= 10;
+	if (num > 18 && floatvalue >= 5.0)
+		str[i - 1]++;
+	return (str);
+}
+
+char		*ft_ftoa(long double floatvalue, int precision, int decimal)
 {
 	unsigned long long	value;
 	char				*pre_decimal;
 	char				*post_decimal;
-	char				*str;
-	int					i;
+	char				*ftoa_str;
 
 	floatvalue = floatvalue + roundup(floatvalue, precision);
-	floatvalue *= (floatvalue < 0) ? -1 : 1;
-	value = floatvalue;
-	pre_decimal = ft_itoa(value);
-	floatvalue = precision ? (floatvalue - value) : 0;
-	post_decimal = ft_strnew(precision + 2);
-	post_decimal[0] = (decimal) ? '.' : '\0';
-	i = 1;
-	while (precision-- > 0)
-	{
-		floatvalue *= 10;
-		value = floatvalue;
-		floatvalue = floatvalue - value;
-		post_decimal[i++] = value + '0';
-	}
-	str = ft_strjoin(pre_decimal, post_decimal);
-	free(post_decimal);
+	value =	floatvalue;
+	pre_decimal = (floatvalue < 0.0 && floatvalue > -1.0) 
+				? ft_strjoin("-", ft_itoa(value)) : ft_itoa(value);
+	floatvalue = (floatvalue < 0.0) ? floatvalue *= -1 : floatvalue;
+	if (!(decimal) && !(precision))
+		return (pre_decimal);
+	floatvalue -= (value < 0) ? -value : value;
+	post_decimal = precission(floatvalue, precision);
+	ftoa_str = ft_strjoin(pre_decimal, post_decimal);
 	free(pre_decimal);
-	return (str);
+	free(post_decimal);
+	return (ftoa_str);
 }
