@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/13 14:58:05 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/13 15:03:00 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	type_s(va_list args, t_printf *data)
 {
 	char *str;
+	
 	str = va_arg(args, char*);
 	if (data->minus != 0)
 	{

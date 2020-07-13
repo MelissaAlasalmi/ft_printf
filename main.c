@@ -154,12 +154,36 @@ int	main(void)
 	// ft_printf("ft_printf:%1c%2c%3c%4c%1c%2c%3c%4c\n", 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
 	// printf("\n");
 
-		/*
- 	** ****************** Simple string with %c flag with width ******************
+	// 	/*
+ 	// ** ****************** Simple string with %c flag with width ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH c FLAG WITH Left aligned WIDTH\n");
+	// printf("printf:%-5c|\n", c);
+	// ft_printf("ft_printf:%-5c|\n", c);
+	// printf("\n");
+
+	/*
+ 	** ****************** Simple string with %p flag ******************
  	*/
- 	printf("SIMPLE STRING WITH c FLAG WITH Left aligned WIDTH\n");
-	printf("printf:%-5c|\n", c);
-	ft_printf("ft_printf:%-5c|\n", c);
+ 	printf("SIMPLE STRING WITH p FLAG\n");
+	printf("printf:%p\n", str);
+	ft_printf("ft_printf:%p\n", str);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %p flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH p FLAG with Left aligned WIDTH\n");
+	printf("printf:%-15p|\n", str);
+	ft_printf("ft_printf:%-15p|\n", str);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %p flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH p FLAG with WIDTH\n");
+	printf("printf:%15p\n", str);
+	ft_printf("ft_printf:%15p\n", str);
 	printf("\n");
 
 	return (0);
