@@ -6,11 +6,14 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 14:13:47 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/20 20:01:04 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+// Covers { -, width value} 
+// To go: {All done!}
 
 void	type_c(va_list args, t_printf *data)
 {

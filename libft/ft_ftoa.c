@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 12:48:12 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/13 14:25:05 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/20 20:53:23 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char		*ft_ftoa(long double floatvalue, int precision, int decimal)
 	floatvalue = floatvalue + roundup(floatvalue, precision);
 	value =	floatvalue;
 	pre_decimal = (floatvalue < 0.0 && floatvalue > -1.0) 
-				? ft_strjoin("-", ft_itoa(value)) : ft_itoa(value);
+				? ft_strjoin("-", ft_itoa(data->value)) : ft_itoa(data->value);
 	floatvalue = (floatvalue < 0.0) ? floatvalue *= -1 : floatvalue;
 	if (!(decimal) && !(precision))
 		return (pre_decimal);

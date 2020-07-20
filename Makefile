@@ -6,7 +6,7 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/13 14:35:45 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/20 19:43:21 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS = ft_printf.c \
 	   test_struct.c \
 	   output.c \
 	   output_helpers.c \
+	   conversions.c \
 	   types/type_c.c \
 	   types/type_s.c \
 	   types/type_p.c \
@@ -35,6 +36,7 @@ OBJS = ft_printf.o \
 	   test_struct.o \
 	   output.o \
 	   output_helpers.o \
+	   conversions.o \
 	   type_c.o \
 	   type_s.o \
 	   type_p.o \

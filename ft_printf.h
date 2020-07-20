@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 14:26:58 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/20 21:35:36 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef	struct	s_printf
 	int			L;
 	int			printf;
 	char		*nformat;
+	intmax_t	value;
 }				t_printf;
 void		teststruct_before(t_printf *data);
 void		teststruct_during(t_printf *data);
@@ -68,5 +69,7 @@ void		type_X(va_list args, t_printf *data);
 void		ft_putspaces(t_printf *data);
 void		ft_putzeros(t_printf *data);
 void		ft_pf_toupper(char *base, t_printf *data);
+void		signed_converter(va_list args, t_printf *data);
+void		unsigned_converter(va_list args, t_printf *data);
 
 #endif
