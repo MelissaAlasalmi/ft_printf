@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/13 15:03:00 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/20 14:13:47 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,12 @@ void	type_s(va_list args, t_printf *data)
 	{
 		ft_pf_putstr(str, data);
 		data->width = data->width - ft_strlen(str);
-		while (data->width > 0)
-		{
-			ft_pf_putchar(' ', data);
-			data->width--;
-		}
+		ft_putspaces(data);
 	}
 	else if (data->width > (int)ft_strlen(str))
 	{
 		data->width = data->width - ft_strlen(str);
-		while (data->width > 0)
-		{
-			ft_pf_putchar(' ', data);
-			data->width--;
-		}
+		ft_putspaces(data);
 		ft_pf_putstr(str, data);
 	}
 	// if (data->asterisk != 0)

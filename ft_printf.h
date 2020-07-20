@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/13 14:34:33 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/20 14:26:58 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,8 @@ void		type_u(va_list args, t_printf *data);
 void		type_x(va_list args, t_printf *data);
 void		type_X(va_list args, t_printf *data);
 //void		type_f(va_list args, t_printf *data);
+void		ft_putspaces(t_printf *data);
+void		ft_putzeros(t_printf *data);
+void		ft_pf_toupper(char *base, t_printf *data);
 
 #endif
