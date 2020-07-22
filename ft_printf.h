@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 21:35:36 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/22 11:39:20 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef	struct	s_printf
 	char		*nformat;
 	intmax_t	value;
 }				t_printf;
+
 void		teststruct_before(t_printf *data);
 void		teststruct_during(t_printf *data);
 void		teststruct_after(t_printf *data, int returnvalue);

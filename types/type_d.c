@@ -6,53 +6,67 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 21:38:42 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/22 15:13:32 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-// Covers { 0, -, width value} 
-// To go: { +, space, ., precision value, hh, h, l , ll, L}
+// Covers { 0, -, width value, + , hh, h, l , ll, L} 
+// To go: { space, ., precision value}
 
 void	type_d(va_list args, t_printf *data)
 {
 	char *sign_dec_int;
-
+	
 	signed_converter(args, data);
 	sign_dec_int = ft_itoa(data->value);
-	if (data->value < 0) // cancel out all of the flags that only work for positive numbers
-		data->plus = 0;
-	if (data->value > 0 && data->plus != 0) 
+	if (data->minus == 1) // left justify!
 	{
-		ft_pf_putchar('+', data);
-		ft_pf_putstr(sign_dec_int, data);
+		if (data->width > 0 && data->decimal == 0) // if there's only width
+		{
+			if (data->plus == 1) // if we need a plus sign
+			{
+				ft_pf_putchar('+', data);
+				ft_pf_putstr(sign_dec_int, data);
+			}
+			else
+				ft_pf_putstr(sign_dec_int, data);
+			data->width = data->width - ft_strlen(sign_dec_int); //now we have the leftovers to deal with ...
+			if (data->width > 0 && data->zero == 1)
+				ft_putzeros(data);
+			else
+				ft_putspaces(data);
+		}
 	}
-	if (data->minus != 0 && data->zero != 0) // left justified with printed zeros
+	else // right justify!
 	{
-		ft_pf_putstr(sign_dec_int, data);
-		data->width = data->width - ft_strlen(sign_dec_int);
-		ft_putzeros(data);
+		if (data->width > 0 && data->decimal == 0) // if there's only width
+		{
+			if (data->plus == 1) // if we need a plus sign
+			{
+				data->width = data->width - (ft_strlen(sign_dec_int) + 1);
+				if (data->width > 0 && data->zero == 1) // if there's a zero
+					ft_putzeros(data);
+				else
+					ft_putspaces(data);
+				ft_pf_putchar('+', data);
+			}
+			else // if we DO NOT need a plus sign
+			{
+				data->width = data->width - ft_strlen(sign_dec_int);
+				if (data->width > 0 && data->zero == 1)
+					ft_putzeros(data);
+				else
+					data->width = data->width - ft_strlen(sign_dec_int);
+					ft_putspaces(data);
+			}
+			ft_pf_putstr(sign_dec_int, data);
+		}
+		else
+			ft_pf_putstr(sign_dec_int, data);
 	}
-	else if (data->minus != 0 && data->zero == 0) // left justified with printed spaces
-	{
-		ft_pf_putstr(sign_dec_int, data);
-		data->width = data->width - ft_strlen(sign_dec_int);
-		ft_putspaces(data);
-	}
-	else if (data->width > (int)ft_strlen(sign_dec_int) && data->zero != 0) // right justified with printed zeros
-	{
-		data->width = data->width - ft_strlen(sign_dec_int);
-		ft_putzeros(data);
-		ft_pf_putstr(sign_dec_int, data);
-	}
-	else if (data->width > (int)ft_strlen(sign_dec_int) && data->zero == 0) // right justified with printed spaces
-	{
-		data->width = data->width - ft_strlen(sign_dec_int);
-		ft_putspaces(data);
-		ft_pf_putstr(sign_dec_int, data);
-	}
-	else
-		ft_pf_putstr(sign_dec_int, data);
-    //teststruct_during(data);
+    // //teststruct_during(data);
 }
+		// printf("width at this point: %d\n", data->width);
+		// printf("value at this point: %s\n", sign_dec_int);
