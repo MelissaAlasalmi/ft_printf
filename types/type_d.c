@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 17:02:00 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/22 17:58:37 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 void	type_d(va_list args, t_printf *data)
 {
 	char *sign_dec_int;
-	
+
 	signed_converter(args, data);
 	sign_dec_int = ft_itoa(data->value);
+	if (sign_dec_int[0] == '-' && data->plus == 1)
+		data->plus = 0;
 	// if (data->decimal == 1 && data->precision == 0) // cancel out precision if it's zero
 	// 	data->decimal = 0;
 	if (data->minus == 1) // left justify!
@@ -29,12 +31,12 @@ void	type_d(va_list args, t_printf *data)
 		{
 			if (data->width > 0 && data->decimal == 0) // if there's only width
 			{
-				if (data->plus == 1 && data->value > 0) // if we need a plus sign
+				if (data->plus == 1) // if we need a plus sign
 				{
 					ft_pf_putchar('+', data);
 					data->width--;
 				}
-				else if (data->space == 1 && data->value > 0) // if we need a space
+				else if (data->space == 1) // if we need a space
 				{
 					ft_pf_putchar(' ', data);
 					data->width--;
@@ -49,9 +51,9 @@ void	type_d(va_list args, t_printf *data)
 		}
 		else // if there's no width or precision but there is a plus or a space
 		{
-			if (data->plus == 1 && data->value > 0) // if we need a plus sign
+			if (data->plus == 1) // if we need a plus sign
 				ft_pf_putchar('+', data);
-			else if (data->space == 1 && data->value > 0) // if we need a space
+			else if (data->space == 1) // if we need a space
 				ft_pf_putchar(' ', data);
 			ft_pf_putstr(sign_dec_int, data);
 		}
@@ -61,14 +63,14 @@ void	type_d(va_list args, t_printf *data)
 	{
 		if (data->width > 0 || data->decimal == 1) // if there's width, precision, or both
 		{
-			if ((data->plus == 1 && data->value > 0) || (data->space == 1 && data->value > 0)) // if we need a plus sign or a space
+			if (data->plus == 1 || data->space == 1) // if we need a plus sign or a space
 			{
 				data->width = data->width - (ft_strlen(sign_dec_int) + 1);
-				if (data->plus == 1 && data->value > 0)
+				if (data->plus == 1)
 					ft_pf_putchar('+', data);
-				else if (data->space == 1 && data->value > 0)
+				else if (data->space == 1)
 					ft_pf_putchar(' ', data);
-				if (data->width > 0 && data->zero == 1) // if there's a zero
+				if (data->zero == 1) // if there's a zero
 					ft_putzeros(data);
 				else
 					ft_putspaces(data);
@@ -86,12 +88,12 @@ void	type_d(va_list args, t_printf *data)
 		}
 		else // if there's no width or precision but there is a plus or a space
 		{
-			if (data->plus == 1 && data->value > 0)
+			if (data->plus == 1)
 				ft_pf_putchar('+', data);
-			else if (data->space == 1 && data->value > 0)
+			else if (data->space == 1)
 				ft_pf_putchar(' ', data);
 			ft_pf_putstr(sign_dec_int, data);
 		}
 	}
- //teststruct_during(data);
+// 	//teststruct_during(data);
 }

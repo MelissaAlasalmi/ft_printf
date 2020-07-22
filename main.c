@@ -174,81 +174,81 @@ int	main(void)
  	** ****************** Simple string with %d flag ******************
  	*/
  	printf("SIMPLE STRING WITH d FLAG\n");
-	printf("printf:%d\n", -12443);
-	ft_printf("ft_printf:%d\n", -12443);
+	printf("printf:%+d\n", -12443);
+	ft_printf("ft_printf:%+d\n", -12443);
 	printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag + extra text ******************
- 	*/
- 	printf("SIMPLE STRING WITH d flag + extra text\n");
-	printf("this %d number %d\n", 17, 18);
-	ft_printf("this %d number %d\n", 17, 18);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag + extra text ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d flag + extra text\n");
+	// printf("this %d number %d\n", 17, 18);
+	// ft_printf("this %d number %d\n", 17, 18);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with WIDTH\n");
-	printf("printf:%15d\n", -12443);
-	ft_printf("ft_printf:%15d\n", -12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with WIDTH\n");
+	// printf("printf:%15d\n", -12443);
+	// ft_printf("ft_printf:%15d\n", -12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH\n");
-	printf("printf:%-15d|\n", -12443);
-	ft_printf("ft_printf:%-15d|\n", -12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH\n");
+	// printf("printf:%-15d|\n", -12443);
+	// ft_printf("ft_printf:%-15d|\n", -12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH and plus\n");
-	printf("printf:%-+15d|\n", 12443);
-	ft_printf("ft_printf:%-+15d|\n", 12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH and plus\n");
+	// printf("printf:%-+15d|\n", 12443);
+	// ft_printf("ft_printf:%-+15d|\n", 12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with Right aligned WIDTH and plus\n");
-	printf("printf:%+15d|\n", 12443);
-	ft_printf("ft_printf:%+15d|\n", 12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with Right aligned WIDTH and plus\n");
+	// printf("printf:%+15d|\n", 12443);
+	// ft_printf("ft_printf:%+15d|\n", 12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG\n");
-	printf("printf:%d\n", -12443);
-	ft_printf("ft_printf:%d\n", -12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG\n");
+	// printf("printf:%d\n", -12443);
+	// ft_printf("ft_printf:%d\n", -12443);
+	// printf("\n");
 
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with WIDTH\n");
-	printf("printf:%15d\n", 12443);
-	ft_printf("ft_printf:%15d\n", 12443);
-	printf("\n");
+	// 	/*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with WIDTH\n");
+	// printf("printf:%15d\n", 12443);
+	// ft_printf("ft_printf:%15d\n", 12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH\n");
-	printf("printf:%-15d|\n", 12443);
-	ft_printf("ft_printf:%-15d|\n", 12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG with Left aligned WIDTH\n");
+	// printf("printf:%-15d|\n", 12443);
+	// ft_printf("ft_printf:%-15d|\n", 12443);
+	// printf("\n");
 
-	/*
- 	** ****************** Simple string with %d flag ******************
- 	*/
- 	printf("SIMPLE STRING WITH d FLAG\n");
-	printf("printf:%d\n", 12443);
-	ft_printf("ft_printf:%d\n", 12443);
-	printf("\n");
+	// /*
+ 	// ** ****************** Simple string with %d flag ******************
+ 	// */
+ 	// printf("SIMPLE STRING WITH d FLAG\n");
+	// printf("printf:%d\n", 12443);
+	// ft_printf("ft_printf:%d\n", 12443);
+	// printf("\n");
 
 	// 		/*
  	// ** ****************** Simple string with %X flag ******************

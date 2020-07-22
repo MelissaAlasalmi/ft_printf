@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/10 10:04:20 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/22 17:46:05 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void		teststruct_before(t_printf *data)
             printf("L = 1\n");
         else
             printf("L = 0\n");
+        printf("value = %s\n", ft_itoa(data->value));
         printf("printf = %d\n", data->printf);
         printf("\n");
 }
@@ -124,6 +125,7 @@ void		teststruct_during(t_printf *data)
             printf("L = 1\n");
         else
             printf("L = 0\n");
+        printf("value = %s\n", ft_itoa(data->value));
         printf("printf = %d\n", data->printf);
         printf("\n");
 }
@@ -182,6 +184,7 @@ void		teststruct_after(t_printf *data, int returnvalue)
             printf("L = 1\n");
         else
             printf("L = 0\n");
+        printf("value = %s\n", ft_itoa(data->value));
         printf("printf = %d\n", data->printf);
         printf("\nreturnvalue after loop: %d\n", returnvalue);
         printf("\n");
