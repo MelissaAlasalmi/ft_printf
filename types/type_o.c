@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_o.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 17:58:37 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:57:48 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	type_o(va_list args, t_printf *data)
 	{
 		ft_pf_putstr(base, data);
 		data->width = data->width - ft_strlen(base);
-		ft_putspaces(data);
+		ft_putspaces(data->width, data);
 	}
 	else if (data->width > (int)ft_strlen(base))
 	{
 		data->width = data->width - ft_strlen(base);
-		ft_putspaces(data);
+		ft_putspaces(data->width, data);
 		ft_pf_putstr(base, data);
 	}
 	else

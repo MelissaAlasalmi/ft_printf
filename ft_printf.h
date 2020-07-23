@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 11:39:20 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:55:26 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void		type_u(va_list args, t_printf *data);
 void		type_x(va_list args, t_printf *data);
 void		type_X(va_list args, t_printf *data);
 //void		type_f(va_list args, t_printf *data);
-void		ft_putspaces(t_printf *data);
-void		ft_putzeros(t_printf *data);
+void		ft_putspaces(int d, t_printf *data);
+void		ft_putzeros(int d, t_printf *data);
 void		ft_pf_toupper(char *base, t_printf *data);
 void		signed_converter(va_list args, t_printf *data);
 void		unsigned_converter(va_list args, t_printf *data);

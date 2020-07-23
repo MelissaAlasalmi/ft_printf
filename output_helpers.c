@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output_helpers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 19:07:41 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 14:24:59 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:54:04 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ void	ft_pf_putstr(char *str, t_printf *data)
 	}
 }
 
-void	ft_putzeros(t_printf *data)
+void	ft_putzeros(int d, t_printf *data)
 {
-	while (data->width > 0)
+	while (d > 0)
 	{
 		ft_pf_putchar('0', data);
-		data->width--;
+		d--;
 	}
 }
 
-void	ft_putspaces(t_printf *data)
+void	ft_putspaces(int d, t_printf *data)
 {
-	while (data->width > 0)
+	while (d > 0)
 	{
 		ft_pf_putchar(' ', data);
-		data->width--;
+		d--;
 	}
 }
 

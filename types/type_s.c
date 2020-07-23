@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 17:58:37 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:58:14 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	type_s(va_list args, t_printf *data)
 	{
 		ft_pf_putstr(str, data);
 		data->width = data->width - ft_strlen(str);
-		ft_putspaces(data);
+		ft_putspaces(data->width, data);
 	}
 	else if (data->width > (int)ft_strlen(str))
 	{
 		data->width = data->width - ft_strlen(str);
-		ft_putspaces(data);
+		ft_putspaces(data->width, data);
 		ft_pf_putstr(str, data);
 	}
 	// if (data->asterisk != 0)

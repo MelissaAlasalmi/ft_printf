@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 17:58:37 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 19:17:21 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,23 @@ int		ft_typeparser(t_printf *data, va_list args)
 
 int		ft_flagparser(t_printf *data, va_list args)
 {
-	char	*all;
+	char	*allflag;
 	int		i;
 
-	all = "-+ #0123456789*.hlL";
+	allflag = "-+ #0123456789.*hlL";
 	i = 0;
 	while (i < 19)
 	{
-		if (*data->nformat == all[i])
+		if (*data->nformat == allflag[i])
 		{
 			format_to_struct(data);
-			break ;
+			i++;
 		}
 		else
 			i++;
 	}
 	if (i == 20)
 		data->nformat++;
-	//teststruct_before(data);
 	return (ft_typeparser(data, args));
 }
 
