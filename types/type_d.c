@@ -1,12 +1,13 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   type_d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 18:29:06 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/22 21:11:29 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,22 +67,23 @@ void	type_d(va_list args, t_printf *data)
 			if (data->plus == 1 || data->space == 1) // if we need a plus sign or a space
 			{
 				data->width = data->width - (ft_strlen(sign_dec_int) + 1);
-				if (data->plus == 1)
+				if (data->zero == 1 && data->plus == 1) // if there's a zero and a plus
 					ft_pf_putchar('+', data);
-				else if (data->space == 1)
-					ft_pf_putchar(' ', data);
 				if (data->zero == 1) // if there's a zero
 					ft_putzeros(data);
 				else
 					ft_putspaces(data);
+				if (data->plus == 1 && data->zero == 0)
+					ft_pf_putchar('+', data);
+				else if (data->space == 1)
+					ft_pf_putchar(' ', data);
 			}
 			else // if we DO NOT need a plus sign or a space
 			{
 				data->width = data->width - ft_strlen(sign_dec_int);
-				if (data->width > 0 && data->zero == 1)
+				if (data->zero == 1)
 					ft_putzeros(data);
 				else
-					data->width = data->width - ft_strlen(sign_dec_int);
 					ft_putspaces(data);
 			}
 			ft_pf_putstr(sign_dec_int, data);
