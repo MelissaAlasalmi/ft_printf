@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 19:07:41 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/20 14:24:59 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/07/23 12:45:41 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_pf_putstr(char *str, t_printf *data)
 	}
 }
 
-void	ft_putzeros(t_printf *data)
+void	ft_putzeros(int d, t_printf *data)
 {
-	while (data->width > 0)
+	while (d > 0)
 	{
 		ft_pf_putchar('0', data);
-		data->width--;
+		d--;
 	}
 }
 
