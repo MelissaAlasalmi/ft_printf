@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 19:08:56 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/07/24 17:12:13 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_printf	format_to_struct(t_printf *data)
 	if (c == '#' || c == '0' || c == '-' ||
 		c == '+' || c == ' ')
 		amplifiers(c, data);
-	else if (c >= 48 && c <= 57 && data->width == 0)
+	else if (c >= 48 && c <= 57 && data->decimal == 0)
 	{
 		data->width = ft_atoi(data->nformat);
 		data->nformat += ft_intlen(data->width);
