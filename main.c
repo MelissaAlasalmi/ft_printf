@@ -174,8 +174,8 @@ int	main(void)
  	** ****************** Simple string with %d flag ******************
  	*/
  	printf("SIMPLE STRING WITH d FLAG\n");
-	printf("   printf:%-8.5d|\n", -83);
-	ft_printf("ft_printf:%-8.5d|\n", -83);
+	printf("   printf:%+8.5d|\n", 83);
+	ft_printf("ft_printf:%+8.5d|\n", 83);
 	printf("\n");
 
 	// /*
