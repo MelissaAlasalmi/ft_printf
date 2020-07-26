@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 19:07:41 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 17:54:04 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/07/26 19:54:40 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_pf_putstr(char *str, t_printf *data)
 void	ft_putzeros(int d, t_printf *data)
 {
 	while (d > 0)
-	{
+	{	
 		ft_pf_putchar('0', data);
 		d--;
 	}

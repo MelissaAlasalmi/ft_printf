@@ -13,9 +13,6 @@
 
 #include "../ft_printf.h"
 
-// Covers { 0, -, space, width value, + , hh, h, l , ll, L} 
-// To go: {., precision value}
-
 void	type_d(va_list args, t_printf *data)
 {
 	char *sign_dec_int;
@@ -29,16 +26,14 @@ void	type_d(va_list args, t_printf *data)
 		data->plus = 0;
 	if (data->minus == 1) // left justify!
 	{	
-		if (data->width > 0 || data->decimal == 0) // if there's only width or no width
+		if (data->width > 0 && data->decimal == 0) // if there's only width or no width
 		{
-			if (data->plus == 1) // if we need a plus sign
+			if (data->plus == 1 || data->space == 1) // if we need a plus sign or a space
 			{
-				ft_pf_putchar('+', data);
-				data->width--;
-			}
-			else if (data->space == 1) // if we need a space
-			{
-				ft_pf_putchar(' ', data);
+				if (data->plus == 1)
+					ft_pf_putchar('+', data);
+				else if (data->space == 1)
+					ft_pf_putchar(' ', data);
 				data->width--;
 			}
 			ft_pf_putstr(sign_dec_int, data); // prints even if there's no width
@@ -50,7 +45,8 @@ void	type_d(va_list args, t_printf *data)
 		}
 		else if (data->width > 0 && data->decimal == 1) // if there's both width and precision
 		{
-			ft_putspaces(data->width, data);
+			// if (data->precision < ft_intlen(data->value))
+			// 	data->precision = ft_intlen(data->value);
 			if (sign_dec_int[0] == '-') // if value is neg
 			{
 				ft_pf_putchar('-', data);
@@ -59,6 +55,7 @@ void	type_d(va_list args, t_printf *data)
 					sign_dec_int[i] = sign_dec_int[i + 1];
 					i++;
 				}
+				data->width--;
 			}
 			else // if value is pos
 			{
@@ -73,10 +70,11 @@ void	type_d(va_list args, t_printf *data)
 					data->width--;
 				}
 			}
-			data->precision = data->precision - ft_strlen(sign_dec_int); //not working when precision goes negative - test 550 & 551
-			data->width = data->width - (ft_strlen(sign_dec_int) + data->precision);
+			data->width = data->width - data->precision;
+			data->precision = data->precision - ft_strlen(sign_dec_int);
 			ft_putzeros(data->precision, data);
 			ft_pf_putstr(sign_dec_int, data);
+			ft_putspaces(data->width, data);
 				
 		}
 		else // if there's only precision
