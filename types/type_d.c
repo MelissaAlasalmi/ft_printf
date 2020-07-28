@@ -57,18 +57,13 @@ void	type_d(va_list args, t_printf *data)
 				data->width--;
 				data->precision--;
 			}
-			else // if value is pos
+			if (data->plus == 1 || data->space == 1) // if we need a plus sign or a space
 			{
-				if (data->plus == 1) // if we need a plus sign
-				{
+				if (data->plus == 1)
 					ft_pf_putchar('+', data);
-					data->width--;
-				}
-				else if (data->space == 1) // if we need a space
-				{
+				else if (data->space == 1)
 					ft_pf_putchar(' ', data);
-					data->width--;
-				}
+				data->width--;
 			}
 			data->width = data->width - data->precision;
 			data->precision = data->precision - ft_strlen(sign_dec_int);

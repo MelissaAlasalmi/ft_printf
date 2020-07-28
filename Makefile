@@ -6,7 +6,7 @@
 #    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/07/20 19:43:21 by malasalm         ###   ########.fr        #
+#    Updated: 2020/07/28 15:37:30 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,8 +71,8 @@ $(NAME):
 
 exe:
 	make -C libft
-	gcc $(CFLAGS) -c $(MAINC) $(SRCS) $(INCS)
-	gcc $(CFLAGS) $(INCS) $(MAINO) $(OBJS) $(LIB) -o $(NAME)
+	gcc -c $(MAINC) $(SRCS) $(INCS)
+	gcc $(INCS) $(MAINO) $(OBJS) $(LIB) -o $(NAME)
 	rm -f $(OBJS) $(MAINO)
 
 .PHONY: clean fclean re all
