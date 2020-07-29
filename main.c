@@ -171,117 +171,214 @@ int	main(void)
 	// printf("\n");
 
 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	// */
- 	// printf("SIMPLE STRING WITH d FLAG left align no width\n");
-	// printf("   printf:%-d\n", 12443);
-	// ft_printf("ft_printf:%-d\n", 12443);
-	// printf("\n");
+ 	** ****************** Simple string with %d flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH d FLAG left align no width\n");
+	printf("   printf:%-d\n", 12443);
+	ft_printf("ft_printf:%-d\n", 12443);
+	printf("\n");
 
-	// /*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width (pos)\n");
-	// printf("   printf:%-08d|\n", 83);
-	// ft_printf("ft_printf:%-08d|\n", 83);
-	// printf("\n");
+	/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width (pos)\n");
+	printf("   printf:%-8d|\n", 83);
+	ft_printf("ft_printf:%-8d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width (neg)\n");
-	// printf("   printf:%-08d|\n", -83);
-	// ft_printf("ft_printf:%-08d|\n", -83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width (neg)\n");
+	printf("   printf:%-8d|\n", -83);
+	ft_printf("ft_printf:%-8d|\n", -83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width + plus(pos)\n");
-	// printf("   printf:%-+08d|\n", 83);
-	// ft_printf("ft_printf:%-+08d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width + plus(pos)\n");
+	printf("   printf:%-+8d|\n", 83);
+	ft_printf("ft_printf:%-+8d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width + space(pos)\n");
-	// printf("   printf:%- 08d|\n", 83);
-	// ft_printf("ft_printf:%- 08d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width + space(pos)\n");
+	printf("   printf:%- 8d|\n", 83);
+	ft_printf("ft_printf:%- 8d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width & prec (pos)\n");
-	// printf("   printf:%-08.5d|\n", 83);
-	// ft_printf("ft_printf:%-08.5d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width & prec (pos)\n");
+	printf("   printf:%-8.5d|\n", 83);
+	ft_printf("ft_printf:%-8.5d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + width & prec (neg)\n");
-	// printf("   printf:%-08.5d|\n", -83);
-	// ft_printf("ft_printf:%-08.5d|\n", -83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + width & prec (neg)\n");
+	printf("   printf:%-8.5d|\n", -83);
+	ft_printf("ft_printf:%-8.5d|\n", -83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + with & prec + plus(pos)\n");
-	// printf("   printf:%-+08.5d|\n", 83);
-	// ft_printf("ft_printf:%-+08.5d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + with & prec + plus(pos)\n");
+	printf("   printf:%-+8.5d|\n", 83);
+	ft_printf("ft_printf:%-+8.5d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + with & prec + space(pos)\n");
-	// printf("   printf:%- 08.5d|\n", 83);
-	// ft_printf("ft_printf:%- 08.5d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + with & prec + space(pos)\n");
+	printf("   printf:%- 8.5d|\n", 83);
+	ft_printf("ft_printf:%- 8.5d|\n", 83);
+	printf("\n");
 
 
-	// 		/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + prec (pos)\n");
-	// printf("   printf:%-0.5d|\n", 83);
-	// ft_printf("ft_printf:%-0.5d|\n", 83);
-	// printf("\n");
+			/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + prec (pos)\n");
+	printf("   printf:%-.5d|\n", 83);
+	ft_printf("ft_printf:%-.5d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + prec (neg)\n");
-	// printf("   printf:%-0.5d|\n", -83);
-	// ft_printf("ft_printf:%-0.5d|\n", -83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + prec (neg)\n");
+	printf("   printf:%-.5d|\n", -83);
+	ft_printf("ft_printf:%-.5d|\n", -83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + prec + plus(pos)\n");
-	// printf("   printf:%-+0.5d|\n", 83);
-	// ft_printf("ft_printf:%-+0.5d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + prec + plus(pos)\n");
+	printf("   printf:%-+.5d|\n", 83);
+	ft_printf("ft_printf:%-+.5d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	//  */
- 	// printf("SIMPLE STRING WITH d left align + prec + space(pos)\n");
-	// printf("   printf:%-0 .5d|\n", 83);
-	// ft_printf("ft_printf:%-0 .5d|\n", 83);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d left align + prec + space(pos)\n");
+	printf("   printf:%- .5d|\n", 83);
+	ft_printf("ft_printf:%- .5d|\n", 83);
+	printf("\n");
 
-	// 	/*
- 	// ** ****************** Simple string with %d flag ******************
- 	// */
- 	// printf("SIMPLE STRING WITH d FLAG right align no width\n");
-	// printf("   printf:%d\n", 12443);
-	// ft_printf("ft_printf:%d\n", 12443);
-	// printf("\n");
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	*/
+ 	printf("SIMPLE STRING WITH d FLAG right align no width\n");
+	printf("   printf:%d\n", 12443);
+	ft_printf("ft_printf:%d\n", 12443);
+	printf("\n");
+
+	/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width (pos)\n");
+	printf("   printf:%8d|\n", 83);
+	ft_printf("ft_printf:%8d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width (neg)\n");
+	printf("   printf:%8d|\n", -83);
+	ft_printf("ft_printf:%8d|\n", -83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width + plus(pos)\n");
+	printf("   printf:%+8d|\n", 83);
+	ft_printf("ft_printf:%+8d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width + space(pos)\n");
+	printf("   printf:% 8d|\n", 83);
+	ft_printf("ft_printf:% 8d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width & prec (pos)\n");
+	printf("   printf:%8.5d|\n", 83);
+	ft_printf("ft_printf:%8.5d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width & prec (neg)\n");
+	printf("   printf:%8.5d|\n", -83);
+	ft_printf("ft_printf:%8.5d|\n", -83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + with & prec + plus(pos)\n");
+	printf("   printf:%+8.5d|\n", 83);
+	ft_printf("ft_printf:%+8.5d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + with & prec + space(pos)\n");
+	printf("   printf:% 8.5d|\n", 83);
+	ft_printf("ft_printf:% 8.5d|\n", 83);
+	printf("\n");
+
+
+			/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + prec (pos)\n");
+	printf("   printf:%.5d|\n", 83);
+	ft_printf("ft_printf:%.5d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + prec (neg)\n");
+	printf("   printf:%.5d|\n", -83);
+	ft_printf("ft_printf:%.5d|\n", -83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + prec + plus(pos)\n");
+	printf("   printf:%+.5d|\n", 83);
+	ft_printf("ft_printf:%+.5d|\n", 83);
+	printf("\n");
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + prec + space(pos)\n");
+	printf("   printf:% .5d|\n", 83);
+	ft_printf("ft_printf:% .5d|\n", 83);
+	printf("\n");
 
 	/*
  	** ****************** Simple string with %d flag ******************
@@ -315,70 +412,6 @@ int	main(void)
 	ft_printf("ft_printf:% 08d|\n", 83);
 	printf("\n");
 
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + width & prec (pos)\n");
-	printf("   printf:%08.5d|\n", 83);
-	ft_printf("ft_printf:%08.5d|\n", 83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + width & prec (neg)\n");
-	printf("   printf:%08.5d|\n", -83);
-	ft_printf("ft_printf:%08.5d|\n", -83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + with & prec + plus(pos)\n");
-	printf("   printf:%+08.5d|\n", 83);
-	ft_printf("ft_printf:%+08.5d|\n", 83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + with & prec + space(pos)\n");
-	printf("   printf:% 08.5d|\n", 83);
-	ft_printf("ft_printf:% 08.5d|\n", 83);
-	printf("\n");
-
-
-			/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + prec (pos)\n");
-	printf("   printf:%0.5d|\n", 83);
-	ft_printf("ft_printf:%0.5d|\n", 83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + prec (neg)\n");
-	printf("   printf:%0.5d|\n", -83);
-	ft_printf("ft_printf:%0.5d|\n", -83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + prec + plus(pos)\n");
-	printf("   printf:%+0.5d|\n", 83);
-	ft_printf("ft_printf:%+0.5d|\n", 83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
- 	printf("SIMPLE STRING WITH d right align + prec + space(pos)\n");
-	printf("   printf:% 0.5d|\n", 83);
-	ft_printf("ft_printf:% 0.5d|\n", 83);
-	printf("\n");
 
 	// /*
  	// ** ****************** Simple string with %d flag + extra text ******************

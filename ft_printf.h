@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 17:55:26 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/07/29 16:59:24 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef	struct	s_printf
 	int			L;
 	int			printf;
 	char		*nformat;
-	intmax_t	value;
+	int			value;
 }				t_printf;
 
 void		teststruct_before(t_printf *data);
