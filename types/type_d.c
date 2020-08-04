@@ -44,35 +44,32 @@ void	type_d(va_list args, t_printf *data)
 	sign_dec_int = ft_itoa(data->value);
 	if (data->value < 0 && data->plus == 1)
 		data->plus = 0;
-	if (data->minus == 1) // left justify!
-	{	
-		if (data->decimal == 0) // if there's only width or no width
-		{
-			if (data->plus == 1 || data->space == 1 || data->value < 0) // if we need a plus sign or a space
-			{
-				sign_dec_int = ft_putsign(data, sign_dec_int);
-				data->width--;
-			}
-			ft_pf_putstr(sign_dec_int, data); // prints even if there's no width
-			data->width = data->width - ft_strlen(sign_dec_int); // but if there is ...
-			ft_putspaces(data->width, data);
-		}
-		else // if there's both width and precision or only prec
-		{
-			if (data->precision < (int)ft_strlen(sign_dec_int))
-				data->precision = ft_strlen(sign_dec_int);
-			if (data->plus == 1 || data->space == 1 || data->value < 0)
-			{
-				sign_dec_int = ft_putsign(data, sign_dec_int);
-				data->width--;
-			}
-			data->width = data->width - data->precision;
-			data->precision = data->precision - ft_strlen(sign_dec_int);
-			ft_putzeros(data->precision, data);
-			ft_pf_putstr(sign_dec_int, data);
-			ft_putspaces(data->width, data);		
-		}
-	}
+	// if (data->minus == 1) // left justify!
+	// {	
+	// 	if (data->plus == 1 || data->space == 1 || data->value < 0)
+	// 		{
+	// 			sign_dec_int = ft_putsign(data, sign_dec_int);
+	// 			data->width--;
+	// 			data->sign = 1;
+	// 		}
+	// 	if (data->decimal == 0) // if there's only width or no width
+	// 	{
+	// 		ft_pf_putstr(sign_dec_int, data); // prints even if there's no width
+	// 		data->width = data->width - ft_strlen(sign_dec_int); // but if there is ...
+	// 		ft_putspaces(data->width, data);
+	// 	}
+	// 	else // if there's both width and precision or only prec
+	// 	{
+	// 		data->width = data->width - data->precision;
+	// 		if (data->sign == 1)
+	// 			data->precision--;
+	// 		else
+	// 			data->precision = data->precision - ft_strlen(sign_dec_int);
+	// 		ft_putzeros(data->precision, data);
+	// 		ft_pf_putstr(sign_dec_int, data);
+	// 		ft_putspaces(data->width, data);		
+	// 	}
+	// }
 	
 	else // right justify!
 	{
@@ -113,5 +110,4 @@ void	type_d(va_list args, t_printf *data)
 			ft_pf_putstr(sign_dec_int, data);
 		}
 	}
-// 	
 }

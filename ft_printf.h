@@ -38,6 +38,7 @@ typedef	struct	s_printf
 	int			printf;
 	char		*nformat;
 	int			value;
+	int 		sign;
 }				t_printf;
 
 void		teststruct_before(t_printf *data);

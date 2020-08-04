@@ -35,6 +35,7 @@ t_printf		*initialize(void)
 	data->printf = 0;
 	data->nformat = NULL;
 	data->value = 0;
+	data->sign = 0;
 	return (data);
 }
 
@@ -56,5 +57,6 @@ void	re_initialize(t_printf *data)
 	data->L = 0;
 	data->printf = 0;
 	data->value = 0;
+	data->sign = 0;
 }
 
