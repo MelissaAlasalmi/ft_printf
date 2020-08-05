@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_to_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/24 17:12:13 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/05 16:31:55 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_printf	format_to_struct(t_printf *data)
 	else if (c >= 48 && c <= 57 && data->decimal == 1)
 	{
 		data->precision = ft_atoi(data->nformat);
-		data->nformat += ft_intlen(data->width);
+		data->nformat += ft_intlen(data->precision);
 	}
 	else if (c == 'h' || c == 'l' || c == 'L')
 		length(c, data);

@@ -413,6 +413,25 @@ int	main(void)
 	printf("\n");
 
 
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width & prec (neg)\n");
+	printf("   printf:|%8.5d|\n", -83);
+	ft_printf("ft_printf:|%8.5d|\n", -83);
+	printf("\n");
+
+
+		/*
+ 	** ****************** Simple string with %d flag ******************
+ 	 */
+ 	printf("SIMPLE STRING WITH d right align + width & prec (neg)\n");
+	printf("   printf:|%-123.5d|\n", -83);
+	ft_printf("ft_printf:|%-123.5d|\n", -83);
+	printf("\n");
+
+
+
 	// /*
  	// ** ****************** Simple string with %d flag + extra text ******************
  	// */

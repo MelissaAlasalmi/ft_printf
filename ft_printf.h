@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/29 16:59:24 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/05 16:25:18 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		re_initialize(t_printf *data);
 void 		length(char flag, t_printf *data);
 void		amplifiers(char flag, t_printf *data);
 t_printf 	format_to_struct(t_printf *data);
-t_printf	output(va_list args, t_printf *data);
+t_printf	*output(va_list args, t_printf *data);
 void		ft_pf_putchar(char c, t_printf *data);
 void		ft_pf_putstr(char *str, t_printf *data);
 void		type_c(va_list args, t_printf *data);

@@ -6,12 +6,12 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 15:38:56 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/05 16:27:55 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-t_printf	output_numerics(va_list args, t_printf *data)
+t_printf	*output_numerics(va_list args, t_printf *data)
 {
 	if (*data->nformat == 'd')
 		type_d(args, data);
@@ -27,10 +27,10 @@ t_printf	output_numerics(va_list args, t_printf *data)
 		type_X(args, data);
 	// else if (*data->nformat == 'f')
 	// 	type_f(args, data);
-	return (*data);
+	return (data);
 }
 
-t_printf	output(va_list args, t_printf *data)
+t_printf	*output(va_list args, t_printf *data)
 {
 	if (*data->nformat == 'c')
 		type_c(args, data);
@@ -38,7 +38,5 @@ t_printf	output(va_list args, t_printf *data)
 		type_s(args, data);
 	else if (*data->nformat == 'p')
 		type_p(args, data);
-	else 
-		output_numerics(args, data);
-	return (*data);
+	return (output_numerics(args, data));
 }
