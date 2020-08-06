@@ -89,21 +89,8 @@ void	type_d(va_list args, t_printf *data)
 		else // if there's both width and precision or only prec
 		{
 			if (data->precision < (int)ft_strlen(sign_dec_int))
-			{
-				if (data->sign == 1)
-					data->precision = (int)ft_strlen(sign_dec_int) - 1;
-				else
-					data->precision = (int)ft_strlen(sign_dec_int);
-			}
-			if (data->sign == 1 && data->width == 0)
-			{
-				if (data->sign == 1)
-					data->precision++;
-				data->precision--;
-			}
-			else
-				data->width--;
-			ft_putspaces((data->width - data->precision), data);
+				data->precision = (int)ft_strlen(sign_dec_int) - data->sign;
+			ft_putspaces((data->width - (data->precision + data->sign)), data);
 			if (data->sign == 1)
 				sign_dec_int = ft_putsign(data, sign_dec_int);
 			ft_putzeros((data->precision - ft_strlen(sign_dec_int)), data);
