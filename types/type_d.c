@@ -12,29 +12,6 @@
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-char	*ft_putsign(t_printf *data, char *sign_dec_int)
-{
-	int i;
-
-	i = 0;
-	if (data->value < 0)
-	{
-		ft_pf_putchar('-', data);
-		while (sign_dec_int[i] != '\0')
-		{
-			sign_dec_int[i] = sign_dec_int[i + 1];
-			i++;
-		}
-	}
-	else
-	{
-		if (data->plus == 1)
-			ft_pf_putchar('+', data);
-		else if (data->space == 1)
-			ft_pf_putchar(' ', data);
-	}
-	return(sign_dec_int);
-}
 
 void	type_d(va_list args, t_printf *data)
 {
@@ -51,26 +28,18 @@ void	type_d(va_list args, t_printf *data)
 	if (data->minus == 1) // left justify!
 	{	
 		if (data->sign == 1)
-			{
-				sign_dec_int = ft_putsign(data, sign_dec_int);
-				data->width--;
-			}
-		if (data->decimal == 0) // if there's only width or no width
 		{
-			ft_pf_putstr(sign_dec_int, data); // prints even if there's no width
-			ft_putspaces(data->width - ft_strlen(sign_dec_int), data);
+			sign_dec_int = ft_putsign(data, sign_dec_int);
+			data->width--;
 		}
-		else // if there's both width and precision or only prec
-		{
-			if (data->precision < (int)ft_strlen(sign_dec_int))
-				data->width = data->width - ft_strlen(sign_dec_int);
-			else
-				data->width = data->width - data->precision;
-			data->precision = data->precision - ft_strlen(sign_dec_int);
-			ft_putzeros(data->precision, data);
-			ft_pf_putstr(sign_dec_int, data);
-			ft_putspaces(data->width, data);		
-		}
+		if (data->precision < (int)ft_strlen(sign_dec_int))
+			data->width = data->width - ft_strlen(sign_dec_int);
+		else
+			data->width = data->width - data->precision;
+		data->precision = data->precision - ft_strlen(sign_dec_int);
+		ft_putzeros(data->precision, data);
+		ft_pf_putstr(sign_dec_int, data);
+		ft_putspaces(data->width, data);		
 	}
 	else // right justify!
 	{
@@ -86,22 +55,20 @@ void	type_d(va_list args, t_printf *data)
 				sign_dec_int = ft_putsign(data, sign_dec_int);
 			if (data->zero == 1)
 				ft_putzeros(data->width - (ft_strlen(sign_dec_int) + data->sign), data);
-			ft_pf_putstr(sign_dec_int, data);
 		}
 		else // if there's both width and precision or only prec
 		{
 			if (data->precision < (int)ft_strlen(sign_dec_int))
 			{
+				data->precision = (int)ft_strlen(sign_dec_int);
 				if (data->value < 0)
-					data->precision = (int)ft_strlen(sign_dec_int) - data->sign;
-				else
-					data->precision = (int)ft_strlen(sign_dec_int);
+					data->precision--;					
 			}
-			ft_putspaces((data->width - (data->precision + data->sign)), data);
+			ft_putspaces(data->width - (data->precision + data->sign), data);
 			if (data->sign == 1)
 				sign_dec_int = ft_putsign(data, sign_dec_int);
 			ft_putzeros(data->precision - ft_strlen(sign_dec_int), data);
-			ft_pf_putstr(sign_dec_int, data);		
-		}
+			}
+		ft_pf_putstr(sign_dec_int, data);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/29 16:59:33 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/06 16:53:09 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	signed_converter(va_list args, t_printf *data)
 {
-	if (data->hh != 0)			
+	if (data->hh == 1)			
 		data->value = (char)va_arg(args, void*);
-	else if (data->h != 0)
+	else if (data->h == 1)
 		data->value = (short)va_arg(args, void*);
-	else if (data->l != 0)
+	else if (data->l == 1)
 		data->value = (long)va_arg(args, void*);
-	else if (data->ll != 0)
+	else if (data->ll == 1)
 		data->value = (long long)va_arg(args, void*);
 	else
 		data->value = (int)va_arg(args, void*);	
@@ -28,13 +28,13 @@ void	signed_converter(va_list args, t_printf *data)
 
 void	unsigned_converter(va_list args, t_printf *data)
 {
-	if (data->hh != 0)			
+	if (data->hh == 1)			
 		data->value = (unsigned char)va_arg(args, void*);
-	else if (data->h != 0)
+	else if (data->h == 1)
 		data->value = (unsigned short)va_arg(args, void*);
-	else if (data->l != 0)
+	else if (data->l == 1)
 		data->value = (unsigned long)va_arg(args, void*);
-	else if (data->ll != 0)
+	else if (data->ll == 1)
 		data->value = (unsigned long long)va_arg(args, void*);
 	else
 		data->value = (unsigned long long)va_arg(args, void*);		

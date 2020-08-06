@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type_o.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 17:57:48 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/06 18:13:43 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-//Covers { #, -, width value} 
-// To go: { 0, +, space, ., precision value, hh, h, l , ll, L}
 
 void	type_o(va_list args, t_printf *data)
 {
@@ -21,21 +18,61 @@ void	type_o(va_list args, t_printf *data)
 	
 	unsigned_converter(args, data);
 	base = ft_itoabase(data->value, 8);
-	if (data->hash != 0)
-		ft_pf_putchar('0', data);
-	if (data->minus != 0)
-	{
+	if (data->value < 0 && data->plus == 1)
+		data->plus = 0;
+	if (data->value == 0 && (data->hash == 1 || (data->decimal == 1 && data->precision == 0)))
+		base = "";
+	if (data->plus == 1 || data->space == 1 || data->value < 0)
+		data->sign = 1;
+	if (data->minus == 1) // left justify!
+	{	
+		if (data->hash == 1 || data->sign == 1)
+		{
+			if (data->hash == 1)
+				ft_pf_putchar('0', data);
+			else
+				base = ft_putsign(data, base);
+			data->width--;
+		}
+		if (data->precision < (int)ft_strlen(base))
+			data->width = data->width - ft_strlen(base);
+		else
+			data->width = data->width - data->precision;
+		data->precision = data->precision - ft_strlen(base);
+		ft_putzeros(data->precision, data);
 		ft_pf_putstr(base, data);
-		data->width = data->width - ft_strlen(base);
 		ft_putspaces(data->width, data);
 	}
-	else if (data->width > (int)ft_strlen(base))
+	else // right justify!
 	{
-		data->width = data->width - ft_strlen(base);
-		ft_putspaces(data->width, data);
+		if (data->decimal == 0)  // if there's only width or no width
+		{
+			if (data->zero == 0)
+			{
+				if (data->value < 0)
+					data->width++;
+				ft_putspaces(data->width - (ft_strlen(base) + (data->sign + data->hash)), data);
+			}
+			if (data->sign == 1)
+				base = ft_putsign(data, base);
+			if (data->zero == 1)
+				ft_putzeros(data->width - (ft_strlen(base) + (data->sign + data->hash)), data);
+		}
+		else // if there's both width and precision or only prec
+		{
+			if (data->precision < (int)ft_strlen(base))
+			{
+				data->precision = (int)ft_strlen(base);
+				if (data->value < 0)
+					data->precision--;					
+			}
+			ft_putspaces(data->width - (data->precision + data->sign), data);
+			if (data->sign == 1)
+				base = ft_putsign(data, base);
+			ft_putzeros(data->precision - (ft_strlen(base) + data->hash), data);
+		}
+		if (data->hash != 0)
+			ft_pf_putchar('0', data);
 		ft_pf_putstr(base, data);
 	}
-	else
-		ft_pf_putstr(base, data);
-    //teststruct_during(data);
 }
