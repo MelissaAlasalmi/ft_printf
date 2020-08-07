@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 17:28:48 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 17:43:08 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	type_u(va_list args, t_printf *data)
 	char *value;
 
 	unsigned_converter(args, data);
-	value = ft_itoa(data->value);
-	if (data->value == 0 && data->decimal == 1 && data->precision == 0)
+	value = ft_itoa(data->ivalue);
+	if (data->ivalue == 0 && data->decimal == 1 && data->precision == 0)
 		value = "";
 	if (data->minus == 1) // left justify!
 	{

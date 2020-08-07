@@ -6,38 +6,70 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 14:35:26 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 18:11:37 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	signed_converter(va_list args, t_printf *data)
+char	*signed_converter(va_list args, t_printf *data)
 {
-	if (data->hh == 1)			
-		data->value = (char)va_arg(args, void*);
+	char *cvalue;
+	if (data->hh == 1)
+	{
+		data->ivalue = (char)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else if (data->h == 1)
-		data->value = (short)va_arg(args, void*);
+	{
+		data->ivalue = (short)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else if (data->l == 1)
-		data->value = (long)va_arg(args, void*);
+	{
+		data->lvalue = (long)va_arg(args, long);
+		cvalue = ft_itoa(data->lvalue);
+	}
 	else if (data->ll == 1)
-		data->value = (long long)va_arg(args, void*);
+	{
+		data->llvalue = (long long)va_arg(args, void*);
+		cvalue = ft_itoa(data->llvalue);
+	}
 	else
-		data->value = (int)va_arg(args, void*);
-	if (data->value < 0)
-		data->sign = 1;
+	{
+		data->ivalue = (int)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
+	return(cvalue);
 }
 
-void	unsigned_converter(va_list args, t_printf *data)
+char	*unsigned_converter(va_list args, t_printf *data)
 {
-	if (data->hh == 1)			
-		data->value = (unsigned char)va_arg(args, void*);
+	char *cvalue;
+	if (data->hh == 1)
+	{		
+		data->ivalue = (unsigned char)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else if (data->h == 1)
-		data->value = (unsigned short)va_arg(args, void*);
+	{
+		data->ivalue = (unsigned short)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else if (data->l == 1)
-		data->value = (unsigned long)va_arg(args, void*);
+	{
+		data->ivalue = (unsigned long)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else if (data->ll == 1)
-		data->value = (unsigned long long)va_arg(args, void*);
+	{
+		data->ivalue = (unsigned long long)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
 	else
-		data->value = (unsigned long long)va_arg(args, void*);		
+	{
+		data->ivalue = (unsigned long long)va_arg(args, void*);
+		cvalue = ft_itoa(data->ivalue);
+	}
+	return(cvalue);	
 }

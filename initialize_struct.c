@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:44 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 11:39:05 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 17:47:36 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ t_printf		*initialize(void)
 	data->L = 0;
 	data->printf = 0;
 	data->nformat = NULL;
-	data->value = 0;
+	data->ivalue = 0;
+	data->lvalue = 0;
+	data->llvalue = 0;
 	data->sign = 0;
 	return (data);
 }
@@ -56,7 +58,9 @@ void	re_initialize(t_printf *data)
 	data->ll = 0;
 	data->L = 0;
 	data->printf = 0;
-	data->value = 0;
+	data->ivalue = 0;
+	data->lvalue = 0;
+	data->llvalue = 0;
 	data->sign = 0;
 }
 

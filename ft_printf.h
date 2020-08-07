@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/06 16:59:01 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 18:03:41 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ typedef	struct	s_printf
 	int			L;
 	int			printf;
 	char		*nformat;
-	int			value;
+	int			ivalue;
+	long		lvalue;
+	long long	llvalue;
 	int 		sign;
 }				t_printf;
 
@@ -58,7 +60,6 @@ t_printf 	format_to_struct(t_printf *data);
 t_printf	*output(va_list args, t_printf *data);
 void		ft_pf_putchar(char c, t_printf *data);
 void		ft_pf_putstr(char *str, t_printf *data);
-char		*ft_putsign(t_printf *data, char *valuestr);
 void		type_c(va_list args, t_printf *data);
 void		type_s(va_list args, t_printf *data);
 void		type_p(va_list args, t_printf *data);
@@ -72,7 +73,7 @@ void		type_X(va_list args, t_printf *data);
 void		ft_putspaces(int d, t_printf *data);
 void		ft_putzeros(int d, t_printf *data);
 void		ft_pf_toupper(char *base, t_printf *data);
-void		signed_converter(va_list args, t_printf *data);
-void		unsigned_converter(va_list args, t_printf *data);
+char 		*signed_converter(va_list args, t_printf *data);
+char		*unsigned_converter(va_list args, t_printf *data);
 
 #endif
