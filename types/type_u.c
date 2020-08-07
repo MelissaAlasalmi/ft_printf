@@ -6,14 +6,11 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/06 20:01:16 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 14:26:33 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-//Covers { 0, -, width value} 
-// To go: { +, space, ., precision value, hh, h, l , ll, L}
 
 void	type_u(va_list args, t_printf *data)
 {
@@ -29,8 +26,7 @@ void	type_u(va_list args, t_printf *data)
 			data->width = data->width - ft_strlen(unsign_dec_int);
 		else
 			data->width = data->width - data->precision;
-		data->precision = data->precision - ft_strlen(unsign_dec_int);
-		ft_putzeros(data->precision, data);
+		ft_putzeros(data->precision - ft_strlen(unsign_dec_int), data);
 		ft_pf_putstr(unsign_dec_int, data);
 		ft_putspaces(data->width, data);		
 	}

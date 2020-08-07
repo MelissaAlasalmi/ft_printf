@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/05 16:31:55 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 14:31:04 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,15 @@ void		amplifiers(char flag, t_printf *data)
 	else if (flag == '-')
 		data->minus = 1;
 	else if (flag == '+')
+	{
 		data->plus = 1;
+		data->sign = 1;
+	}
 	else if (flag == ' ')
+	{
 		data->space = 1;
+		data->sign = 1;
+	}
 }
 
 t_printf	format_to_struct(t_printf *data)

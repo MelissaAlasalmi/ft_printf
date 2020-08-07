@@ -425,14 +425,6 @@ int	main(void)
 		/*
  	** ****************** Simple string with %d flag ******************
  	 */
- 	printf("SIMPLE STRING WITH d right align + width & prec (neg)\n");
-	printf("   printf:|%-123.5d|\n", -83);
-	ft_printf("ft_printf:|%-123.5d|\n", -83);
-	printf("\n");
-
-		/*
- 	** ****************** Simple string with %d flag ******************
- 	 */
  	printf("SIMPLE STRING WITH d right align + with & prec + plus(pos)\n");
 	printf("   printf:%+8.d|\n", 0);
 	ft_printf("ft_printf:%+8.d|\n", 0);

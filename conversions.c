@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/06 16:53:09 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 14:35:26 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	signed_converter(va_list args, t_printf *data)
 	else if (data->ll == 1)
 		data->value = (long long)va_arg(args, void*);
 	else
-		data->value = (int)va_arg(args, void*);	
+		data->value = (int)va_arg(args, void*);
+	if (data->value < 0)
+		data->sign = 1;
 }
 
 void	unsigned_converter(va_list args, t_printf *data)
