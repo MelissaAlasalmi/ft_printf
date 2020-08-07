@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 14:26:33 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/07 17:28:48 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	type_u(va_list args, t_printf *data)
 {
-	char *unsign_dec_int;
+	char *value;
 
 	unsigned_converter(args, data);
-	unsign_dec_int = ft_itoa(data->value);
+	value = ft_itoa(data->value);
 	if (data->value == 0 && data->decimal == 1 && data->precision == 0)
-		unsign_dec_int = "";
+		value = "";
 	if (data->minus == 1) // left justify!
 	{
-		if (data->precision < (int)ft_strlen(unsign_dec_int))
-			data->width = data->width - ft_strlen(unsign_dec_int);
+		if (data->precision < (int)ft_strlen(value))
+			data->width = data->width - ft_strlen(value);
 		else
 			data->width = data->width - data->precision;
-		ft_putzeros(data->precision - ft_strlen(unsign_dec_int), data);
-		ft_pf_putstr(unsign_dec_int, data);
+		ft_putzeros(data->precision - ft_strlen(value), data);
+		ft_pf_putstr(value, data);
 		ft_putspaces(data->width, data);		
 	}
 	else // right justify!
@@ -35,17 +35,17 @@ void	type_u(va_list args, t_printf *data)
 		if (data->decimal == 0)  // if there's only width or no width
 		{
 			if (data->zero == 0)
-				ft_putspaces(data->width - ft_strlen(unsign_dec_int), data);
+				ft_putspaces(data->width - ft_strlen(value), data);
 			if (data->zero == 1)
-				ft_putzeros(data->width - ft_strlen(unsign_dec_int), data);
+				ft_putzeros(data->width - ft_strlen(value), data);
 		}
 		else // if there's both width and precision or only prec
 		{
-			if (data->precision < (int)ft_strlen(unsign_dec_int))
-				data->precision = (int)ft_strlen(unsign_dec_int);
+			if (data->precision < (int)ft_strlen(value))
+				data->precision = (int)ft_strlen(value);
 			ft_putspaces((data->width - data->precision), data);
-			ft_putzeros((data->precision - ft_strlen(unsign_dec_int)), data);
+			ft_putzeros((data->precision - ft_strlen(value)), data);
 			}
-		ft_pf_putstr(unsign_dec_int, data);
+		ft_pf_putstr(value, data);
 	}
 }

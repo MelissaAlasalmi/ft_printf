@@ -1,33 +1,32 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   type_d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/22 21:11:29 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/07 17:30:28 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_d_right_prec(char *sign_dec_int, t_printf *data)
+void	ft_d_right_prec(char *value, t_printf *data)
 {
-	if (data->precision < (int)ft_strlen(sign_dec_int))
+	if (data->precision < (int)ft_strlen(value))
 	{
-		data->precision = (int)ft_strlen(sign_dec_int);
+		data->precision = (int)ft_strlen(value);
 		if (data->value < 0)
-			data->precision--;					
+			data->precision--;
 	}
 	ft_putspaces(data->width - (data->precision + data->sign), data);
 	if (data->sign == 1)
-		sign_dec_int = ft_putsign(data, sign_dec_int);
-	ft_putzeros(data->precision - ft_strlen(sign_dec_int), data);
+		value = ft_putsign(data, value);
+	ft_putzeros(data->precision - ft_strlen(value), data);
 }
 
-void	ft_d_right_justify(char *sign_dec_int, t_printf *data)
+void	ft_d_right_justify(char *value, t_printf *data)
 {
 	if (data->decimal == 0)
 	{
@@ -35,39 +34,38 @@ void	ft_d_right_justify(char *sign_dec_int, t_printf *data)
 		{
 			if (data->value < 0)
 				data->width++;
-			ft_putspaces(data->width - (ft_strlen(sign_dec_int) + data->sign), data);
+			ft_putspaces(data->width - (ft_strlen(value) + data->sign), data);
 		}
 		if (data->sign == 1)
-			sign_dec_int = ft_putsign(data, sign_dec_int);
+			value = ft_putsign(data, value);
 		if (data->zero == 1)
-			ft_putzeros(data->width - (ft_strlen(sign_dec_int) + data->sign), data);
+			ft_putzeros(data->width - (ft_strlen(value) + data->sign), data);
 	}
 	else
-		ft_d_right_prec(sign_dec_int, data);
-	
-	ft_pf_putstr(sign_dec_int, data);
+		ft_d_right_prec(value, data);
+	ft_pf_putstr(value, data);
 }
 
 void	type_d(va_list args, t_printf *data)
 {
-	char *sign_dec_int;
+	char *value;
 
 	signed_converter(args, data);
-	sign_dec_int = ft_itoa(data->value);
+	value = ft_itoa(data->value);
 	if (data->value == 0 && data->decimal == 1 && data->precision == 0)
-		sign_dec_int = "";
+		value = "";
 	if (data->minus == 1)
-	{	
+	{
 		if (data->sign == 1)
-			sign_dec_int = ft_putsign(data, sign_dec_int);
-		if (data->precision < (int)ft_strlen(sign_dec_int))
-			data->width = data->width - (ft_strlen(sign_dec_int) + data->sign);
+			value = ft_putsign(data, value);
+		if (data->precision < (int)ft_strlen(value))
+			data->width = data->width - (ft_strlen(value) + data->sign);
 		else
 			data->width = data->width - (data->precision + data->sign);
-		ft_putzeros(data->precision - ft_strlen(sign_dec_int), data);
-		ft_pf_putstr(sign_dec_int, data);
-		ft_putspaces(data->width, data);		
+		ft_putzeros(data->precision - ft_strlen(value), data);
+		ft_pf_putstr(value, data);
+		ft_putspaces(data->width, data);
 	}
 	else
-		ft_d_right_justify(sign_dec_int, data);
+		ft_d_right_justify(value, data);
 }
