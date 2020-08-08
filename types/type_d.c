@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 18:10:44 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/08 14:58:09 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void	type_d(va_list args, t_printf *data)
 	char *value;
 
 	value = signed_converter(args, data);
-	if (data->ivalue < 0)
+	if (value[0] == '-' && data->space == 1)
+		data->space = 0;
+	if (value[0] == '-')
 		data->sign = 1;
-	if (data->ivalue == 0 && data->decimal == 1 && data->precision == 0)
-		value = "";
 	if (data->minus == 1)
 	{
 		if (data->sign == 1)

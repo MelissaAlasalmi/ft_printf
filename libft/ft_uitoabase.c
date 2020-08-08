@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoabase.c                                      :+:      :+:    :+:   */
+/*   ft_uitoabase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 10:38:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/08 14:20:32 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/08 14:32:12 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_findbase(long long value, int base, char *str, int i)
+static void ft_findbase(unsigned long long value, int base, char *str, int i)
 {
-    int 		modindex;
-	long long   basestart;
+    int 					modindex;
+	unsigned long long   	basestart;
 		
     modindex = 0;
 	basestart = 1;
@@ -42,7 +42,7 @@ static void ft_findbase(long long value, int base, char *str, int i)
 	}
 }
 
-char	*ft_itoabase(long long value, int base)
+char	*ft_uitoabase(unsigned long long value, int base)
 {
 	char	    *str;
 	int		    i;
@@ -54,11 +54,6 @@ char	*ft_itoabase(long long value, int base)
 	i = 0;
     if (value == 0)
 		str[0] = '0';
-	else if (value < 0)
-    {
-		str[0] = '-';
-        i = 1;
-    }
     else
     	ft_findbase(value, base, str, i);
 	return (str);

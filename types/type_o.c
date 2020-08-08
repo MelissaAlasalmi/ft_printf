@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 17:43:12 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/08 14:55:47 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ void	type_o(va_list args, t_printf *data)
 {
 	char *base;
 	
-	unsigned_converter(args, data);
-	base = ft_itoabase(data->ivalue, 8);
-	if (data->ivalue == 0 && data->decimal == 1 && data->precision == 0)
-		base = "";
+	base = unsigned_converter(args, data, 8);
 	if (data->decimal == 1 && data->precision == 0)
 		data->decimal = 0;
 	// if (data->ivalue == 0 && data->hash == 1 && data->decimal == 1 && data->precision == 0)

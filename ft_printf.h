@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 18:03:41 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/08 13:59:46 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ void		ft_putspaces(int d, t_printf *data);
 void		ft_putzeros(int d, t_printf *data);
 void		ft_pf_toupper(char *base, t_printf *data);
 char 		*signed_converter(va_list args, t_printf *data);
-char		*unsigned_converter(va_list args, t_printf *data);
+char		*unsigned_converter(va_list args, t_printf *data, int base);
 
 #endif
