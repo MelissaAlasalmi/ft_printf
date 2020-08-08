@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/08 15:08:38 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/08 15:32:58 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ char	*unsigned_converter(va_list args, t_printf *data, int base)
 		cvalue = "";
 		data->precision--;
 	}
+	if (data->decimal == 1 && data->precision == 0)
+		data->decimal = 0;
 	return(cvalue);	
 }
