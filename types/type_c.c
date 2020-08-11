@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 17:55:59 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/11 12:05:34 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-// Covers { -, width value} 
-// To go: {All done!}
 
 void	type_c(va_list args, t_printf *data)
 {
@@ -32,9 +29,6 @@ void	type_c(va_list args, t_printf *data)
 		ft_putspaces(data->width, data);
 		ft_pf_putchar(c, data);
 	}
-	// if (data->asterisk != 0)
-	// 	// add * format
 	else
 		ft_pf_putchar(c, data);
-    //teststruct_during(data);
 }

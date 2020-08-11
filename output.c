@@ -6,14 +6,14 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:00:55 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 12:05:19 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 void	type_percent(t_printf *data)
 {
-	if (data->minus == 1) // left justify!
+	if (data->minus == 1)
 	{
 		if (data->precision < 1)
 			data->width--;
@@ -23,16 +23,16 @@ void	type_percent(t_printf *data)
 		ft_pf_putchar('%', data);
 		ft_putspaces(data->width, data);		
 	}
-	else // right justify!
+	else
 	{
-		if (data->decimal == 0)  // if there's only width or no width
+		if (data->decimal == 0)
 		{
 			if (data->zero == 0)
 				ft_putspaces(data->width - 1, data);
 			if (data->zero == 1)
 				ft_putzeros(data->width - 1, data);
 		}
-		else // if there's both width and precision or only prec
+		else
 		{
 			if (data->precision < 1)
 				data->precision = 1;

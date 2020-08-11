@@ -300,11 +300,12 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + prec (.3)\n");
-	printf("   printf:%.3s|\n", NULL);
-	ft_printf("ft_printf:%.3s|\n", NULL);
+	printf("   printf:%x\n", 100);
+	ft_printf("ft_printf:%x\n", 100);
 	printf("\n");
 
-	
+	printf("itoa test:%s\n", ft_itoabase(10, 10));	
+	printf("itoa test:%s\n", ft_uitoabase(10, 10));	
 	// /*
  	// ** ****************** Simple string with %s flag + extra text ******************
  	// */

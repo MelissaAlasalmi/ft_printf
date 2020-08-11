@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/08 15:00:45 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 12:28:38 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*ft_putsign(t_printf *data, char *valuestr)
 		else if (data->space == 1)
 			ft_pf_putchar(' ', data);
 	}
-	return(valuestr);
+	return (valuestr);
 }
 
 static void	ft_right_prec(char *value, t_printf *data)
@@ -70,7 +70,7 @@ static void	ft_right_justify(char *value, t_printf *data)
 	ft_pf_putstr(value, data);
 }
 
-void	type_i(va_list args, t_printf *data)
+void		type_i(va_list args, t_printf *data)
 {
 	char *value;
 
