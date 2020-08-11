@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/07/23 17:58:14 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/11 10:53:31 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,56 @@
 void	type_s(va_list args, t_printf *data)
 {
 	char *str;
+	long temp;
 	
 	str = va_arg(args, char*);
+	temp = data->width;
+	if (data->decimal == 1 && data->precision == 0)
+		str = "";
 	if (data->minus != 0)
 	{
-		ft_pf_putstr(str, data);
-		data->width = data->width - ft_strlen(str);
+		if (data->precision > 0)
+		{
+			while (data->precision > 0 && *str != '\0')
+			{
+				ft_pf_putchar(*str, data);
+				str++;
+				data->precision--;
+				data->width--;
+			}
+		}
+		else
+		{
+			ft_pf_putstr(str, data);
+			data->width = data->width - ft_strlen(str);
+		}
 		ft_putspaces(data->width, data);
 	}
-	else if (data->width > (int)ft_strlen(str))
-	{
-		data->width = data->width - ft_strlen(str);
-		ft_putspaces(data->width, data);
-		ft_pf_putstr(str, data);
-	}
-	// if (data->asterisk != 0)
-	// 	// add * format
 	else
-		ft_pf_putstr(str, data);
-    //teststruct_during(data);
+	{
+		if (data->width > (int)ft_strlen(str))
+			data->width = data->width - ft_strlen(str);
+		else if (data->width <= (int)ft_strlen(str) && data->precision == 0)
+			data->width = 0;
+		else
+			data->width = data->width - data->precision;
+		if (data->decimal == 1 && data->width > 0 && temp > (data->width + data->precision))
+		{
+			temp = temp - (data->width + data->precision);
+			ft_putspaces(temp, data);
+		}
+		ft_putspaces(data->width, data);
+		if (data->precision > 0)
+		{
+			while (data->precision > 0 && *str != '\0')
+			{
+				ft_pf_putchar(*str, data);
+				str++;
+				data->precision--;
+				data->width--;
+			}
+		}
+		else
+			ft_pf_putstr(str, data);
+	}
 }
