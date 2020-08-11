@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:47:32 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 16:21:50 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*signed_converter(va_list args, t_printf *data)
 		data->ivalue = (int)va_arg(args, void*);
 		cvalue = ft_itoa(data->ivalue);
 	}
-	if (cvalue[0] == '0' && data->decimal == 1 && data->precision == 0)
+	if (*cvalue == '0' && data->decimal == 1 && data->precision == 0)
 		cvalue = "";
 	return(cvalue);
 }
@@ -73,12 +73,5 @@ char	*unsigned_converter(va_list args, t_printf *data, int base)
 		data->llvalue = (unsigned long long)va_arg(args, void*);
 		cvalue = ft_uitoabase(data->llvalue, base);
 	}
-	if (cvalue[0] == '0' && data->decimal == 1 && data->precision == 0)
-	{
-		cvalue = "";
-		data->precision--;
-	}
-	if (data->decimal == 1 && data->precision == 0)
-		data->decimal = 0;
 	return(cvalue);	
 }
