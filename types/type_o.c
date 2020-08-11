@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/08 15:26:19 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 15:31:49 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	type_o(va_list args, t_printf *data)
 	char *base;
 	
 	base = unsigned_converter(args, data, 8);
-	if (data->minus == 1) // left justify!
+	if (data->hash == 1 && data->decimal == 0 && *base == '0')
+		data->hash = 0;
+	if (data->minus == 1)
 	{	
 		if (data->hash == 1)
 			ft_pf_putchar('0', data);
@@ -29,16 +31,16 @@ void	type_o(va_list args, t_printf *data)
 		ft_pf_putstr(base, data);
 		ft_putspaces(data->width, data);
 	}
-	else // right justify!
+	else
 	{
-		if (data->decimal == 0)  // if there's only width or no width
+		if (data->decimal == 0)
 		{
 			if (data->zero == 0)
 				ft_putspaces(data->width - (ft_strlen(base) + data->hash), data);
 			if (data->zero == 1)
 				ft_putzeros(data->width - (ft_strlen(base) + data->hash), data);
 		}
-		else // if there's both width and precision or only prec
+		else
 		{
 			if (data->precision < (int)ft_strlen(base))
 			{
