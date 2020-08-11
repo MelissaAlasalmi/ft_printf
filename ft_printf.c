@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/05 16:32:16 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 11:50:58 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_typeparser(t_printf *data, va_list args)
 	char	*all;
 	int		i;
 
-	all = "cspdiouxXf";
+	all = "cspdiouxXf%";
 	i = 0;
-	while (i < 10)
+	while (i < 11)
 	{
 		if (*data->nformat == all[i])
 		{

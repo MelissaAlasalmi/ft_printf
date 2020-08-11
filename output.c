@@ -6,11 +6,43 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/06 18:43:50 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 12:00:55 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+void	type_percent(t_printf *data)
+{
+	if (data->minus == 1) // left justify!
+	{
+		if (data->precision < 1)
+			data->width--;
+		else
+			data->width = data->width - data->precision;
+		ft_putzeros(data->precision - 1, data);
+		ft_pf_putchar('%', data);
+		ft_putspaces(data->width, data);		
+	}
+	else // right justify!
+	{
+		if (data->decimal == 0)  // if there's only width or no width
+		{
+			if (data->zero == 0)
+				ft_putspaces(data->width - 1, data);
+			if (data->zero == 1)
+				ft_putzeros(data->width - 1, data);
+		}
+		else // if there's both width and precision or only prec
+		{
+			if (data->precision < 1)
+				data->precision = 1;
+			ft_putspaces((data->width - data->precision), data);
+			ft_putzeros((data->precision - 1), data);
+		}
+		ft_pf_putchar('%', data);
+	}
+}
+
 t_printf	*output_numerics(va_list args, t_printf *data)
 {
 	if (*data->nformat == 'd')
@@ -27,6 +59,8 @@ t_printf	*output_numerics(va_list args, t_printf *data)
 		type_X(args, data);
 	// else if (*data->nformat == 'f')
 	// 	type_f(args, data);
+	else if (*data->nformat == '%')
+		type_percent(data);
 	return (data);
 }
 
