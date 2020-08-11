@@ -6,25 +6,23 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 10:53:31 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 11:07:39 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-// Covers { -, width value} 
-// To go: {All done!}
 
 void	type_s(va_list args, t_printf *data)
 {
 	char *str;
 	long temp;
 	
-	str = va_arg(args, char*);
+	if ((str = va_arg(args, char*)) == NULL)
+		str = "(null)";
 	temp = data->width;
 	if (data->decimal == 1 && data->precision == 0)
 		str = "";
-	if (data->minus != 0)
+	if (data->minus == 1)
 	{
 		if (data->precision > 0)
 		{

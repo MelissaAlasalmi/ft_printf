@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/08 15:25:37 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/11 11:01:41 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	type_u(va_list args, t_printf *data)
 {
 	char *value;
+	long temp;
 
 	value = unsigned_converter(args, data, 10);
+	temp = data->width;
 	if (data->minus == 1) // left justify!
 	{
 		if (data->precision < (int)ft_strlen(value))

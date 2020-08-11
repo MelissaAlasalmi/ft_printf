@@ -6,7 +6,7 @@ int	main(void)
 	// char *str;
 	// int i;
 
-	// str = "hello";
+	// str = null;
 	// i = 0;
 	// c = str[i];
 
@@ -174,24 +174,24 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	*/
  	printf("SIMPLE STRING WITH s FLAG left align no width\n");
-	printf("   printf:%7.5s|\n", "bombastic");
-	ft_printf("ft_printf:%7.5s|\n", "bombastic");
+	printf("   printf:%7.5s|\n", NULL);
+	ft_printf("ft_printf:%7.5s|\n", NULL);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + width (8)\n");
-	printf("   printf:%-8s|\n", "hello");
-	ft_printf("ft_printf:%-8s|\n", "hello");
+	printf("   printf:%-8s|\n", NULL);
+	ft_printf("ft_printf:%-8s|\n", NULL);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + width & prec (8.5)\n");
-	printf("   printf:%-8.5s|\n", "hello");
-	ft_printf("ft_printf:%-8.5s|\n", "hello");
+	printf("   printf:%-8.5s|\n", NULL);
+	ft_printf("ft_printf:%-8.5s|\n", NULL);
 	printf("\n");
 
 
@@ -199,56 +199,56 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + width & prec (8.10)\n");
-	printf("   printf:%-8.10s|\n", "hello");
-	ft_printf("ft_printf:%-8.10s|\n", "hello");
+	printf("   printf:%-8.10s|\n", NULL);
+	ft_printf("ft_printf:%-8.10s|\n", NULL);
 	printf("\n");
 
 			/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + width & prec (8.3)\n");
-	printf("   printf:%-8.3s|\n", "hello");
-	ft_printf("ft_printf:%-8.3s|\n", "hello");
+	printf("   printf:%-8.3s|\n", NULL);
+	ft_printf("ft_printf:%-8.3s|\n", NULL);
 	printf("\n");
 
 			/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + prec (.5)\n");
-	printf("   printf:%-.5s|\n", "hello");
-	ft_printf("ft_printf:%-.5s|\n", "hello");
+	printf("   printf:%-.5s|\n", NULL);
+	ft_printf("ft_printf:%-.5s|\n", NULL);
 	printf("\n");
 
 				/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + prec (.10)\n");
-	printf("   printf:%-.10s|\n", "hello");
-	ft_printf("ft_printf:%-.10s|\n", "hello");
+	printf("   printf:%-.10s|\n", NULL);
+	ft_printf("ft_printf:%-.10s|\n", NULL);
 	printf("\n");
 
 				/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s left align + prec (.3)\n");
-	printf("   printf:%-.3s|\n", "hello");
-	ft_printf("ft_printf:%-.3s|\n", "hello");
+	printf("   printf:%-.3s|\n", NULL);
+	ft_printf("ft_printf:%-.3s|\n", NULL);
 	printf("\n");
 
 		/*
  	** ****************** Simple string with %s flag ******************
  	*/
  	printf("SIMPLE STRING WITH s FLAG right align no width\n");
-	printf("   printf:%s\n", "hello");
-	ft_printf("ft_printf:%s\n", "hello");
+	printf("   printf:%s\n", NULL);
+	ft_printf("ft_printf:%s\n", NULL);
 	printf("\n");
 
 	/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + width (8)\n");
-	printf("   printf:%8s|\n", "hello");
-	ft_printf("ft_printf:%8s|\n", "hello");
+	printf("   printf:%8s|\n", NULL);
+	ft_printf("ft_printf:%8s|\n", NULL);
 	printf("\n");
 
 
@@ -256,16 +256,16 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + width & prec (8.5)\n");
-	printf("   printf:%8.5s|\n", "hello");
-	ft_printf("ft_printf:%8.5s|\n", "hello");
+	printf("   printf:%8.5s|\n", NULL);
+	ft_printf("ft_printf:%8.5s|\n", NULL);
 	printf("\n");
 
 			/*
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + width & prec (8.10)\n");
-	printf("   printf:%8.10s|\n", "hello");
-	ft_printf("ft_printf:%8.10s|\n", "hello");
+	printf("   printf:%8.10s|\n", NULL);
+	ft_printf("ft_printf:%8.10s|\n", NULL);
 	printf("\n");
 
 
@@ -273,8 +273,8 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + width & prec (8.3)\n");
-	printf("   printf:%8.3s|\n", "hello");
-	ft_printf("ft_printf:%8.3s|\n", "hello");
+	printf("   printf:%8.3s|\n", NULL);
+	ft_printf("ft_printf:%8.3s|\n", NULL);
 	printf("\n");
 
 
@@ -282,8 +282,8 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + prec (.5)\n");
-	printf("   printf:%.5s|\n", "hello");
-	ft_printf("ft_printf:%.5s|\n", "hello");
+	printf("   printf:%.5s|\n", NULL);
+	ft_printf("ft_printf:%.5s|\n", NULL);
 	printf("\n");
 
 
@@ -291,8 +291,8 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + prec (.10)\n");
-	printf("   printf:%.10s|\n", "hello");
-	ft_printf("ft_printf:%.10s|\n", "hello");
+	printf("   printf:%.10s|\n", NULL);
+	ft_printf("ft_printf:%.10s|\n", NULL);
 	printf("\n");
 
 
@@ -300,8 +300,8 @@ int	main(void)
  	** ****************** Simple string with %s flag ******************
  	 */
  	printf("SIMPLE STRING WITH s right align + prec (.3)\n");
-	printf("   printf:%.3s|\n", "hello");
-	ft_printf("ft_printf:%.3s|\n", "hello");
+	printf("   printf:%.3s|\n", NULL);
+	ft_printf("ft_printf:%.3s|\n", NULL);
 	printf("\n");
 
 	
