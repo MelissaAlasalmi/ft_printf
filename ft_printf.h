@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 10:38:00 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/14 14:55:52 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef	struct	s_printf
 	int			ivalue;
 	long		lvalue;
 	long long	llvalue;
+	long double ldvalue;
 	int 		sign;
 }				t_printf;
 
@@ -69,11 +70,12 @@ void		type_o(va_list args, t_printf *data);
 void		type_u(va_list args, t_printf *data);
 void		type_x(va_list args, t_printf *data);
 void		type_X(va_list args, t_printf *data);
-//void		type_f(va_list args, t_printf *data);
+void		type_f(va_list args, t_printf *data);
 void		ft_putspaces(int d, t_printf *data);
 void		ft_putzeros(int d, t_printf *data);
 void		ft_pf_toupper(char *base, t_printf *data);
 char 		*signed_converter(va_list args, t_printf *data);
 char		*unsigned_converter(va_list args, t_printf *data, int base);
+char		*ft_ftoa(t_printf *data);
 
 #endif
