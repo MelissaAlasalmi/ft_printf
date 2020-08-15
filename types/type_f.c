@@ -16,8 +16,10 @@ void	type_f(va_list args, t_printf *data)
 {
 	char *dec_float_point;
 
-	data->ldvalue = (double)va_arg(args, double);
-	dec_float_point = ft_ftoa(data);
+	data->ldvalue = (long double)va_arg(args, long double);
+	printf("fvalue: %Lf\n", data->ldvalue);
+	dec_float_point = ft_ftoa(data->ldvalue, data->precision, data->decimal);
 	printf("decfloatpoint: %s\n", dec_float_point);
+
 	ft_pf_putstr(dec_float_point, data);
 }

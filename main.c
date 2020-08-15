@@ -2,8 +2,7 @@
 
 int	main(void)
 {
-	double floatf = 3423.34325;
-	printf("printfs long double:%f\n", floatf);
-	ft_printf("original long double:%f\n", floatf);
+	long double floatf = 3423.34325;
+	ft_printf("%Lf\n", floatf);
 	return (0);
 }

@@ -13,61 +13,50 @@
 
 #include "ft_printf.h"
 
-long double		addfive(long double value, t_printf *data)
+static long double	rounding(long double fvalue, int precision)
 {
-	int			i;
-	long double	five;
+	long double	rounded;
+	int			dec;
 
-	i = 0;
-	five = 0.5;
-	while (i < data->precision)
+	rounded = 0.5;
+	dec = 0;
+	if (fvalue < 0)
+		rounded = rounded * -1;
+	while (dec < precision)
 	{
-		five /= 10;
-		i++;
+		rounded = rounded / 10.0;
+		dec++;
 	}
-	return (value + five);
+	return (rounded);
 }
 
-char			*roundup(long double postdecimal, int start, char *str, t_printf *data)
+char				*ft_ftoa(long double fvalue, int precision, int dec)
 {
-	int			i;
+	unsigned long long	value;
+	char				*before_dec;
+	char				*after_dec;
+	char				*res;
+	int					i;
 
-	i = 0;
-	while (i < data->precision)
+	fvalue = fvalue + rounding(fvalue, precision);
+	fvalue *= (fvalue < 0) ? -1 : 1;
+	value = fvalue;
+	before_dec = ft_itoa(value);
+	fvalue = precision ? (fvalue - value) : 0;
+	after_dec = ft_strnew(precision + 2);
+	after_dec[0] = (dec) ? '.' : '\0';
+	i = 1;
+	while (precision > 0)
 	{
-		postdecimal = 10;
-		str[i + start] = (intmax_t)postdecimal + '0';
-		postdecimal--;
+		fvalue = fvalue * 10;
+		value = fvalue;
+		fvalue = fvalue - value;
+		after_dec[i] = value + '0';
 		i++;
+		precision--;
 	}
-	str[i + start] = '\0';
-	return (str);
-}
-
-char			*ft_ftoa(t_printf *data)
-{
-	int			i;
-	intmax_t	predecimal;
-	long double	postdecimal;
-	char		*str;
-	char		*temp;
-
-	if (data->ldvalue < 0)
-		data->ldvalue = data->ldvalue * -1;
-	data->ldvalue = addfive(data->ldvalue, data);
-	predecimal = (intmax_t)data->ldvalue;
-	temp = ft_itoa(predecimal);
-	postdecimal = data->ldvalue - (long double)predecimal;
-	if (!(str = malloc(sizeof(char) * ft_strlen(temp) + data->precision + 2)))
-		return (NULL);
-	str = ft_strcpy(str, temp);
-	free(temp);
-	if (data->precision > 0 || data->hash == 1)
-	{
-		i = ft_strlen(str);
-		str[i] = '.';
-		i++;
-		return (roundup(postdecimal, i, str, data));
-	}
-	return (str);
+	res = ft_strjoin(before_dec, after_dec);
+	free(after_dec);
+	free(before_dec);
+	return (res);
 }
