@@ -3,6 +3,7 @@
 int	main(void)
 {
 	long double floatf = 3423.34325;
-	ft_printf("%Lf\n", floatf);
+	printf("%.5Lf\n", floatf);
+	ft_printf("%.5f\n", floatf);
 	return (0);
 }
