@@ -3,75 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   conversions.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 16:21:50 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 16:04:31 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*signed_converter(va_list args, t_printf *data)
+static char	*convert_sign(va_list args, t_printf *data, char *str)
 {
-	char *cvalue;
 	if (data->hh == 1)
 	{
 		data->ivalue = (char)va_arg(args, void*);
-		cvalue = ft_itoa(data->ivalue);
+		str = ft_itoa(data->ivalue);
 	}
 	else if (data->h == 1)
 	{
 		data->ivalue = (short)va_arg(args, void*);
-		cvalue = ft_itoa(data->ivalue);
+		str = ft_itoa(data->ivalue);
 	}
 	else if (data->l == 1)
 	{
 		data->lvalue = (long)va_arg(args, void*);
-		cvalue = ft_itoa(data->lvalue);
+		str = ft_itoa(data->lvalue);
 	}
 	else if (data->ll == 1)
 	{
 		data->llvalue = (long long)va_arg(args, void*);
-		cvalue = ft_itoa(data->llvalue);
+		str = ft_itoa(data->llvalue);
 	}
+	return (str);
+}
+
+char		*signed_converter(va_list args, t_printf *data)
+{
+	char *str;
+	
+	str = NULL;
+	if (data->hh == 1 || data->h == 1 || data->l == 1 || data->ll == 1)
+		str = convert_sign(args, data, str);
 	else
 	{
 		data->ivalue = (int)va_arg(args, void*);
-		cvalue = ft_itoa(data->ivalue);
+		str = ft_itoa(data->ivalue);
 	}
-	if (*cvalue == '0' && data->decimal == 1 && data->precision == 0)
-		cvalue = "";
-	return(cvalue);
+	if (*str == '0' && data->decimal == 1 && data->precision == 0)
+		str = "";
+	return(str);
 }
 
-char	*unsigned_converter(va_list args, t_printf *data, int base)
+static char	*convert_unsign(va_list args, t_printf *data, int base, char *str)
 {
-	char *cvalue;
 	if (data->hh == 1)
 	{		
 		data->ivalue = (unsigned char)va_arg(args, void*);
-		cvalue = ft_uitoabase(data->ivalue, base);
+		str = ft_uitoabase(data->ivalue, base);
 	}
 	else if (data->h == 1)
 	{
 		data->ivalue = (unsigned short)va_arg(args, void*);
-		cvalue = ft_uitoabase(data->ivalue, base);
+		str = ft_uitoabase(data->ivalue, base);
 	}
 	else if (data->l == 1)
 	{
 		data->lvalue = (unsigned long)va_arg(args, void*);
-		cvalue = ft_uitoabase(data->lvalue, base);
+		str = ft_uitoabase(data->lvalue, base);
 	}
 	else if (data->ll == 1)
 	{
 		data->llvalue = (unsigned long long)va_arg(args, void*);
-		cvalue = ft_uitoabase(data->llvalue, base);
+		str = ft_uitoabase(data->llvalue, base);
 	}
+	return(str);
+}
+
+char		*unsigned_converter(va_list args, t_printf *data, int base)
+{
+	char *str;
+	
+	str = NULL;
+	if (data->hh == 1 || data->h == 1 || data->l == 1 || data->ll == 1)
+		str = convert_unsign(args, data, base, str);
 	else
 	{
 		data->llvalue = (unsigned long long)va_arg(args, void*);
-		cvalue = ft_uitoabase(data->llvalue, base);
+		str = ft_uitoabase(data->llvalue, base);
 	}
-	return(cvalue);	
+	return(str);	
 }

@@ -3,45 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   type_d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:28:16 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:33:10 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static char	*ft_putsign(t_printf *data, char *valuestr)
-{
-	int i;
-
-	i = 0;
-	if (data->ivalue < 0)
-	{
-		ft_pf_putchar('-', data);
-		while (valuestr[i] != '\0')
-		{
-			valuestr[i] = valuestr[i + 1];
-			i++;
-		}
-	}
-	else
-	{
-		if (data->plus == 1)
-			ft_pf_putchar('+', data);
-		else if (data->space == 1)
-			ft_pf_putchar(' ', data);
-	}
-	return (valuestr);
-}
 
 static void	ft_right_prec(char *value, t_printf *data)
 {
 	if (data->precision < (int)ft_strlen(value))
 	{
 		data->precision = (int)ft_strlen(value);
-		if (data->ivalue < 0)
+		if (value[0] == '-')
 			data->precision--;
 	}
 	ft_putspaces(data->width - (data->precision + data->sign), data);
@@ -56,7 +32,7 @@ static void	ft_right_justify(char *value, t_printf *data)
 	{
 		if (data->zero == 0)
 		{
-			if (data->ivalue < 0)
+			if (value[0] == '-')
 				data->width++;
 			ft_putspaces(data->width - (ft_strlen(value) + data->sign), data);
 		}

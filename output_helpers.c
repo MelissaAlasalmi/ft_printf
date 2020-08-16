@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output_helpers.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 19:07:41 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 17:45:49 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:33:25 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,26 @@ void	ft_putspaces(int d, t_printf *data)
 	}
 }
 
-void	ft_pf_toupper(char *base, t_printf *data)
+char	*ft_putsign(t_printf *data, char *valuestr)
 {
 	int i;
-	char c;
-	
+
 	i = 0;
-	while (base[i] != '\0')
-    {
-		c = ft_toupper(base[i]);
-        ft_pf_putchar(c, data);
-        i++;
-    }
+	if (valuestr[0] == '-')
+	{
+		ft_pf_putchar('-', data);
+		while (valuestr[i] != '\0')
+		{
+			valuestr[i] = valuestr[i + 1];
+			i++;
+		}
+	}
+	else
+	{
+		if (data->plus == 1)
+			ft_pf_putchar('+', data);
+		else if (data->space == 1)
+			ft_pf_putchar(' ', data);
+	}
+	return (valuestr);
 }

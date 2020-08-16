@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   type_upperX.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/14 12:29:30 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:32:56 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+void	ft_pf_toupper(char *base, t_printf *data)
+{
+	int i;
+	char c;
+	
+	i = 0;
+	while (base[i] != '\0')
+    {
+		c = ft_toupper(base[i]);
+        ft_pf_putchar(c, data);
+        i++;
+    }
+}
 
 void	type_X(va_list args, t_printf *data)
 {

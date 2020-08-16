@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:05:34 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:16:24 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,11 @@ void	type_c(va_list args, t_printf *data)
 	if (data->minus != 0)
 	{
 		ft_pf_putchar(c, data);
-		data->width = data->width - 1;
-		ft_putspaces(data->width, data);
-	}
-	else if (data->width != 0)
-	{
-		data->width = data->width - 1;
-		ft_putspaces(data->width, data);
-		ft_pf_putchar(c, data);
+		ft_putspaces((data->width - 1), data);
 	}
 	else
+	{
+		ft_putspaces((data->width - 1), data);
 		ft_pf_putchar(c, data);
+	}
 }

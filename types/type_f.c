@@ -6,35 +6,11 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 14:39:04 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 15:38:42 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
-static char	*ft_putsign(t_printf *data, char *floatstr)
-{
-	int i;
-
-	i = 0;
-	if (data->ldvalue < 0)
-	{
-		ft_pf_putchar('-', data);
-		while (floatstr[i] != '\0')
-		{
-			floatstr[i] = floatstr[i + 1];
-			i++;
-		}
-	}
-	else
-	{
-		if (data->plus == 1)
-			ft_pf_putchar('+', data);
-		else if (data->space == 1)
-			ft_pf_putchar(' ', data);
-	}
-	return (floatstr);
-}
 
 void	type_f(va_list args, t_printf *data)
 {
@@ -74,7 +50,7 @@ void	type_f(va_list args, t_printf *data)
 		if (data->precision < (int)ft_strlen(floatstr))
 		{
 			data->precision = (int)ft_strlen(floatstr);
-			if (data->ldvalue < 0)
+			if (floatstr[0] == '-')
 				data->precision--;
 		}
 		if (data->zero == 1)

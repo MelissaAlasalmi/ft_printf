@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 13:26:06 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 15:35:10 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		type_X(va_list args, t_printf *data);
 void		type_f(va_list args, t_printf *data);
 void		ft_putspaces(int d, t_printf *data);
 void		ft_putzeros(int d, t_printf *data);
-void		ft_pf_toupper(char *base, t_printf *data);
+char		*ft_putsign(t_printf *data, char *valuestr);
 char 		*signed_converter(va_list args, t_printf *data);
 char		*unsigned_converter(va_list args, t_printf *data, int base);
 char		*ft_ftoa(long double fvalue, int precision);
