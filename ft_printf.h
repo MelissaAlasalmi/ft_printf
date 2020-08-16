@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 10:43:40 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 13:26:06 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef	struct	s_printf
 	long long	llvalue;
 	long double ldvalue;
 	int 		sign;
+	int			dot;
 }				t_printf;
 
 void		teststruct_before(t_printf *data);

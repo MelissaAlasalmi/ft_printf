@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:44 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 10:45:54 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 13:26:27 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_printf		*initialize(void)
 	data->llvalue = 0;
 	data->ldvalue = 0;
 	data->sign = 0;
+	data->dot = 0;
 	return (data);
 }
 
@@ -64,5 +65,6 @@ void	re_initialize(t_printf *data)
 	data->llvalue = 0;
 	data->ldvalue = 0;
 	data->sign = 0;
+	data->dot = 0;
 }
 
