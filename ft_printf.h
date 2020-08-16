@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 15:35:10 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:09:25 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void		ft_putzeros(int d, t_printf *data);
 char		*ft_putsign(t_printf *data, char *valuestr);
 char 		*signed_converter(va_list args, t_printf *data);
 char		*unsigned_converter(va_list args, t_printf *data, int base);
+char		*float_converter(va_list args, t_printf *data);
 char		*ft_ftoa(long double fvalue, int precision);
 
 #endif

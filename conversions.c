@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:04:31 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:09:03 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,24 @@ char		*unsigned_converter(va_list args, t_printf *data, int base)
 	{
 		data->llvalue = (unsigned long long)va_arg(args, void*);
 		str = ft_uitoabase(data->llvalue, base);
+	}
+	return(str);	
+}
+
+char		*float_converter(va_list args, t_printf *data)
+{
+	char *str;
+	
+	str = NULL;
+	if (data->L == 1)
+	{
+		data->ldvalue = (long double)va_arg(args, long double);
+		str = ft_ftoa(data->ldvalue, data->precision);
+	}
+	else
+	{
+		data->ldvalue = (double)va_arg(args, double);
+		str = ft_ftoa(data->ldvalue, data->precision);
 	}
 	return(str);	
 }

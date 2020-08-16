@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   type_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:26:13 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 16:20:01 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	ft_right_justify(char *str, t_printf *data, long temp)
+static void	right_justify(char *str, t_printf *data, long temp)
 {
 	if (data->width > (int)ft_strlen(str))
 		data->width = data->width - ft_strlen(str);
@@ -41,7 +41,7 @@ static void	ft_right_justify(char *str, t_printf *data, long temp)
 		ft_pf_putstr(str, data);
 }
 
-static void	ft_left_justify(char *str, t_printf *data)
+static void	left_justify(char *str, t_printf *data)
 {
 	if (data->precision > 0)
 	{
@@ -72,7 +72,7 @@ void		type_s(va_list args, t_printf *data)
 	if (data->decimal == 1 && data->precision == 0)
 		str = "";
 	if (data->minus == 1)
-		ft_left_justify(str, data);
+		left_justify(str, data);
 	else
-		ft_right_justify(str, data, temp);
+		right_justify(str, data, temp);
 }

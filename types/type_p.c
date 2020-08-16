@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 12:11:16 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 16:18:57 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,9 @@ void	type_p(va_list args, t_printf *data)
 		ft_pf_putstr(base, data);
 		ft_putspaces(data->width - (ft_strlen(base) + 2), data);
 	}
-	else if (data->width > (int)(ft_strlen(base) - 2))
-	{
-		ft_putspaces(data->width - (ft_strlen(base) + 2), data);
-		ft_pf_putstr("0x", data);
-		ft_pf_putstr(base, data);
-	}
 	else
 	{
+		ft_putspaces(data->width - (ft_strlen(base) + 2), data);
 		ft_pf_putstr("0x", data);
 		ft_pf_putstr(base, data);
 	}

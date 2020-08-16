@@ -6,13 +6,13 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 15:33:10 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:16:07 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	ft_right_prec(char *value, t_printf *data)
+static void	right_prec(char *value, t_printf *data)
 {
 	if (data->precision < (int)ft_strlen(value))
 	{
@@ -26,7 +26,7 @@ static void	ft_right_prec(char *value, t_printf *data)
 	ft_putzeros(data->precision - ft_strlen(value), data);
 }
 
-static void	ft_right_justify(char *value, t_printf *data)
+static void	right_justify(char *value, t_printf *data)
 {
 	if (data->decimal == 0)
 	{
@@ -42,7 +42,7 @@ static void	ft_right_justify(char *value, t_printf *data)
 			ft_putzeros(data->width - (ft_strlen(value) + data->sign), data);
 	}
 	else
-		ft_right_prec(value, data);
+		right_prec(value, data);
 	ft_pf_putstr(value, data);
 }
 
@@ -68,5 +68,5 @@ void		type_d(va_list args, t_printf *data)
 		ft_putspaces(data->width, data);
 	}
 	else
-		ft_right_justify(value, data);
+		right_justify(value, data);
 }
