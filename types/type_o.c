@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:36:25 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 17:43:24 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ void	type_o(va_list args, t_printf *data)
 		left_justify(base, data);
 	else
 		right_justify(base, data);
+	free(base);
 }

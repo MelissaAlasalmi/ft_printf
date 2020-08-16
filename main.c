@@ -2,6 +2,10 @@
 
 int	main(void)
 {
-	ft_printf("%5.0f\n", 7.5);
-	return (0);
+	char *str;
+	str = "hello";
+	
+	ft_printf("%5.0s\n", str);
+	while (1);
+	//return (0);
 }

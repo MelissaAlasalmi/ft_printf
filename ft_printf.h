@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:09:25 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:42:21 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,8 @@ void		teststruct_before(t_printf *data);
 void		teststruct_during(t_printf *data);
 void		teststruct_after(t_printf *data, int returnvalue);
 int 		ft_printf(const char *restrict format, ...);
-int			ft_preparser(t_printf *data, va_list args);
-void 		ft_percentparser(t_printf *data, va_list args);
-void 		ft_parser(char c, t_printf *data, va_list args);
-int		 	ft_flagparser(t_printf *data, va_list args);
-int		 	ft_typeparser(t_printf *data, va_list args);
 t_printf	*initialize(void);
 void		re_initialize(t_printf *data);
-void 		length(char flag, t_printf *data);
-void		amplifiers(char flag, t_printf *data);
 t_printf 	format_to_struct(t_printf *data);
 t_printf	*output(va_list args, t_printf *data);
 void		ft_pf_putchar(char c, t_printf *data);

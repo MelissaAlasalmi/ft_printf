@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:18:57 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 18:00:48 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void	type_p(va_list args, t_printf *data)
 		ft_pf_putstr("0x", data);
 		ft_pf_putstr(base, data);
 	}
+	free(base);
 }
