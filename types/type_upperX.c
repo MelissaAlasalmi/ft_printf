@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 15:32:56 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:31:08 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,55 @@ void	ft_pf_toupper(char *base, t_printf *data)
     }
 }
 
+static void	right_prec(char *base, t_printf *data)
+{
+	if (data->precision < (int)ft_strlen(base))
+		data->precision = (int)ft_strlen(base);
+	data->width = data->width - (ft_strlen(base) + data->hash);
+	data->precision = data->precision - ft_strlen(base);
+	ft_putspaces(data->width - data->precision, data);
+	if (data->hash == 2)
+		ft_pf_putstr("0X", data);
+	ft_putzeros(data->precision, data);
+}
+
+static void	right_justify(char *base, t_printf *data)
+{
+	if (data->decimal == 0)
+	{
+		if (data->width < (int)ft_strlen(base))
+			data->width = (int)ft_strlen(base);
+		if (data->zero == 1)
+		{
+			if (data->hash == 2)
+				ft_pf_putstr("0X", data);
+			ft_putzeros(data->width - (ft_strlen(base) + data->hash), data);
+		}
+		else
+		{
+			ft_putspaces(data->width - (ft_strlen(base) + data->hash), data);
+				if (data->hash == 2)
+					ft_pf_putstr("0X", data);
+		}
+	}
+	else
+		right_prec(base, data);
+	ft_pf_toupper(base, data);
+}
+
+static void	left_justify(char *base, t_printf *data)
+{	
+	if (data->hash == 2)
+		ft_pf_putstr("0X", data);
+	if (data->precision < (int)ft_strlen(base))
+		data->width = data->width - (ft_strlen(base) + data->hash);
+	else
+		data->width = data->width - (data->precision + data->hash);
+	ft_putzeros(data->precision - ft_strlen(base), data);
+	ft_pf_toupper(base, data);
+	ft_putspaces(data->width, data);
+}
+
 void	type_X(va_list args, t_printf *data)
 {
 	char *base;
@@ -37,48 +86,8 @@ void	type_X(va_list args, t_printf *data)
 		base = "";
 	if (data->hash == 1)
 			data->hash = 2;
-	if (data->minus == 1) // left justify!
-	{	
-		if (data->hash == 2)
-			ft_pf_putstr("0X", data);
-		if (data->precision < (int)ft_strlen(base))
-			data->width = data->width - (ft_strlen(base) + data->hash);
-		else
-			data->width = data->width - (data->precision + data->hash);
-		ft_putzeros(data->precision - ft_strlen(base), data);
-		ft_pf_toupper(base, data);
-		ft_putspaces(data->width, data);
-	}
-	else // right justify!
-	{
-		if (data->decimal == 0)  // if there's only width or no width
-		{
-			if (data->width < (int)ft_strlen(base))
-				data->width = (int)ft_strlen(base);
-			if (data->zero == 1)
-			{
-				if (data->hash == 2)
-					ft_pf_putstr("0X", data);
-				ft_putzeros(data->width - (ft_strlen(base) + data->hash), data);
-			}
-			else
-			{
-				ft_putspaces(data->width - (ft_strlen(base) + data->hash), data);
-					if (data->hash == 2)
-						ft_pf_putstr("0X", data);
-			}
-		}
-		else // if there's both width and precision or only prec
-		{
-			if (data->precision < (int)ft_strlen(base))
-				data->precision = (int)ft_strlen(base);
-			data->width = data->width - (ft_strlen(base) + data->hash);
-			data->precision = data->precision - ft_strlen(base);
-			ft_putspaces(data->width - data->precision, data);
-			if (data->hash == 2)
-				ft_pf_putstr("0X", data);
-			ft_putzeros(data->precision, data);
-		}
-		ft_pf_toupper(base, data);
-	}
+	if (data->minus == 1)
+		left_justify(base, data);
+	else
+		right_justify(base, data);
 }

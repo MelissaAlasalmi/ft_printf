@@ -6,11 +6,30 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 15:11:34 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 16:33:47 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+static void	right_justify(char *value, t_printf *data)
+{
+	if (data->decimal == 0)
+	{
+		if (data->zero == 0)
+			ft_putspaces(data->width - ft_strlen(value), data);
+		if (data->zero == 1)
+			ft_putzeros(data->width - ft_strlen(value), data);
+	}
+	else
+	{
+		if (data->precision < (int)ft_strlen(value))
+			data->precision = (int)ft_strlen(value);
+		ft_putspaces((data->width - data->precision), data);
+		ft_putzeros((data->precision - ft_strlen(value)), data);
+	}
+	ft_pf_putstr(value, data);
+}
 
 void	type_u(va_list args, t_printf *data)
 {
@@ -33,21 +52,5 @@ void	type_u(va_list args, t_printf *data)
 		ft_putspaces(data->width, data);		
 	}
 	else
-	{
-		if (data->decimal == 0)
-		{
-			if (data->zero == 0)
-				ft_putspaces(data->width - ft_strlen(value), data);
-			if (data->zero == 1)
-				ft_putzeros(data->width - ft_strlen(value), data);
-		}
-		else
-		{
-			if (data->precision < (int)ft_strlen(value))
-				data->precision = (int)ft_strlen(value);
-			ft_putspaces((data->width - data->precision), data);
-			ft_putzeros((data->precision - ft_strlen(value)), data);
-		}
-		ft_pf_putstr(value, data);
-	}
+		right_justify(value, data);
 }
