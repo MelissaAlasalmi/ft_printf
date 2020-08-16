@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_u.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 15:34:15 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 14:53:57 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	type_u(va_list args, t_printf *data)
 	char *value;
 
 	value = unsigned_converter(args, data, 10);
+	if (*value == '0' && data->decimal == 1 && data->precision == 0)
+	{
+		value = "";
+		data->precision--;
+	}
 	if (data->minus == 1)
 	{
 		if (data->precision < (int)ft_strlen(value))
@@ -42,7 +47,7 @@ void	type_u(va_list args, t_printf *data)
 				data->precision = (int)ft_strlen(value);
 			ft_putspaces((data->width - data->precision), data);
 			ft_putzeros((data->precision - ft_strlen(value)), data);
-			}
+		}
 		ft_pf_putstr(value, data);
 	}
 }
