@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_to_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/07 14:31:04 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 14:39:11 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ t_printf	format_to_struct(t_printf *data)
 	char c;
 
 	c = *data->nformat;
-	if (c == '#' || c == '0' || c == '-' ||
-		c == '+' || c == ' ')
+	if ((c == '#' || c == '0' || c == '-' ||
+		c == '+' || c == ' ') && data->decimal == 0)
 		amplifiers(c, data);
 	else if (c >= 48 && c <= 57 && data->decimal == 0)
 	{
