@@ -2,8 +2,6 @@
 
 int	main(void)
 {
-	long double floatf = 3423.34325;
-	printf("%.5Lf\n", floatf);
-	ft_printf("%.5f\n", floatf);
+	ft_printf("%f\n", 7.5);
 	return (0);
 }
