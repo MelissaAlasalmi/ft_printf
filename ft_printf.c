@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:24 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 11:50:58 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 19:08:28 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_typeparser(t_printf *data, va_list args)
 	char	*all;
 	int		i;
 
-	all = "cspdiouxXf%";
+	all = "cspdiouxXfb%";
 	i = 0;
-	while (i < 11)
+	while (i < 12)
 	{
 		if (*data->nformat == all[i])
 		{
@@ -97,8 +97,6 @@ int		ft_preparser(t_printf *data, va_list args)
 	return (returnvalue);
 }
 
-// to increment the char in the pointer and not the pointer itself -> *nformat++; this will take the actual letter and increase it by one -> 'a' becomes 'b'
-
 int		ft_printf(const char *format, ...)
 {
 	va_list		args;
@@ -110,7 +108,6 @@ int		ft_printf(const char *format, ...)
 	data->nformat = (char *)format;
 	returnvalue = ft_preparser(data, args);
 	free(data);
-    //teststruct_after(data, returnvalue);
 	va_end(args);
 	return (returnvalue);
 }

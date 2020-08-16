@@ -6,14 +6,13 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:42:21 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 19:24:59 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h> //REMOVE!!!
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -45,9 +44,6 @@ typedef	struct	s_printf
 	int			dot;
 }				t_printf;
 
-void		teststruct_before(t_printf *data);
-void		teststruct_during(t_printf *data);
-void		teststruct_after(t_printf *data, int returnvalue);
 int 		ft_printf(const char *restrict format, ...);
 t_printf	*initialize(void);
 void		re_initialize(t_printf *data);
@@ -65,6 +61,7 @@ void		type_u(va_list args, t_printf *data);
 void		type_x(va_list args, t_printf *data);
 void		type_X(va_list args, t_printf *data);
 void		type_f(va_list args, t_printf *data);
+void		type_b(va_list args, t_printf *data);
 void		ft_putspaces(int d, t_printf *data);
 void		ft_putzeros(int d, t_printf *data);
 char		*ft_putsign(t_printf *data, char *valuestr);

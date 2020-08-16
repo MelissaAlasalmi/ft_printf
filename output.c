@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/14 14:49:53 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 19:10:55 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ t_printf	*output_numerics(va_list args, t_printf *data)
 		type_X(args, data);
 	else if (*data->nformat == 'f')
 		type_f(args, data);
+	else if (*data->nformat == 'b')
+		type_b(args, data);
 	else if (*data->nformat == '%')
 		type_percent(data);
 	return (data);
