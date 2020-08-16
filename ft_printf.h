@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:39 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/15 19:59:03 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 10:43:40 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ typedef	struct	s_printf
 	int			ivalue;
 	long		lvalue;
 	long long	llvalue;
-	float		fvalue;
-	double		dvalue;
 	long double ldvalue;
 	int 		sign;
 }				t_printf;

@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 10:41:14 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/16 11:00:25 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ static char	*ft_putsign(t_printf *data, char *floatstr)
 void	type_f(va_list args, t_printf *data)
 {
 	char *floatstr;
-
-	data->ldvalue = (long double)va_arg(args, long double);
+		data->ldvalue = (double)va_arg(args, double);
 	if (data->precision == 0)
 		data->precision = 6;
 	floatstr = ft_ftoa(data->ldvalue, data->precision);

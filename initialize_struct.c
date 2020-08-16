@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_struct.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:44 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/14 14:48:38 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/16 10:45:54 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ t_printf		*initialize(void)
 	data->ivalue = 0;
 	data->lvalue = 0;
 	data->llvalue = 0;
-	data->fvalue = 0;
-	data->dvalue = 0;
 	data->ldvalue = 0;
 	data->sign = 0;
 	return (data);
@@ -64,8 +62,6 @@ void	re_initialize(t_printf *data)
 	data->ivalue = 0;
 	data->lvalue = 0;
 	data->llvalue = 0;
-	data->fvalue = 0;
-	data->dvalue = 0;
 	data->ldvalue = 0;
 	data->sign = 0;
 }
