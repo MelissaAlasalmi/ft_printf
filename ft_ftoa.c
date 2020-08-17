@@ -3,47 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ftoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 12:48:12 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 16:53:09 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 15:00:24 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-static char 	*neg_zero(char *before_dec)
+static char	*stack_prec(int prec, long double fval, long long val, char *after)
+{
+	int i;
+
+	i = 0;
+	after[i] = '.';
+	i++;
+	while (prec > 0)
+	{
+		fval = fval * 10;
+		val = fval;
+		fval = fval - val;
+		after[i] = val + '0';
+		i++;
+		prec--;
+	}
+	after[i] = '\0';
+	return (after);
+}
+
+static char	*neg_zero(char *before)
 {
 	char	*temp;
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	j = 0;
-	temp = before_dec;
-	before_dec = ft_strnew(ft_strlen(before_dec) + 1);
-	before_dec[i] = '-';
+	temp = before;
+	before = ft_strnew(ft_strlen(before) + 1);
+	before[i] = '-';
 	i++;
 	while (temp[j] != '\0')
 	{
-		before_dec[i] = temp[j];
+		before[i] = temp[j];
 		i++;
 		j++;
 	}
-	return(before_dec);
+	return (before);
 }
 
-long double	rounding(long double fvalue, int precision)
+long double	rounding(long double fval, int prec)
 {
 	long double	rounded;
 	int			dec;
 
 	rounded = 0.5;
 	dec = 0;
-	if (fvalue < 0)
+	if (fval < 0)
 		rounded = rounded * -1;
-	while (dec < precision)
+	while (dec < prec)
 	{
 		rounded = rounded / 10.0;
 		dec++;
@@ -51,41 +70,29 @@ long double	rounding(long double fvalue, int precision)
 	return (rounded);
 }
 
-char		*ft_ftoa(long double fvalue, int precision)
+char		*ft_ftoa(long double fval, int prec)
 {
-	long long			value;
-	char				*before_dec;
-	char				*after_dec;
+	long long			val;
+	char				*before;
+	char				*after;
 	char				*str;
 	int					i;
-	
+
 	i = 0;
-	fvalue = fvalue + rounding(fvalue, precision);
-	value = fvalue;
-	before_dec = ft_itoa(value);
-	if (fvalue < 0 && before_dec[i] != '-')
-		before_dec = neg_zero(before_dec);
-	fvalue = precision ? (fvalue - value) : 0;
-	if (fvalue < 0)
-		fvalue = fvalue * -1;
-	after_dec = ft_strnew(precision + 2);
-	if (precision > 0)
-	{
-		after_dec[i] = '.';
-		i++;
-		while (precision > 0)
-		{
-			fvalue = fvalue * 10;
-			value = fvalue;
-			fvalue = fvalue - value;
-			after_dec[i] = value + '0';
-			i++;
-			precision--;
-		}
-	}
-	after_dec[i] = '\0';
-	str = ft_strjoin(before_dec, after_dec);
-	free(after_dec);
-	free(before_dec);
+	fval = fval + rounding(fval, prec);
+	val = fval;
+	before = ft_itoa(val);
+	if (fval < 0 && before[i] != '-')
+		before = neg_zero(before);
+	fval = prec ? (fval - val) : 0;
+	fval *= (fval < 0) ? -1 : 1;
+	after = ft_strnew(prec + 2);
+	if (prec > 0)
+		after = stack_prec(prec, fval, val, after);
+	else
+		after[i] = '\0';
+	str = ft_strjoin(before, after);
+	free(after);
+	free(before);
 	return (str);
 }
