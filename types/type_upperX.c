@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   type_upperX.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 17:44:11 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:20:22 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_pf_toupper(char *base, t_printf *data)
+void		ft_pf_toupper(char *base, t_printf *data)
 {
-	int i;
-	char c;
-	
+	int		i;
+	char	c;
+
 	i = 0;
 	while (base[i] != '\0')
-    {
+	{
 		c = ft_toupper(base[i]);
-        ft_pf_putchar(c, data);
-        i++;
-    }
+		ft_pf_putchar(c, data);
+		i++;
+	}
 }
 
 static void	right_prec(char *base, t_printf *data)
@@ -53,8 +53,8 @@ static void	right_justify(char *base, t_printf *data)
 		else
 		{
 			ft_putspaces(data->width - (ft_strlen(base) + data->hash), data);
-				if (data->hash == 2)
-					ft_pf_putstr("0X", data);
+			if (data->hash == 2)
+				ft_pf_putstr("0X", data);
 		}
 	}
 	else
@@ -63,7 +63,7 @@ static void	right_justify(char *base, t_printf *data)
 }
 
 static void	left_justify(char *base, t_printf *data)
-{	
+{
 	if (data->hash == 2)
 		ft_pf_putstr("0X", data);
 	if (data->precision < (int)ft_strlen(base))
@@ -75,7 +75,7 @@ static void	left_justify(char *base, t_printf *data)
 	ft_putspaces(data->width, data);
 }
 
-void	type_X(va_list args, t_printf *data)
+void		type_upperx(va_list args, t_printf *data)
 {
 	char *base;
 
@@ -85,10 +85,10 @@ void	type_X(va_list args, t_printf *data)
 	if (*base == '0' && data->decimal == 1 && data->precision == 0)
 		base = "";
 	if (data->hash == 1)
-			data->hash = 2;
+		data->hash = 2;
 	if (data->minus == 1)
 		left_justify(base, data);
 	else
 		right_justify(base, data);
-	free(base);
+	// free(base);
 }

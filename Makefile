@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+         #
+#    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/08/16 19:12:35 by Melissa          ###   ########.fr        #
+#    Updated: 2020/08/17 13:42:48 by malasalm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS = ft_printf.c \
 	   types/type_o.c \
 	   types/type_u.c \
 	   types/type_lowerx.c \
-	   types/type_upperX.c \
+	   types/type_upperx.c \
 	   types/type_f.c \
 	   types/type_b.c \
 	   ft_ftoa.c \
@@ -46,7 +46,7 @@ OBJS = ft_printf.o \
 	   type_o.o \
 	   type_u.o \
 	   type_lowerx.o \
-	   type_upperX.o \
+	   type_upperx.o \
 	   type_f.o \
 	   type_b.o \
 	   ft_ftoa.o \

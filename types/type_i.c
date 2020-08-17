@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_i.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 17:43:01 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 09:17:16 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ void		type_i(va_list args, t_printf *data)
 	}
 	else
 		right_justify(value, data);
-	free(value);
+	//free(value);
 }

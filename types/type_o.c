@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_o.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:27 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 17:43:24 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:14:07 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static void	right_justify(char *base, t_printf *data)
 		if (data->precision < (int)ft_strlen(base))
 		{
 			data->precision = (int)ft_strlen(base);
-			if (data->hash == 1)		
-				data->precision++;	
+			if (data->hash == 1)
+				data->precision++;
 		}
 		ft_putspaces(data->width - data->precision, data);
 		ft_putzeros(data->precision - (ft_strlen(base) + data->hash), data);
@@ -36,9 +36,9 @@ static void	right_justify(char *base, t_printf *data)
 		ft_pf_putchar('0', data);
 	ft_pf_putstr(base, data);
 }
-	
+
 static void	left_justify(char *base, t_printf *data)
-{	
+{
 	if (data->hash == 1)
 		ft_pf_putchar('0', data);
 	if (data->precision < (int)ft_strlen(base))
@@ -50,10 +50,10 @@ static void	left_justify(char *base, t_printf *data)
 	ft_putspaces(data->width, data);
 }
 
-void	type_o(va_list args, t_printf *data)
+void		type_o(va_list args, t_printf *data)
 {
 	char *base;
-	
+
 	base = unsigned_converter(args, data, 8);
 	if (*base == '0' && data->decimal == 1 && data->precision == 0)
 	{
@@ -68,5 +68,5 @@ void	type_o(va_list args, t_printf *data)
 		left_justify(base, data);
 	else
 		right_justify(base, data);
-	free(base);
+	//free(base);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_to_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:10 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 14:39:11 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 13:52:31 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		length(char flag, t_printf *data)
 			data->l = 1;
 	}
 	else if (flag == 'L')
-		data->L = 1;
+		data->upperl = 1;
 }
 
 void		amplifiers(char flag, t_printf *data)
@@ -71,8 +71,6 @@ t_printf	format_to_struct(t_printf *data)
 		data->width = ft_atoi(data->nformat);
 		data->nformat += ft_intlen(data->width);
 	}
-	else if (c == '*')
-		data->asterisk = 1;
 	else if (c == '.')
 		data->decimal = 1;
 	else if (c >= 48 && c <= 57 && data->decimal == 1)

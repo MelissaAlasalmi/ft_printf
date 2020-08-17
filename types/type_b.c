@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 19:08:03 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:10:23 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ static void	right_justify(char *base, t_printf *data)
 		else
 		{
 			ft_putspaces(data->width - (ft_strlen(base) + data->hash), data);
-				if (data->hash == 2)
-					ft_pf_putstr("0b", data);
+			if (data->hash == 2)
+				ft_pf_putstr("0b", data);
 		}
 	}
 	else
 		right_prec(base, data);
 	ft_pf_putstr(base, data);
-}	
+}
 
 static void	left_justify(char *base, t_printf *data)
-{	
+{
 	if (data->hash == 2)
 		ft_pf_putstr("0b", data);
 	if (data->precision < (int)ft_strlen(base))
@@ -61,7 +61,7 @@ static void	left_justify(char *base, t_printf *data)
 	ft_putspaces(data->width, data);
 }
 
-void	type_b(va_list args, t_printf *data)
+void		type_b(va_list args, t_printf *data)
 {
 	char *base;
 
@@ -71,10 +71,10 @@ void	type_b(va_list args, t_printf *data)
 	if (*base == '0' && data->decimal == 1 && data->precision == 0)
 		base = "";
 	if (data->hash == 1)
-			data->hash = 2;
+		data->hash = 2;
 	if (data->minus == 1)
 		left_justify(base, data);
-	else 
+	else
 		right_justify(base, data);
 	free(base);
 }

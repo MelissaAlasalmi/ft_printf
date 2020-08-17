@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_u.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 17:44:01 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:16:01 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	right_justify(char *value, t_printf *data)
 	ft_pf_putstr(value, data);
 }
 
-void	type_u(va_list args, t_printf *data)
+void		type_u(va_list args, t_printf *data)
 {
 	char *value;
 
@@ -49,9 +49,9 @@ void	type_u(va_list args, t_printf *data)
 			data->width = data->width - data->precision;
 		ft_putzeros(data->precision - ft_strlen(value), data);
 		ft_pf_putstr(value, data);
-		ft_putspaces(data->width, data);		
+		ft_putspaces(data->width, data);
 	}
 	else
 		right_justify(value, data);
-	free(value);
+	//free(value);
 }

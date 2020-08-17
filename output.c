@@ -3,15 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:25:58 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 19:10:55 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:08:05 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void	type_percent(t_printf *data)
+
+static void	right_justify(t_printf *data)
+{
+	if (data->decimal == 0)
+	{
+		if (data->zero == 0)
+			ft_putspaces(data->width - 1, data);
+		if (data->zero == 1)
+			ft_putzeros(data->width - 1, data);
+	}
+	else
+	{
+		if (data->precision < 1)
+			data->precision = 1;
+		ft_putspaces((data->width - data->precision), data);
+		ft_putzeros((data->precision - 1), data);
+	}
+	ft_pf_putchar('%', data);
+}
+
+void		type_percent(t_printf *data)
 {
 	if (data->minus == 1)
 	{
@@ -21,26 +41,10 @@ void	type_percent(t_printf *data)
 			data->width = data->width - data->precision;
 		ft_putzeros(data->precision - 1, data);
 		ft_pf_putchar('%', data);
-		ft_putspaces(data->width, data);		
+		ft_putspaces(data->width, data);
 	}
 	else
-	{
-		if (data->decimal == 0)
-		{
-			if (data->zero == 0)
-				ft_putspaces(data->width - 1, data);
-			if (data->zero == 1)
-				ft_putzeros(data->width - 1, data);
-		}
-		else
-		{
-			if (data->precision < 1)
-				data->precision = 1;
-			ft_putspaces((data->width - data->precision), data);
-			ft_putzeros((data->precision - 1), data);
-		}
-		ft_pf_putchar('%', data);
-	}
+		right_justify(data);
 }
 
 t_printf	*output_numerics(va_list args, t_printf *data)
@@ -54,9 +58,9 @@ t_printf	*output_numerics(va_list args, t_printf *data)
 	else if (*data->nformat == 'u')
 		type_u(args, data);
 	else if (*data->nformat == 'x')
-		type_x(args, data);
+		type_lowerx(args, data);
 	else if (*data->nformat == 'X')
-		type_X(args, data);
+		type_upperx(args, data);
 	else if (*data->nformat == 'f')
 		type_f(args, data);
 	else if (*data->nformat == 'b')

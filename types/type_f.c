@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   type_f.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:26:21 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/16 18:00:32 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/17 14:15:39 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void	right_justify(char *value, t_printf *data)
+static void	right_justify(char *value, t_printf *data, int dot)
 {
 	if (data->precision < (int)ft_strlen(value))
 	{
@@ -33,11 +33,11 @@ static void	right_justify(char *value, t_printf *data)
 			value = ft_putsign(data, value);
 	}
 	ft_pf_putstr(value, data);
-	if (data->dot == 1)
+	if (dot == 1)
 		ft_pf_putchar('.', data);
 }
 
-static void	left_justify(char *value, t_printf *data)
+static void	left_justify(char *value, t_printf *data, int dot)
 {
 	if (data->sign == 1)
 		value = ft_putsign(data, value);
@@ -47,7 +47,7 @@ static void	left_justify(char *value, t_printf *data)
 		data->width = data->width - (data->precision + data->sign);
 	ft_putzeros(data->precision - ft_strlen(value), data);
 	ft_pf_putstr(value, data);
-	if (data->dot == 1)
+	if (dot == 1)
 	{
 		ft_pf_putchar('.', data);
 		data->width--;
@@ -55,12 +55,14 @@ static void	left_justify(char *value, t_printf *data)
 	ft_putspaces(data->width, data);
 }
 
-void	type_f(va_list args, t_printf *data)
+void		type_f(va_list args, t_printf *data)
 {
-	char *value;
+	char	*value;
+	int		dot;
 
+	dot = 0;
 	if (data->hash == 1 && data->decimal == 1 && data->precision == 0)
-		data->dot = 1;
+		dot = 1;
 	if (data->decimal == 0 && data->precision == 0)
 		data->precision = 6;
 	value = float_converter(args, data);
@@ -69,8 +71,8 @@ void	type_f(va_list args, t_printf *data)
 	if (value[0] == '-')
 		data->sign = 1;
 	if (data->minus == 1)
-		left_justify(value, data);
+		left_justify(value, data, dot);
 	else
-		right_justify(value, data);
+		right_justify(value, data, dot);
 	free(value);
 }

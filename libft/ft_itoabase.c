@@ -6,7 +6,7 @@
 /*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 10:38:18 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/11 13:21:16 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/17 14:01:41 by malasalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,4 @@ char		*ft_itoabase(long long value, int base)
 	if (neg)
 		str[0] = '-';
 	return (str);
-    }
+}
