@@ -50,7 +50,7 @@ char		*signed_converter(va_list args, t_printf *data)
 		str = ft_itoa(data->ivalue);
 	}
 	if (*str == '0' && data->decimal == 1 && data->precision == 0)
-		str = "";
+		*str = 0;
 	return (str);
 }
 

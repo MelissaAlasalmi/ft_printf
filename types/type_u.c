@@ -29,6 +29,7 @@ static void	right_justify(char *value, t_printf *data)
 		ft_putzeros((data->precision - ft_strlen(value)), data);
 	}
 	ft_pf_putstr(value, data);
+	free(value);
 }
 
 void		type_u(va_list args, t_printf *data)
@@ -38,7 +39,7 @@ void		type_u(va_list args, t_printf *data)
 	value = unsigned_converter(args, data, 10);
 	if (*value == '0' && data->decimal == 1 && data->precision == 0)
 	{
-		value = "";
+		*value = 0;
 		data->precision--;
 	}
 	if (data->minus == 1)
@@ -50,8 +51,8 @@ void		type_u(va_list args, t_printf *data)
 		ft_putzeros(data->precision - ft_strlen(value), data);
 		ft_pf_putstr(value, data);
 		ft_putspaces(data->width, data);
+		free(value);
 	}
 	else
 		right_justify(value, data);
-	//free(value);
 }

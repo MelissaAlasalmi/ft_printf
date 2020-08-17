@@ -35,6 +35,7 @@ static void	right_justify(char *value, t_printf *data, int dot)
 	ft_pf_putstr(value, data);
 	if (dot == 1)
 		ft_pf_putchar('.', data);
+	free(value);
 }
 
 static void	left_justify(char *value, t_printf *data, int dot)
@@ -53,6 +54,7 @@ static void	left_justify(char *value, t_printf *data, int dot)
 		data->width--;
 	}
 	ft_putspaces(data->width, data);
+	free(value);
 }
 
 void		type_f(va_list args, t_printf *data)
@@ -74,5 +76,4 @@ void		type_f(va_list args, t_printf *data)
 		left_justify(value, data, dot);
 	else
 		right_justify(value, data, dot);
-	free(value);
 }

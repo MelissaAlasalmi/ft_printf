@@ -46,6 +46,7 @@ static void	right_justify(char *base, t_printf *data)
 	else
 		right_prec(base, data);
 	ft_pf_putstr(base, data);
+	free(base);
 }
 
 static void	left_justify(char *base, t_printf *data)
@@ -59,6 +60,7 @@ static void	left_justify(char *base, t_printf *data)
 	ft_putzeros(data->precision - ft_strlen(base), data);
 	ft_pf_putstr(base, data);
 	ft_putspaces(data->width, data);
+	free(base);
 }
 
 void		type_lowerx(va_list args, t_printf *data)
@@ -69,12 +71,11 @@ void		type_lowerx(va_list args, t_printf *data)
 	if (*base == '0')
 		data->hash = 0;
 	if (*base == '0' && data->decimal == 1 && data->precision == 0)
-		base = "";
+		*base = 0;
 	if (data->hash == 1)
 		data->hash = 2;
 	if (data->minus == 1)
 		left_justify(base, data);
 	else
 		right_justify(base, data);
-	//free(base);
 }

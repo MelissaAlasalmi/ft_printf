@@ -44,6 +44,7 @@ static void	right_justify(char *value, t_printf *data)
 	else
 		right_prec(value, data);
 	ft_pf_putstr(value, data);
+	free(value);
 }
 
 void		type_i(va_list args, t_printf *data)
@@ -66,8 +67,8 @@ void		type_i(va_list args, t_printf *data)
 		ft_putzeros(data->precision - ft_strlen(value), data);
 		ft_pf_putstr(value, data);
 		ft_putspaces(data->width, data);
+		free(value);
 	}
 	else
 		right_justify(value, data);
-	//free(value);
 }

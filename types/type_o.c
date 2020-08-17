@@ -35,6 +35,7 @@ static void	right_justify(char *base, t_printf *data)
 	if (data->hash == 1)
 		ft_pf_putchar('0', data);
 	ft_pf_putstr(base, data);
+	free(base);
 }
 
 static void	left_justify(char *base, t_printf *data)
@@ -48,6 +49,7 @@ static void	left_justify(char *base, t_printf *data)
 	ft_putzeros(data->precision - (ft_strlen(base) + data->hash), data);
 	ft_pf_putstr(base, data);
 	ft_putspaces(data->width, data);
+	free(base);
 }
 
 void		type_o(va_list args, t_printf *data)
@@ -57,7 +59,7 @@ void		type_o(va_list args, t_printf *data)
 	base = unsigned_converter(args, data, 8);
 	if (*base == '0' && data->decimal == 1 && data->precision == 0)
 	{
-		base = "";
+		*base = 0;
 		data->precision--;
 	}
 	if (data->decimal == 1 && data->precision == 0)
@@ -68,5 +70,4 @@ void		type_o(va_list args, t_printf *data)
 		left_justify(base, data);
 	else
 		right_justify(base, data);
-	//free(base);
 }
