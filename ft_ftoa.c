@@ -50,6 +50,7 @@ static char	*neg_zero(char *before)
 		i++;
 		j++;
 	}
+	free(temp);
 	return (before);
 }
 
