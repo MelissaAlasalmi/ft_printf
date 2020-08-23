@@ -47,7 +47,7 @@ void		type_percent(t_printf *data)
 		right_justify(data);
 }
 
-t_printf	*output_numerics(va_list args, t_printf *data)
+void output_numerics(va_list args, t_printf *data)
 {
 	if (*data->nformat == 'd')
 		type_d(args, data);
@@ -67,10 +67,9 @@ t_printf	*output_numerics(va_list args, t_printf *data)
 		type_b(args, data);
 	else if (*data->nformat == '%')
 		type_percent(data);
-	return (data);
 }
 
-t_printf	*output(va_list args, t_printf *data)
+void output(va_list args, t_printf *data)
 {
 	if (*data->nformat == 'c')
 		type_c(args, data);
@@ -78,5 +77,7 @@ t_printf	*output(va_list args, t_printf *data)
 		type_s(args, data);
 	else if (*data->nformat == 'p')
 		type_p(args, data);
-	return (output_numerics(args, data));
+	else
+		output_numerics(args, data);
+
 }

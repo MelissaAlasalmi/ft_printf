@@ -44,7 +44,7 @@ char		*ft_uitoabase(unsigned long long value, int base)
 		str[0] = '0';
 	else
 	{
-		while (value)
+		while (value != 0)
 		{
 			str[size] = vals[value % base];
 			value /= base;

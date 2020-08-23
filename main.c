@@ -1,11 +1,33 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	char *str;
-	str = "hellodf";
+    char *str = "test";
+ //char *str2 = "second test";
+     int test = 42;
 
-	ft_printf("hellodfahdskjfahlkjdsnf'alkdsmgvokebjnoiea mklbv,mgpirjfopvksd,VL:< XC>BM");
-	while (1);
-	return (0);
+    // ft_printf("%d\n",10);
+    // printf("%d\n",10);
+
+    // ft_printf("%c %-x %-X\n", 2, 65, 5);
+    // printf("%c %-x %-X\n", 2, 65, 5);
+
+    ft_printf(" %s %d %d %d %d %d %o %o\n", str, test, 65, 41, 65, 5, 42, 3);
+    printf(" %s %d %d %d %d %d %o %o\n", str, test, 65, 41, 65, 5, 42, 3);
+
+    ft_printf("%#0x %X %#x\n", 42, 42, 42);
+	printf("%#0x %X %#x", 42, 42, 42);
+
+    // ft_printf("%s %s %d %d %d %d %d %-X\n", str, str2, test, 65, 41, 65, 5, 3);
+    // printf("%s %s %d %d %d %d %d %-X\n", str, str2, test, 65, 41, 65, 5, 3);
+
+    // ft_printf("%x\n",10);
+    // printf("%x\n",10);
+
+    // ft_printf("%f\n", -0.001675);
+    // printf("%f\n", -0.001675);
+
+   // while (1);
+    return (0);
 }

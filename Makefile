@@ -30,6 +30,7 @@ SRCS = ft_printf.c \
 	   types/type_f.c \
 	   types/type_b.c \
 	   ft_ftoa.c \
+	   teststruct.c \
 
 	   
 OBJS = ft_printf.o \
@@ -50,7 +51,7 @@ OBJS = ft_printf.o \
 	   type_f.o \
 	   type_b.o \
 	   ft_ftoa.o \
-
+	   teststruct.o \
 
 HEADER = ft_printf.h
 

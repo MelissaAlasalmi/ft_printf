@@ -1,0 +1,42 @@
+Test   7 (pct_5w) : FAILED.
+    First line of code: {return test("%5%");}
+      expected output : "    %"
+      your output     : ""
+      expected (nonprintable as hex) : "    %"
+      actual   (nonprintable as hex) : ""
+
+Test   8 (pct_5wlj) : FAILED.
+    First line of code: {return test("%-5%");}
+      expected output : "%    "
+      your output     : ""
+      expected (nonprintable as hex) : "%    "
+      actual   (nonprintable as hex) : ""
+
+Test   9 (pct_5wzp) : FAILED.
+    First line of code: {return test("%05%");}
+      expected output : "0000%"
+      your output     : ""
+      expected (nonprintable as hex) : "0000%"
+      actual   (nonprintable as hex) : ""
+
+Test  10 (pct_5wljzp) : FAILED.
+    First line of code: {return test("%-05%");}
+      expected output : "%    "
+      your output     : ""
+      expected (nonprintable as hex) : "%    "
+      actual   (nonprintable as hex) : ""
+
+Test 1923 (f_L_stress_prec20_rndu) : FAILED.
+    First line of code: {return test("%.20f",        1.025978542436587568678);}
+      expected output : "1.02597854243658748175"
+      your output     : "1.02597854243658748174"
+      expected (nonprintable as hex) : "1.02597854243658748175"
+      actual   (nonprintable as hex) : "1.02597854243658748174"
+
+Test 1924 (f_L_stress_prec20_rndd) : FAILED.
+    First line of code: {return test("%.20f",        1.025978548534310422034);}
+      expected output : "1.02597854853431047495"
+      your output     : "1.02597854853431047494"
+      expected (nonprintable as hex) : "1.02597854853431047495"
+      actual   (nonprintable as hex) : "1.02597854853431047494"
+
