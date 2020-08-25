@@ -85,14 +85,16 @@ int		ft_preparser(t_printf *data, va_list args)
 	while (*data->nformat != '\0')
 	{
 		if (*data->nformat == '%')
+		{
 			ft_percentparser(data, args);
+			re_initialize(data);
+		}
 		else
 		{
 			ft_pf_putchar(*data->nformat, data);
 			data->nformat++;
 		}
 		returnvalue = returnvalue + data->printf;
-		re_initialize(data);
 	}
 	return (returnvalue);
 }

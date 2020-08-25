@@ -56,7 +56,7 @@ int				ft_printf(const char *restrict format, ...);
 t_printf		*initialize(void);
 void			re_initialize(t_printf *data);
 t_printf		format_to_struct(t_printf *data);
-t_printf		*output(va_list args, t_printf *data);
+void			output(va_list args, t_printf *data);
 void			ft_pf_putchar(char c, t_printf *data);
 void			ft_pf_putstr(char *str, t_printf *data);
 void			type_c(va_list args, t_printf *data);
@@ -77,5 +77,6 @@ char			*signed_converter(va_list args, t_printf *data);
 char			*unsigned_converter(va_list args, t_printf *data, int base);
 char			*float_converter(va_list args, t_printf *data);
 char			*ft_ftoa(long double fvalue, int precision);
+void		teststruct(t_printf *data);
 
 #endif

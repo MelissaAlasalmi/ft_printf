@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+         #
+#    By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 14:26:10 by malasalm          #+#    #+#              #
-#    Updated: 2020/08/17 13:42:48 by malasalm         ###   ########.fr        #
+#    Updated: 2020/08/25 07:28:29 by Melissa          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,6 @@ OBJS = ft_printf.o \
 	   type_f.o \
 	   type_b.o \
 	   ft_ftoa.o \
-
 
 HEADER = ft_printf.h
 
