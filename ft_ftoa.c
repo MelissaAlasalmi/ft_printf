@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ftoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 12:48:12 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/17 15:00:24 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/25 07:24:05 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static char	*neg_zero(char *before)
 		i++;
 		j++;
 	}
+	free(temp);
 	return (before);
 }
 

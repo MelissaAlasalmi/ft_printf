@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversions.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malasalm <malasalm@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/17 13:46:17 by malasalm         ###   ########.fr       */
+/*   Updated: 2020/08/25 07:23:38 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ char		*unsigned_converter(va_list args, t_printf *data, int base)
 		str = convert_unsign(args, data, base, str);
 	else
 	{
-		data->llvalue = (unsigned long long)va_arg(args, void*);
-		str = ft_uitoabase(data->llvalue, base);
+		data->ivalue = (unsigned int)va_arg(args, void*);
+		str = ft_uitoabase(data->ivalue, base);
 	}
 	return (str);
 }
