@@ -6,7 +6,7 @@
 /*   By: Melissa <Melissa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:42:46 by malasalm          #+#    #+#             */
-/*   Updated: 2020/08/25 07:23:38 by Melissa          ###   ########.fr       */
+/*   Updated: 2020/08/25 07:40:40 by Melissa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ char		*unsigned_converter(va_list args, t_printf *data, int base)
 		str = convert_unsign(args, data, base, str);
 	else
 	{
-		data->ivalue = (unsigned int)va_arg(args, void*);
-		str = ft_uitoabase(data->ivalue, base);
+		data->llvalue = (unsigned int)va_arg(args, void*);
+		str = ft_uitoabase(data->llvalue, base);
 	}
 	return (str);
 }
