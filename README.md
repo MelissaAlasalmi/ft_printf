@@ -7,6 +7,10 @@ int		ft_printf(const char *format, ...)
 ```  
 The function ft_printf, mimicking stdio's function printf, writes a string to the standard output. If it's parameter 'format' includes format specifiers (subsequences beginning with %), the additional arguments following format (variadic function) are formatted and inserted into the resulting string replacing their respective specifiers. It returns the number of output characters.  
 
+You can read more about it [here](https://www.dummies.com/programming/cpp/using-printf-for-output/) - this link was my best friend during this project!  
+
+Through this project, I learned the importance of well-structured, readable and extendable code. The nature of this function makes it vital to have a proper plan before you start coding - no brute-forcing your way through this one!  
+
 ### It handles the following types:  
 
 | Type specifier | Type                     | Example       | Supported flags                |
@@ -43,8 +47,3 @@ The function ft_printf, mimicking stdio's function printf, writes a string to th
 | ll 	       | long	long    | unsigned long long | none        | 
 | L          | none         | none               | long double | 
 
-
-You can read more about it [here](https://www.dummies.com/programming/cpp/using-printf-for-output/) - this link was my best friend during this project!
-
-
-Through this project, I learned the importance of well-structured, readable and extendable code. The nature of this function makes it vital to have a proper plan before you start coding - no brute-forcing your way through this one!
