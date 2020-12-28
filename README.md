@@ -13,17 +13,17 @@ Through this project, I learned the importance of well-structured, readable and 
 
 ### It handles the following types:  
 
-| Type specifier | Type                     | Example       | Supported flags                |
-| -------------- | ------------------------ | ------------- | ------------------------------ |
-| d / i          | Signed decimal int       | –123          | -, +, space, 0, width, prec    |
-| o              | Unsigned octal           | 05670         | -, +, space, #, 0, width, prec |
-| u              | Unsigned decimal int     | 456           | -, +, space, 0, width, prec    |  
-| x / X          | Unsigned hex lower/upper | 89abc / 89ABC | -, +, space, #, 0, width, prec |
-| f              | Decimal floating point   | 123.456       | -, +, space, #, 0, width, prec | 
-| c              | Char                     | c             | -, width, prec                 |
-| s              | Char string              | abcd          | -, width, prec                 |
-| p              | Pointer address          | bc080         | -, width, prec                 |
-| b              | Binary                   | 10101         | -, +, space, #, 0, width, prec |  
+| Type specifier | Type                     | Example       | Supported flags                     |
+| -------------- | ------------------------ | ------------- | ----------------------------------- |
+| d / i          | Signed decimal int       | –123          | -, +, space, 0, width, precision    |
+| o              | Unsigned octal           | 05670         | -, +, space, #, 0, width, precision |
+| u              | Unsigned decimal int     | 456           | -, +, space, 0, width, precision    | 
+| x / X          | Unsigned hex lower/upper | 89abc / 89ABC | -, +, space, #, 0, width, precision |
+| f              | Decimal floating point   | 123.456       | -, +, space, #, 0, width, precision | 
+| c              | Char                     | c             | -, width, precision                 |
+| s              | Char string              | abcd          | -, width, precision                 |
+| p              | Pointer address          | bc080         | -, width, recision                  |
+| b              | Binary                   | 10101         | -, +, space, #, 0, width, precision |  
 
 ### The flags carry out the following actions:  
 | Flag       | Function                                                                   |
@@ -35,7 +35,7 @@ Through this project, I learned the importance of well-structured, readable and 
 | # (type f) | Includes a decimal point even if the fractional part of the int is zero    |
 | 0          | Left-pads ints using zeroes                                                |
 | width      | (given as a number) The minimum number of chars to allocate for width      |
-| prec       | (given as a number) The minimum number of chars to allocate for precision  |
+| precision  | (given as a number) The minimum number of chars to allocate for precision  |
 
 ### The types support the following conversions:
 | Conversion |	d / i       | o / u / x / X	     | f           | 
@@ -46,4 +46,7 @@ Through this project, I learned the importance of well-structured, readable and 
 | l 	       | long	        | unsigned long      | none        | 
 | ll 	       | long	long    | unsigned long long | none        | 
 | L          | none         | none               | long double | 
+
+## How to run it:
+Clone the repo and run the executable ./ft_printf (some tests are included in the main). Alternatively, add your own tests to the main.c file, run the command "make re" then run the executable ./ft_printf and repeat to your heart's content!
 
