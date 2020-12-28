@@ -51,5 +51,5 @@ Through this project, I learned the importance of well-structured, readable and 
 Clone the repo and run the executable ./ft_printf (some tests are included in the main). Alternatively, add your own tests to the main.c file, run the command "make re" then run the executable ./ft_printf and repeat to your heart's content!  
 
 Here's a screenshot of some of the output of built-in tests:  
-
+![pf_tests](./RMsrcs/pf_output.png)
 
