@@ -7,7 +7,7 @@ int		ft_printf(const char *format, ...)
 ```  
 The function ft_printf, mimicking stdio's function printf, writes a string to the standard output. If it's parameter 'format' includes format specifiers (subsequences beginning with %), the additional arguments following format (variadic function) are formatted and inserted into the resulting string replacing their respective specifiers. It returns the number of output characters.  
 
-It handles the following types:  
+### It handles the following types:  
 
 | Type specifier | Type                     | Example       | Supported flags                |
 | -------------- | ------------------------ | ------------- | ------------------------------ |
@@ -21,7 +21,7 @@ It handles the following types:
 | p              | Pointer address          | bc080         | -, width, prec                 |
 | b              | Binary                   | 10101         | -, +, space, #, 0, width, prec |  
 
-The flags carry out the following actions:  
+### The flags carry out the following actions:  
 | Flag       | Function                                                                   |
 |----------- | -------------------------------------------------------------------------- |
 | -          | Left justifies output                                                      |
