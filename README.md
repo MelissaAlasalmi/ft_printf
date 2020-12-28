@@ -23,7 +23,7 @@ The function ft_printf, mimicking stdio's function printf, writes a string to th
 
 ### The flags carry out the following actions:  
 | Flag       | Function                                                                   |
-|----------- | -------------------------------------------------------------------------- |
+| ---------- | -------------------------------------------------------------------------- |
 | -          | Left justifies output                                                      |
 | +          | Precedes positive ints with +                                              |
 | space      | Inserts a blank space if no sign is to be written                          |
@@ -32,6 +32,17 @@ The function ft_printf, mimicking stdio's function printf, writes a string to th
 | 0          | Left-pads ints using zeroes                                                |
 | width      | (given as a number) The minimum number of chars to allocate for width      |
 | prec       | (given as a number) The minimum number of chars to allocate for precision  |
+
+### The types support the following conversions:
+| Conversion |	d / i       | o / u / x / X	     | f           | 
+| ---------- | ------------ | ------------------ | ----------- | 
+| None	     | int	        | unsigned int	     | double      |
+| hh	       | signed char	| unsigned char      | none        |
+| h 	       | signed short	| unsigned short     | none        | 
+| l 	       | long	        | unsigned long      | none        | 
+| ll 	       | long	long    | unsigned long long | none        | 
+| L          | none         | none               | long double | 
+
 
 You can read more about it [here](https://www.dummies.com/programming/cpp/using-printf-for-output/) - this link was my best friend during this project!
 
